@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aaN-iM-hdX">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photos View Controller-->
+        <scene sceneID="ZEb-R7-mRZ">
+            <objects>
+                <viewController storyboardIdentifier="first" id="aaN-iM-hdX" customClass="PhotosViewController" customModule="ChedliWeldi2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GiY-ga-a6y"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Uh-is-M3a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fe2-uc-nYs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="alT-Ig-mvC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="378"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jHQ-p1-gDV">
+                                    <size key="itemSize" width="97" height="103"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExampleCollectionViewCell" id="FLc-1e-Y3i" customClass="ExampleCollectionViewCell" customModule="ChedliWeldi2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="97" height="103"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="103"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nv3-9U-nCV">
+                                                    <rect key="frame" x="7" y="16" width="82" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="imageView" destination="nv3-9U-nCV" id="kbN-Qh-LWR"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="aaN-iM-hdX" id="G35-zQ-UPT"/>
+                                    <outlet property="delegate" destination="aaN-iM-hdX" id="79T-ka-86b"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbe-Hj-3EL">
+                                <rect key="frame" x="156" y="269" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Wh1-bR-DjL" kind="showDetail" id="Ie6-Zw-udk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="alT-Ig-mvC" id="7Jl-Oc-sVJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WhM-an-9AM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1061.25" y="-1052.1126760563379"/>
+        </scene>
+        <!--Youtube Example View Controller-->
+        <scene sceneID="qW0-cF-iM7">
+            <objects>
+                <viewController storyboardIdentifier="youtube" id="Wh1-bR-DjL" customClass="YoutubeExampleViewController" customModule="ChedliWeldi2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xeb-ec-Tt4"/>
+                        <viewControllerLayoutGuide type="bottom" id="7CE-uK-bJL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K32-Qg-4UU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vq5-ye-6SP">
+                                <rect key="frame" x="0.0" y="70" width="320" height="498"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9en-A9-8PD">
+                                <rect key="frame" x="28" y="523" width="84" height="33"/>
+                                <color key="backgroundColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84" id="z2b-Uh-5vU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <state key="normal" title="CLOSE"/>
+                                <connections>
+                                    <action selector="closeAction:" destination="Wh1-bR-DjL" eventType="touchUpInside" id="KI3-iQ-UKi"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JAc-wy-c5f" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nad-aS-QoC"/>
+                                </constraints>
+                                <inset key="scrollIndicatorInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uCF-3o-CsS">
+                                    <size key="itemSize" width="40" height="40"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.058823529409999999" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Vq5-ye-6SP" firstAttribute="leading" secondItem="K32-Qg-4UU" secondAttribute="leading" id="631-0h-9pi"/>
+                            <constraint firstAttribute="trailing" secondItem="Vq5-ye-6SP" secondAttribute="trailing" id="Cls-4W-8m9"/>
+                            <constraint firstItem="7CE-uK-bJL" firstAttribute="top" secondItem="Vq5-ye-6SP" secondAttribute="bottom" id="GnL-rO-fXG"/>
+                            <constraint firstItem="Vq5-ye-6SP" firstAttribute="top" secondItem="JAc-wy-c5f" secondAttribute="bottom" id="Jbj-8n-y7c"/>
+                            <constraint firstItem="JAc-wy-c5f" firstAttribute="leading" secondItem="K32-Qg-4UU" secondAttribute="leading" id="VdP-4r-WEO"/>
+                            <constraint firstItem="7CE-uK-bJL" firstAttribute="top" secondItem="9en-A9-8PD" secondAttribute="bottom" constant="12" id="YQ2-6u-cE5"/>
+                            <constraint firstItem="9en-A9-8PD" firstAttribute="leading" secondItem="K32-Qg-4UU" secondAttribute="leadingMargin" constant="12" id="jyb-fU-kgs"/>
+                            <constraint firstAttribute="trailing" secondItem="JAc-wy-c5f" secondAttribute="trailing" id="obx-pD-gw9"/>
+                            <constraint firstItem="JAc-wy-c5f" firstAttribute="top" secondItem="Xeb-ec-Tt4" secondAttribute="bottom" id="sCX-48-5gv"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="g9F-Ew-rP4">
+                        <barButtonItem key="leftBarButtonItem" title="  Home" id="n6t-FQ-kJ6"/>
+                        <rightBarButtonItems>
+                            <barButtonItem image="more_options" id="Qva-OJ-J3R">
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                            <barButtonItem image="search" id="ane-MH-9Vu">
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="buttonBarView" destination="JAc-wy-c5f" id="1qt-nH-xEb"/>
+                        <outlet property="containerView" destination="Vq5-ye-6SP" id="r58-B0-yRq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NRX-g8-kO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1856" y="-1370"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="more_options" width="24" height="24"/>
+        <image name="search" width="24" height="24"/>
+    </resources>
+</document>

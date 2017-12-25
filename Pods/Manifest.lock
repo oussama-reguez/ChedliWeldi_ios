@@ -1,0 +1,67 @@
+PODS:
+  - Alamofire (4.5.1)
+  - Cosmos (8.0.2)
+  - DatePickerDialog (2.0)
+  - FoldingCell (2.1.3)
+  - FSCalendar (2.7.9)
+  - INSPhotoGallery (1.2.3)
+  - Kingfisher (3.13.1)
+  - PopupDialog (0.5.4)
+  - SimulatorRemoteNotifications (0.0.3)
+  - SkyFloatingLabelTextField (3.2.1)
+  - SwiftyJSON (3.1.4)
+  - TagListView (1.2.0)
+  - UIFloatLabelTextField (1.2.9)
+  - XLPagerTabStrip (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - Cosmos (from `https://github.com/marketplacer/Cosmos.git`, tag `8.0.2`)
+  - DatePickerDialog
+  - FoldingCell
+  - FSCalendar
+  - INSPhotoGallery
+  - Kingfisher (~> 3.13.1)
+  - PopupDialog (~> 0.5.4)
+  - SimulatorRemoteNotifications
+  - SkyFloatingLabelTextField (~> 3.0)
+  - SwiftyJSON
+  - TagListView (~> 1.2.0)
+  - UIFloatLabelTextField
+  - XLPagerTabStrip (from `https://github.com/KelvinJin/XLPagerTabStrip`, branch `swift3`)
+
+EXTERNAL SOURCES:
+  Cosmos:
+    :git: https://github.com/marketplacer/Cosmos.git
+    :tag: 8.0.2
+  XLPagerTabStrip:
+    :branch: swift3
+    :git: https://github.com/KelvinJin/XLPagerTabStrip
+
+CHECKOUT OPTIONS:
+  Cosmos:
+    :git: https://github.com/marketplacer/Cosmos.git
+    :tag: 8.0.2
+  XLPagerTabStrip:
+    :commit: 99e3cbd5e6b99bb6b1fdf25f4af58fe2e38ad308
+    :git: https://github.com/KelvinJin/XLPagerTabStrip
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Cosmos: 83d7e1c5289839a954dfa45376a11e9a9cef0a13
+  DatePickerDialog: 5e1c24d9fe6506cd45dbc573eed7b0a251b1c09d
+  FoldingCell: f3073f8b24cf20866a35198f31e3b67aea64e96e
+  FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
+  INSPhotoGallery: 2c07e4a5b5be1b4fd49c0c1f16eed28c6fe8a15d
+  Kingfisher: ed9707a409cc47fddafbcd12a43a9757e3600af5
+  PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
+  SimulatorRemoteNotifications: 1610643e0582b2af67bc254b071ace4077e8ef86
+  SkyFloatingLabelTextField: 71d28906024e7d7e4460099b342f3ca7036a2e24
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  TagListView: 999e1df50c0f6b9ca927fae705c86a7e3b6ee9ba
+  UIFloatLabelTextField: c1df7d4e688a1bd52738513f961df16f94914367
+  XLPagerTabStrip: 87b8b705f9a7178e76a063ffaa2d70045944a965
+
+PODFILE CHECKSUM: 4e47970ce4db75750f110b0d028bfc46a20d2f60
+
+COCOAPODS: 1.3.1

@@ -8,15 +8,28 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
-
+    static let  serverUrl="http://localhost:8888/rest/v1/"
+    static let serverImage="http://localhost:8888/images/"
+    static let userId="6"
+    
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+    registerForRemoteNotification()
+      /*
+        let storyBoard = UIStoryboard(name: "testing", bundle: nil)
+        
+       //let secondVC = storyBoard.instantiateViewController(withIdentifier: "first") as! PhotosViewController
+         let secondVC2 = storyBoard.instantiateViewController(withIdentifier: "youtube")  as! YoutubeExampleViewController
+        self.window?.rootViewController = secondVC2
+ */
         return true
     }
 
@@ -89,5 +102,93 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    
+    func registerForRemoteNotification() {
+        if #available(iOS 10.0, *) {
+            let center  = UNUserNotificationCenter.current()
+            
+            center.delegate = self
+            center.requestAuthorization(options: [.sound, .alert, .badge]) { (granted, error) in
+                if error == nil{
+                    UIApplication.shared.registerForRemoteNotifications()
+               
+                }
+                let generalCategory = UNNotificationCategory(identifier: "newCategory",
+                                                             actions: [],
+                                                             intentIdentifiers: [],
+                                                             options: .customDismissAction)
+                
+             
+                center.setNotificationCategories([generalCategory])
+                
+                
+            }
+            
+            
+        }
+        else {
+            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.sound, .alert, .badge], categories: nil))
+            UIApplication.shared.registerForRemoteNotifications()
+        }
+    }
+    
+    
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("User Info = ",notification.request.content.userInfo)
+    
+        
+       // let fileURL: URL = ... //  your disk file url, support image, audio, movie
+        
+       // let attachement = try? UNNotificationAttachment(identifier: "attachment", url: fileURL, options: nil)
+     //   content.attachments = [attachement!]
+        /*
+        let request = UNNotificationRequest.init(identifier: "newNotificationRequest", content: content, trigger: nil)
+        
+        let center = UNUserNotificationCenter.current()
+        center.add(request)
+ */
+        completionHandler([.alert, .badge, .sound ])
+    }
+    
+    //Called to let your app know which action was selected by the user for a given notification.
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeC = storyboard.instantiateViewController(withIdentifier: "Requests") as? RequestsViewController
+    let userInfo =    response.notification.request.content.userInfo
+
+       
+    
+        
+            let offerId = userInfo["offer_id"] as? NSString
+            let requestId = userInfo["request_id"] as? NSString
+
+                homeC?.offerId=offerId! as String
+        
+                 homeC?.requestIdFromNotification=requestId! as String
+        
+                //Do stuff
+            
+        
+        
+
+        if homeC != nil {
+            homeC!.view.frame = (self.window!.frame)
+            self.window!.addSubview(homeC!.view)
+            self.window!.bringSubview(toFront: homeC!.view)
+            //homeC.getMyNotifcations()
+        }
+        // completionHandler()
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        print(deviceTokenString)
+        
+        
+    }
 }
 
