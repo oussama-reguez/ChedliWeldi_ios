@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AsyncDisplayKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Cosmos.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -40,6 +45,26 @@
 			<false/>
 		</dict>
 		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>NMessenger.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PINCache.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PINOperation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PINRemoteImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -92,7 +117,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>13EBD1B054F5F611834B6DCAF0B831CC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>160F3D2B181465FD6DEC4E9916DF2092</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>161C75B3BE3CB29C95EEB83B4F0B0C34</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,17 +137,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2A0D35C35A06679878E495D68BC70AA2</key>
+		<key>355880F2257E3A38864A164DF6480E0F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3657C7D5526AA406E7696D8B6DA2F3F7</key>
+		<key>4676EA5E9389AEEE9DBEC9F544AC164E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4DAC99A58C5477E53E531AD52FF0093F</key>
+		<key>47802DF441EEFF744ED10FC9C54BCE99</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,7 +157,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5232B3CB536810CA15CB2CC7453FD7AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>55AA215962670F3924D199E0EBB88A9A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5AB2AFB1E6DC8D2967EF130A030AD1B8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6D6A05538726A79942E51E0D6636139F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,27 +182,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7847A9FD4C6F76C3A11DD3E438799A2D</key>
+		<key>75484E9FC8379B0447FF84F736CC0E85</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>821FA15F4FFEE73C2AEEF424E0D9BADA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>84DC12D70CDAE6A95DBFC0FA79FEA63D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>874877BEDBACC146BFBE5FD7CA12DDFD</key>
+		<key>827334D0AD7F09AF18CBD338F7DB507D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AC1012C31E95590C528AF538A72D2965</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,12 +212,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C6873F6DFA0C3787CF5FA46C1090D090</key>
+		<key>D863DF209AFF2C56879854880B5ABD64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF7B84C6508862BE38AE578C2DD76E5C</key>
+		<key>DDE8929ABCB318C8B10D3E4E7BDFB8CB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E0A59FEBE757722BE4BBBFADC6E5DD94</key>
 		<dict>
 			<key>primary</key>
 			<true/>

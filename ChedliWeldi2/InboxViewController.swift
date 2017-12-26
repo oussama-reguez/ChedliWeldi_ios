@@ -15,6 +15,26 @@ import Kingfisher
 
 class InboxViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource  {
     
+    fileprivate let timeStampFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return formatter
+    }()
+
+    
+    fileprivate let formatter2: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMM"
+        return formatter
+    }()
+    
+    fileprivate let formatter3: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a"
+        return formatter
+    }()
+
+    
     
     @IBOutlet weak var table: UITableView!
     
@@ -25,7 +45,7 @@ class InboxViewController: UIViewController ,UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
  
-        getInbox(id: "4")
+        getInbox(id: "5")
        
         // Do any additional setup after loading the view.
     }
@@ -46,6 +66,22 @@ class InboxViewController: UIViewController ,UITableViewDelegate, UITableViewDat
     
     
     
+    func generateStringDate(text:String)->String{
+          let date = self.timeStampFormatter.date(from: text)
+        let now = Date()
+        if(   Calendar.current.isDate(date!, inSameDayAs:now)){
+           return formatter3.string(from: date!)
+        }
+
+        return formatter2.string(from: date!)
+        // let flags = CalendarUnit.Day
+        //let components = calendar.components(flags, fromDate: date, toDate: now, options: [])
+        
+       // components.day
+        
+        
+    }
+    
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "prototype", for: indexPath)
     
@@ -64,7 +100,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     // img.image=#imageLiteral(resourceName: "man")
     name.text=(user?["firstName"].stringValue)! + " " + (user?["lastName"].stringValue)!
     message.text=user?["lastMessage"].stringValue
-    date.text=user?["date"].stringValue
+    date.text = self.generateStringDate(text: (user?["date"].stringValue)!)
     
 
     
@@ -103,6 +139,8 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         
         
     }
+    
+
     
 
     

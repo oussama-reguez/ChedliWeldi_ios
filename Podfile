@@ -16,5 +16,5 @@ target ‘ChedliWeldi2’ do
     pod 'XLPagerTabStrip', :git => 'https://github.com/KelvinJin/XLPagerTabStrip', :branch => 'swift3'
     pod 'TagListView', '~> 1.2.0'
     pod 'FSCalendar'
-
+    pod 'NMessenger'
 end
