@@ -30,12 +30,14 @@ PODS:
     - PINCache (= 3.0.1-beta.4)
     - PINRemoteImage/Core
   - PopupDialog (0.5.4)
+  - RAMAnimatedTabBarController (3.0.1)
   - SimulatorRemoteNotifications (0.0.3)
   - SkyFloatingLabelTextField (3.2.1)
   - SwiftyJSON (3.1.4)
   - TagListView (1.2.0)
   - UIFloatLabelTextField (1.2.9)
   - XLPagerTabStrip (5.0.0)
+  - YALSideMenu (2.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
@@ -47,12 +49,14 @@ DEPENDENCIES:
   - Kingfisher (~> 3.13.1)
   - NMessenger
   - PopupDialog (~> 0.5.4)
+  - RAMAnimatedTabBarController
   - SimulatorRemoteNotifications
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftyJSON
   - TagListView (~> 1.2.0)
   - UIFloatLabelTextField
   - XLPagerTabStrip (from `https://github.com/KelvinJin/XLPagerTabStrip`, branch `swift3`)
+  - YALSideMenu (~> 2.0)
 
 EXTERNAL SOURCES:
   Cosmos:
@@ -84,13 +88,15 @@ SPEC CHECKSUMS:
   PINOperation: ac23db44796d4a564ecf9b5ea7163510f579b71d
   PINRemoteImage: c4f9f16932840c597f32e69dd288e10e111a1929
   PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
+  RAMAnimatedTabBarController: 78bafa7a1c1b162f0d4a86a936c0d1ee4a06ffcc
   SimulatorRemoteNotifications: 1610643e0582b2af67bc254b071ace4077e8ef86
   SkyFloatingLabelTextField: 71d28906024e7d7e4460099b342f3ca7036a2e24
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TagListView: 999e1df50c0f6b9ca927fae705c86a7e3b6ee9ba
   UIFloatLabelTextField: c1df7d4e688a1bd52738513f961df16f94914367
   XLPagerTabStrip: 87b8b705f9a7178e76a063ffaa2d70045944a965
+  YALSideMenu: 4d6b90ea44dcdded18a99e46b676e4ad51d9c6bb
 
-PODFILE CHECKSUM: bfa5b82712bcace07e71097e59e7a34b83600da4
+PODFILE CHECKSUM: bf006de0c78b563388ad8920492a78df24ee0260
 
 COCOAPODS: 1.3.1

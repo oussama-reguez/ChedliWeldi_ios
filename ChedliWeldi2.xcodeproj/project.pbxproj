@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3C011020015EE8002AE7B3 /* AddJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C010F20015EE8002AE7B3 /* AddJobViewController.swift */; };
+		0F3C011220015F64002AE7B3 /* MyJobPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3C011120015F64002AE7B3 /* MyJobPreferencesViewController.xib */; };
+		0F3C01142001767B002AE7B3 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C01132001767B002AE7B3 /* TaskListViewController.swift */; };
+		0F3C011D20017FEC002AE7B3 /* AnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C011920017FEC002AE7B3 /* AnimationDelegate.swift */; };
+		0F3C011E20017FEC002AE7B3 /* CircularRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C011A20017FEC002AE7B3 /* CircularRevealAnimator.swift */; };
+		0F3C011F20017FEC002AE7B3 /* CircularRevealTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C011B20017FEC002AE7B3 /* CircularRevealTransitionAnimator.swift */; };
+		0F3C012320018056002AE7B3 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C012220018056002AE7B3 /* ContentType.swift */; };
+		0F3C0126200180A4002AE7B3 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C0125200180A4002AE7B3 /* UITableViewCell.swift */; };
+		0F3C01282001810E002AE7B3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C01272001810E002AE7B3 /* MenuViewController.swift */; };
+		0F3C012A20018457002AE7B3 /* HomeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C012920018457002AE7B3 /* HomeMenuViewController.swift */; };
+		0F3C012C2001853C002AE7B3 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C012B2001853C002AE7B3 /* TabsViewController.swift */; };
+		0F67101E200107BE0016F173 /* ParentStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F67101D200107BE0016F173 /* ParentStoryboard.storyboard */; };
+		0F67102220010AE40016F173 /* BabysitterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F67102120010AE40016F173 /* BabysitterListViewController.swift */; };
+		0F67102420010B0A0016F173 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F67102320010B0A0016F173 /* MapViewController.swift */; };
+		0F67102820011FD20016F173 /* BabysitterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F67102720011FD20016F173 /* BabysitterCell.swift */; };
+		0F67102A200120C20016F173 /* BabysitterFolding.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F671029200120C20016F173 /* BabysitterFolding.xib */; };
+		0F67102C200139B20016F173 /* BabySitterPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F67102B200139B20016F173 /* BabySitterPin.swift */; };
 		3579E74D0AD465DAE096ED59 /* Pods_ChedliWeldi2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C938081B4006F4907E99A8CE /* Pods_ChedliWeldi2.framework */; };
 		5A0023821FB8849000314156 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0023811FB8849000314156 /* AppDelegate.swift */; };
 		5A0023841FB8849000314156 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0023831FB8849000314156 /* ViewController.swift */; };
@@ -84,6 +101,24 @@
 
 /* Begin PBXFileReference section */
 		04DD358DCC04340B72098936 /* Pods-ChedliWeldi2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChedliWeldi2.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChedliWeldi2/Pods-ChedliWeldi2.release.xcconfig"; sourceTree = "<group>"; };
+		0F3C010F20015EE8002AE7B3 /* AddJobViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddJobViewController.swift; sourceTree = "<group>"; };
+		0F3C011120015F64002AE7B3 /* MyJobPreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyJobPreferencesViewController.xib; sourceTree = "<group>"; };
+		0F3C01132001767B002AE7B3 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		0F3C011920017FEC002AE7B3 /* AnimationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationDelegate.swift; sourceTree = "<group>"; };
+		0F3C011A20017FEC002AE7B3 /* CircularRevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularRevealAnimator.swift; sourceTree = "<group>"; };
+		0F3C011B20017FEC002AE7B3 /* CircularRevealTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularRevealTransitionAnimator.swift; sourceTree = "<group>"; };
+		0F3C012220018056002AE7B3 /* ContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
+		0F3C0125200180A4002AE7B3 /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		0F3C01272001810E002AE7B3 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		0F3C012920018457002AE7B3 /* HomeMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuViewController.swift; sourceTree = "<group>"; };
+		0F3C012B2001853C002AE7B3 /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
+		0F67101D200107BE0016F173 /* ParentStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ParentStoryboard.storyboard; sourceTree = "<group>"; };
+		0F67102120010AE40016F173 /* BabysitterListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabysitterListViewController.swift; sourceTree = "<group>"; };
+		0F67102320010B0A0016F173 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		0F67102720011FD20016F173 /* BabysitterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabysitterCell.swift; sourceTree = "<group>"; };
+		0F671029200120C20016F173 /* BabysitterFolding.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BabysitterFolding.xib; sourceTree = "<group>"; };
+		0F67102B200139B20016F173 /* BabySitterPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabySitterPin.swift; sourceTree = "<group>"; };
+		0F67102D200148B50016F173 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		5A00237E1FB8849000314156 /* ChedliWeldi2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChedliWeldi2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A0023811FB8849000314156 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A0023831FB8849000314156 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +196,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F3C011820017FEC002AE7B3 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				0F3C011920017FEC002AE7B3 /* AnimationDelegate.swift */,
+				0F3C011A20017FEC002AE7B3 /* CircularRevealAnimator.swift */,
+				0F3C011B20017FEC002AE7B3 /* CircularRevealTransitionAnimator.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		0F3C012120018056002AE7B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0F3C012220018056002AE7B3 /* ContentType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0F3C0124200180A4002AE7B3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0F3C0125200180A4002AE7B3 /* UITableViewCell.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		5A0023751FB8849000314156 = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +297,22 @@
 		5A0F0D192000E7F300E76CEF /* parent */ = {
 			isa = PBXGroup;
 			children = (
+				0F3C0124200180A4002AE7B3 /* Extension */,
+				0F3C012120018056002AE7B3 /* Model */,
+				0F3C011820017FEC002AE7B3 /* Misc */,
+				0F671029200120C20016F173 /* BabysitterFolding.xib */,
+				0F67101D200107BE0016F173 /* ParentStoryboard.storyboard */,
+				0F67102120010AE40016F173 /* BabysitterListViewController.swift */,
+				0F67102D200148B50016F173 /* Location.gpx */,
+				0F67102320010B0A0016F173 /* MapViewController.swift */,
+				0F67102720011FD20016F173 /* BabysitterCell.swift */,
+				0F67102B200139B20016F173 /* BabySitterPin.swift */,
+				0F3C011120015F64002AE7B3 /* MyJobPreferencesViewController.xib */,
+				0F3C010F20015EE8002AE7B3 /* AddJobViewController.swift */,
+				0F3C01132001767B002AE7B3 /* TaskListViewController.swift */,
+				0F3C01272001810E002AE7B3 /* MenuViewController.swift */,
+				0F3C012920018457002AE7B3 /* HomeMenuViewController.swift */,
+				0F3C012B2001853C002AE7B3 /* TabsViewController.swift */,
 			);
 			name = parent;
 			sourceTree = "<group>";
@@ -403,9 +480,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F67102A200120C20016F173 /* BabysitterFolding.xib in Resources */,
 				5A00238F1FB8849000314156 /* LaunchScreen.storyboard in Resources */,
 				5A06F9101FCE0D860029B99A /* RatingDialog.xib in Resources */,
 				5A00238C1FB8849000314156 /* Assets.xcassets in Resources */,
+				0F67101E200107BE0016F173 /* ParentStoryboard.storyboard in Resources */,
+				0F3C011220015F64002AE7B3 /* MyJobPreferencesViewController.xib in Resources */,
 				5ADCAB9A1FD34B98000062AD /* testing.storyboard in Resources */,
 				5ADCABAC1FD36C63000062AD /* YoutubeIconCell.xib in Resources */,
 				5A0023871FB8849000314156 /* Main.storyboard in Resources */,
@@ -446,12 +526,14 @@
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/SimulatorRemoteNotifications/SimulatorRemoteNotifications.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework",
 				"${BUILT_PRODUCTS_DIR}/UIFloatLabelTextField/UIFloatLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
+				"${BUILT_PRODUCTS_DIR}/YALSideMenu/SideMenu.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -468,12 +550,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimulatorRemoteNotifications.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TagListView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIFloatLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -520,25 +604,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F3C0126200180A4002AE7B3 /* UITableViewCell.swift in Sources */,
 				5AD98F441FD71497008F4AA8 /* YoutubeExampleViewController.swift in Sources */,
 				5ADCABA81FD36B90000062AD /* ChildExampleViewController.swift in Sources */,
 				5ADA4AC31FB8A13D00D4D3F3 /* CreateAccountViewController.swift in Sources */,
+				0F67102820011FD20016F173 /* BabysitterCell.swift in Sources */,
 				5AD98F4D1FD73B56008F4AA8 /* ReviewsViewControlleBackupr.swift in Sources */,
 				5A2335411FBBB55E00EFEC12 /* CreateProfileViewController.swift in Sources */,
 				5A0023971FB8873100314156 /* SignUpTypeViewController.swift in Sources */,
+				0F3C011D20017FEC002AE7B3 /* AnimationDelegate.swift in Sources */,
 				5AEAE11F1FCE1934001CFD55 /* DemoViewController.swift in Sources */,
 				5AD98F481FD73858008F4AA8 /* ProfileViewController.swift in Sources */,
 				5A4AC4851FC4A2B800A1B989 /* MyOffersViewController.swift in Sources */,
 				5AA06EC11FF2716600FC2D90 /* CustomBarView.swift in Sources */,
 				5ADF89BF1FBE480500C2FCD3 /* DemoCell.swift in Sources */,
+				0F3C012320018056002AE7B3 /* ContentType.swift in Sources */,
+				0F67102220010AE40016F173 /* BabysitterListViewController.swift in Sources */,
 				5ADF89931FBE260300C2FCD3 /* TestingViewController.swift in Sources */,
 				5AD98F4B1FD73AFC008F4AA8 /* AboutViewController.swift in Sources */,
 				5A80608B1FF19430007D5700 /* ChatViewController.swift in Sources */,
+				0F3C012A20018457002AE7B3 /* HomeMenuViewController.swift in Sources */,
 				5AD98F461FD734AA008F4AA8 /* ProfileTabsViewController.swift in Sources */,
 				5A00238A1FB8849000314156 /* ChedliWeldi2.xcdatamodeld in Sources */,
 				5ADCAB981FD349A0000062AD /* PhotosViewController.swift in Sources */,
 				5A0023841FB8849000314156 /* ViewController.swift in Sources */,
 				5A06F9121FCE15E40029B99A /* RatingDialogViewController.swift in Sources */,
+				0F3C011E20017FEC002AE7B3 /* CircularRevealAnimator.swift in Sources */,
 				5ADCAB9C1FD35089000062AD /* ExampleCollectionViewCell.swift in Sources */,
 				5A8060871FF15E6D007D5700 /* InboxViewController.swift in Sources */,
 				5ADCABAB1FD36C63000062AD /* YoutubeIconCell.swift in Sources */,
@@ -547,13 +638,20 @@
 				5AEAE4431FBBA58C007798EE /* Tex.swift in Sources */,
 				5A071ED41FC5ED9D00B9411A /* RequestDialogViewController.swift in Sources */,
 				5AEAE4411FBB9B48007798EE /* SkyFloatingLabelExtension.swift in Sources */,
+				0F3C01142001767B002AE7B3 /* TaskListViewController.swift in Sources */,
 				5A0023821FB8849000314156 /* AppDelegate.swift in Sources */,
+				0F67102C200139B20016F173 /* BabySitterPin.swift in Sources */,
 				5A583B381FE06A63002E3372 /* InterfaceBuilderViewController.swift in Sources */,
 				5A0F0D1C2000EDE100E76CEF /* ViewCorner.swift in Sources */,
+				0F67102420010B0A0016F173 /* MapViewController.swift in Sources */,
+				0F3C011020015EE8002AE7B3 /* AddJobViewController.swift in Sources */,
 				5A2335431FBBC15D00EFEC12 /* OffersViewController.swift in Sources */,
+				0F3C011F20017FEC002AE7B3 /* CircularRevealTransitionAnimator.swift in Sources */,
 				5ADCABA61FD36B04000062AD /* maintab.swift in Sources */,
+				0F3C012C2001853C002AE7B3 /* TabsViewController.swift in Sources */,
 				5AD98F511FD778F2008F4AA8 /* FavoritesDialogViewController.swift in Sources */,
 				5A8CF66B1FCE3716007B9340 /* ReviewsViewController.swift in Sources */,
+				0F3C01282001810E002AE7B3 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

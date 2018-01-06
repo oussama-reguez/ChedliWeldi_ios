@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
 
     var window: UIWindow?
     static let  serverUrl="http://localhost:8888/rest/v1/"
+    static let  serverUrlTaha="http://192.168.1.3/rest/v1/"
+    static let  serverUrlTahaImage="http://192.168.1.3/images/"
     static let  connectedUser="5"
     static let serverImage="http://localhost:8888/images/"
     static let userId="5"
