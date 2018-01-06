@@ -15,11 +15,11 @@
 		5A00238C1FB8849000314156 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A00238B1FB8849000314156 /* Assets.xcassets */; };
 		5A00238F1FB8849000314156 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A00238D1FB8849000314156 /* LaunchScreen.storyboard */; };
 		5A0023971FB8873100314156 /* SignUpTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0023961FB8873100314156 /* SignUpTypeViewController.swift */; };
-		5A0023991FB8892000314156 /* ViewCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0023981FB8892000314156 /* ViewCorner.swift */; };
 		5A06F9101FCE0D860029B99A /* RatingDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A06F90F1FCE0D860029B99A /* RatingDialog.xib */; };
 		5A06F9121FCE15E40029B99A /* RatingDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A06F9111FCE15E40029B99A /* RatingDialogViewController.swift */; };
 		5A071ED41FC5ED9D00B9411A /* RequestDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A071ED31FC5ED9D00B9411A /* RequestDialogViewController.swift */; };
 		5A071ED81FC6162700B9411A /* RequestDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A071ED71FC6162700B9411A /* RequestDialog.xib */; };
+		5A0F0D1C2000EDE100E76CEF /* ViewCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F0D1B2000EDE100E76CEF /* ViewCorner.swift */; };
 		5A2335411FBBB55E00EFEC12 /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2335401FBBB55E00EFEC12 /* CreateProfileViewController.swift */; };
 		5A2335431FBBC15D00EFEC12 /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2335421FBBC15D00EFEC12 /* OffersViewController.swift */; };
 		5A4AC4851FC4A2B800A1B989 /* MyOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4AC4841FC4A2B800A1B989 /* MyOffersViewController.swift */; };
@@ -93,11 +93,11 @@
 		5A00238E1FB8849000314156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A0023901FB8849000314156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A0023961FB8873100314156 /* SignUpTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTypeViewController.swift; sourceTree = "<group>"; };
-		5A0023981FB8892000314156 /* ViewCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewCorner.swift; path = ../../ChedliWeldi/ChedliWeldi/ViewCorner.swift; sourceTree = "<group>"; };
 		5A06F90F1FCE0D860029B99A /* RatingDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingDialog.xib; sourceTree = "<group>"; };
 		5A06F9111FCE15E40029B99A /* RatingDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingDialogViewController.swift; sourceTree = "<group>"; };
 		5A071ED31FC5ED9D00B9411A /* RequestDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestDialogViewController.swift; sourceTree = "<group>"; };
 		5A071ED71FC6162700B9411A /* RequestDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RequestDialog.xib; sourceTree = "<group>"; };
+		5A0F0D1B2000EDE100E76CEF /* ViewCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCorner.swift; sourceTree = "<group>"; };
 		5A2335401FBBB55E00EFEC12 /* CreateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
 		5A2335421FBBC15D00EFEC12 /* OffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
 		5A4AC4841FC4A2B800A1B989 /* MyOffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOffersViewController.swift; sourceTree = "<group>"; };
@@ -184,12 +184,16 @@
 		5A0023801FB8849000314156 /* ChedliWeldi2 */ = {
 			isa = PBXGroup;
 			children = (
+				5A0F0D1B2000EDE100E76CEF /* ViewCorner.swift */,
+				5A0F0D1A2000E80300E76CEF /* common */,
+				5A0F0D192000E7F300E76CEF /* parent */,
 				5A8060851FF15945007D5700 /* message */,
 				5A583B371FE06A63002E3372 /* InterfaceBuilderViewController.swift */,
 				5AD98F491FD73AE4008F4AA8 /* profile */,
 				5ADCABA41FD36AB2000062AD /* profileTabs */,
 				5A59390A1FC0C44500FF5DA6 /* ChedliWeldi2.entitlements */,
 				5A0023811FB8849000314156 /* AppDelegate.swift */,
+				5A0F0D182000E7E200E76CEF /* babysitter */,
 				5A0023831FB8849000314156 /* ViewController.swift */,
 				5A0023851FB8849000314156 /* Main.storyboard */,
 				5AD98F471FD73858008F4AA8 /* ProfileViewController.swift */,
@@ -204,7 +208,6 @@
 				5A071ED71FC6162700B9411A /* RequestDialog.xib */,
 				5AD98F4E1FD77845008F4AA8 /* favoritesDialog.xib */,
 				5A06F90F1FCE0D860029B99A /* RatingDialog.xib */,
-				5A0023981FB8892000314156 /* ViewCorner.swift */,
 				5A00238B1FB8849000314156 /* Assets.xcassets */,
 				5A00238D1FB8849000314156 /* LaunchScreen.storyboard */,
 				5A0023901FB8849000314156 /* Info.plist */,
@@ -221,6 +224,27 @@
 				5AEAE11E1FCE1934001CFD55 /* DemoViewController.swift */,
 			);
 			path = ChedliWeldi2;
+			sourceTree = "<group>";
+		};
+		5A0F0D182000E7E200E76CEF /* babysitter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = babysitter;
+			sourceTree = "<group>";
+		};
+		5A0F0D192000E7F300E76CEF /* parent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = parent;
+			sourceTree = "<group>";
+		};
+		5A0F0D1A2000E80300E76CEF /* common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = common;
 			sourceTree = "<group>";
 		};
 		5A5939141FC0E71D00FF5DA6 /* notification */ = {
@@ -509,7 +533,6 @@
 				5ADF89BF1FBE480500C2FCD3 /* DemoCell.swift in Sources */,
 				5ADF89931FBE260300C2FCD3 /* TestingViewController.swift in Sources */,
 				5AD98F4B1FD73AFC008F4AA8 /* AboutViewController.swift in Sources */,
-				5A0023991FB8892000314156 /* ViewCorner.swift in Sources */,
 				5A80608B1FF19430007D5700 /* ChatViewController.swift in Sources */,
 				5AD98F461FD734AA008F4AA8 /* ProfileTabsViewController.swift in Sources */,
 				5A00238A1FB8849000314156 /* ChedliWeldi2.xcdatamodeld in Sources */,
@@ -526,6 +549,7 @@
 				5AEAE4411FBB9B48007798EE /* SkyFloatingLabelExtension.swift in Sources */,
 				5A0023821FB8849000314156 /* AppDelegate.swift in Sources */,
 				5A583B381FE06A63002E3372 /* InterfaceBuilderViewController.swift in Sources */,
+				5A0F0D1C2000EDE100E76CEF /* ViewCorner.swift in Sources */,
 				5A2335431FBBC15D00EFEC12 /* OffersViewController.swift in Sources */,
 				5ADCABA61FD36B04000062AD /* maintab.swift in Sources */,
 				5AD98F511FD778F2008F4AA8 /* FavoritesDialogViewController.swift in Sources */,
