@@ -11,13 +11,19 @@ import FoldingCell
 import Alamofire
 
 class BabysitterCell: FoldingCell {
-    
+    var onButtonTapped : (() -> Void)? = nil
     @IBOutlet var closeNumberLabel: UILabel!
     @IBOutlet var openNumberLabel: UILabel!
     @IBOutlet var FullName: UILabel!
-    @IBAction func Call(_ sender: Any) {
+    @IBAction func Call(_ sender: UIButton) {
         print("Called")
+        print(sender.tag)
+        if let onButtonTapped = self.onButtonTapped {
+            onButtonTapped()
+        }
     }
+
+
     @IBOutlet var ProfileImg: UIImageView!
     @IBOutlet var Description: UILabel!
     

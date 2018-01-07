@@ -8,14 +8,15 @@
 
 import UIKit
 import SideMenu
-
+import Alamofire
+import SwiftyJSON
 
 class HomeMenuViewController: UIViewController {
     fileprivate var selectedIndex = 0
     fileprivate var transitionPoint: CGPoint!
     fileprivate var contentType: ContentType = .Music
     fileprivate var navigator: UINavigationController!
-    
+    var jobId : String?
     lazy fileprivate var menuAnimator : MenuTransitionAnimator! = MenuTransitionAnimator(mode: .presentation, shouldPassEventsOutsideMenu: false) { [unowned self] in
         self.dismiss(animated: true, completion: nil)
     }
@@ -55,6 +56,27 @@ extension HomeMenuViewController: MenuViewControllerDelegate {
             let content = storyboard!.instantiateViewController(withIdentifier: "AddJob") as! AddJobViewController
             navigator.setViewControllers([content], animated: true)
             
+        case 2:
+            Alamofire.request(AppDelegate.serverUrlTaha+"checkJobs?id="+AppDelegate.userId, method: .get)
+                .responseJSON { response in
+                    
+                    if let json = response.data {
+                        let data = JSON(data: json)
+                        if((data["status"].stringValue).contains("found")){
+                            print(data["status"].stringValue)
+                            self.jobId = data["id"].stringValue
+                            let content = self.storyboard!.instantiateViewController(withIdentifier: "Ongoing") as! OngoingViewController
+                            content.jobId = self.jobId!
+                            self.navigator.setViewControllers([content], animated: true)
+                        }else {
+                            
+                        }
+                        
+                    }
+                            //Add alert no ongoing job
+            }
+
+            
         default:
             let content = storyboard!.instantiateViewController(withIdentifier: "Content") as! TabsViewController
             navigator.setViewControllers([content], animated: true)
@@ -71,6 +93,7 @@ extension HomeMenuViewController: MenuViewControllerDelegate {
     func menuDidCancel(_: MenuViewController) {
         dismiss(animated: true, completion: nil)
     }
+    
 }
 
 extension HomeMenuViewController: UINavigationControllerDelegate {

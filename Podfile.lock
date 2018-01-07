@@ -35,6 +35,7 @@ PODS:
   - SkyFloatingLabelTextField (3.2.1)
   - SwiftyJSON (3.1.4)
   - TagListView (1.2.0)
+  - TransitionButton (0.3.0)
   - UIFloatLabelTextField (1.2.9)
   - XLPagerTabStrip (5.0.0)
   - YALSideMenu (2.0.1)
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftyJSON
   - TagListView (~> 1.2.0)
+  - TransitionButton
   - UIFloatLabelTextField
   - XLPagerTabStrip (from `https://github.com/KelvinJin/XLPagerTabStrip`, branch `swift3`)
   - YALSideMenu (~> 2.0)
@@ -93,10 +95,11 @@ SPEC CHECKSUMS:
   SkyFloatingLabelTextField: 71d28906024e7d7e4460099b342f3ca7036a2e24
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TagListView: 999e1df50c0f6b9ca927fae705c86a7e3b6ee9ba
+  TransitionButton: 0bf7e5ffe80030f9d10d57983a04acf2f511998a
   UIFloatLabelTextField: c1df7d4e688a1bd52738513f961df16f94914367
   XLPagerTabStrip: 87b8b705f9a7178e76a063ffaa2d70045944a965
   YALSideMenu: 4d6b90ea44dcdded18a99e46b676e4ad51d9c6bb
 
-PODFILE CHECKSUM: bf006de0c78b563388ad8920492a78df24ee0260
+PODFILE CHECKSUM: ceefdde389355cc6ddad78792ac7ea3855d3eae6
 
 COCOAPODS: 1.3.1

@@ -19,4 +19,6 @@ target ‘ChedliWeldi2’ do
     pod 'NMessenger'
     pod 'RAMAnimatedTabBarController'
     pod 'YALSideMenu', '~> 2.0'
+    pod 'TransitionButton'
+
 end

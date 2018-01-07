@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8801C610666AE831B46892D79D5BFBFA'
-               BlueprintName = 'SimulatorRemoteNotifications'
+               BlueprintIdentifier = '4670080152D584EC5E7357DDCE3043B8'
+               BlueprintName = 'TransitionButton'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SimulatorRemoteNotifications.framework'>
+               BuildableName = 'TransitionButton.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

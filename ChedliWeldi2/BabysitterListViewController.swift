@@ -67,7 +67,12 @@ class BabysitterListViewController: UIViewController,UITableViewDelegate, UITabl
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
         cell.apply((babysitter?["image"].stringValue)!, name: (babysitter?["firstname"].stringValue)!+" "+(babysitter?["lastname"].stringValue)!, descr: (babysitter?["descr"].stringValue)!)
-        
+        cell.onButtonTapped={
+            let content = self.storyboard!.instantiateViewController(withIdentifier: "AddJob") as! AddJobViewController
+            content.bbyId = babysitter?["id"].stringValue
+            self.navigationController?.setViewControllers([content], animated: true)
+            
+        }
         return cell
     }
 

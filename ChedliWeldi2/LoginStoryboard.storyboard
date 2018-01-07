@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17C88" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gp4-gM-vL7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="PJE-Dg-Tgo">
+            <objects>
+                <viewController id="gp4-gM-vL7" customClass="LoginViewController" customModule="ChedliWeldi2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TIG-aC-3Xg"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZoH-se-7kd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="POy-le-C1e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="OPY-z7-5tr">
+                                <rect key="frame" x="-1" y="-1" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouU-Xu-LDc" customClass="TransitionButton" customModule="TransitionButton">
+                                <rect key="frame" x="102" y="578" width="171" height="33"/>
+                                <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Login"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="spinnerColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginBtn:" destination="gp4-gM-vL7" eventType="touchUpInside" id="cgQ-Av-tCN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZoH-se-7kd" firstAttribute="top" secondItem="ouU-Xu-LDc" secondAttribute="bottom" constant="56" id="6ml-3l-Xau"/>
+                            <constraint firstItem="ouU-Xu-LDc" firstAttribute="centerX" secondItem="POy-le-C1e" secondAttribute="centerX" id="bd6-an-PRc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OPY-z7-5tr" secondAttribute="trailing" constant="-15" id="cdI-O1-xcx"/>
+                            <constraint firstItem="ouU-Xu-LDc" firstAttribute="leading" secondItem="POy-le-C1e" secondAttribute="leadingMargin" constant="86" id="jBD-mW-q7E"/>
+                            <constraint firstItem="OPY-z7-5tr" firstAttribute="top" secondItem="POy-le-C1e" secondAttribute="topMargin" constant="-1" id="jjN-ce-owk"/>
+                            <constraint firstItem="OPY-z7-5tr" firstAttribute="leading" secondItem="POy-le-C1e" secondAttribute="leadingMargin" constant="-17" id="lPl-4t-r4d"/>
+                            <constraint firstItem="ZoH-se-7kd" firstAttribute="top" secondItem="OPY-z7-5tr" secondAttribute="bottom" constant="1" id="qCp-S2-V9H"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="ouU-Xu-LDc" id="urb-Qc-QIT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n6c-p3-h8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="180" y="-323.23943661971833"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="login" width="750" height="1334"/>
+    </resources>
+</document>
