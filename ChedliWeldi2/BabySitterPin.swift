@@ -21,6 +21,7 @@ class BabySitterPin: NSObject, MKAnnotation {
         self.discipline = discipline
         self.coordinate = coordinate
         
+        
         super.init()
     }
     

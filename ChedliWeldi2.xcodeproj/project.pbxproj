@@ -10,9 +10,6 @@
 		0F3C011020015EE8002AE7B3 /* AddJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C010F20015EE8002AE7B3 /* AddJobViewController.swift */; };
 		0F3C011220015F64002AE7B3 /* MyJobPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3C011120015F64002AE7B3 /* MyJobPreferencesViewController.xib */; };
 		0F3C01142001767B002AE7B3 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C01132001767B002AE7B3 /* TaskListViewController.swift */; };
-		0F3C011D20017FEC002AE7B3 /* AnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C011920017FEC002AE7B3 /* AnimationDelegate.swift */; };
-		0F3C011E20017FEC002AE7B3 /* CircularRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C011A20017FEC002AE7B3 /* CircularRevealAnimator.swift */; };
-		0F3C011F20017FEC002AE7B3 /* CircularRevealTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C011B20017FEC002AE7B3 /* CircularRevealTransitionAnimator.swift */; };
 		0F3C012320018056002AE7B3 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C012220018056002AE7B3 /* ContentType.swift */; };
 		0F3C0126200180A4002AE7B3 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C0125200180A4002AE7B3 /* UITableViewCell.swift */; };
 		0F3C01282001810E002AE7B3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C01272001810E002AE7B3 /* MenuViewController.swift */; };
@@ -24,6 +21,7 @@
 		0F67102820011FD20016F173 /* BabysitterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F67102720011FD20016F173 /* BabysitterCell.swift */; };
 		0F67102A200120C20016F173 /* BabysitterFolding.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F671029200120C20016F173 /* BabysitterFolding.xib */; };
 		0F67102C200139B20016F173 /* BabySitterPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F67102B200139B20016F173 /* BabySitterPin.swift */; };
+		0FD8E76B2003E27600A385CC /* YalFoldingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8E76A2003E27600A385CC /* YalFoldingViewController.swift */; };
 		0FDE305620025B6700D4DEFB /* OneTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FDE305520025B6700D4DEFB /* OneTaskCell.xib */; };
 		0FDE30582002716500D4DEFB /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE30572002716500D4DEFB /* AddTaskViewController.swift */; };
 		0FDE305A2002760700D4DEFB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE30592002760700D4DEFB /* Task.swift */; };
@@ -31,6 +29,7 @@
 		0FDE305E2002943900D4DEFB /* OngoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE305D2002943900D4DEFB /* OngoingViewController.swift */; };
 		0FDE30662002AC3500D4DEFB /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDE30652002AC3500D4DEFB /* LoginStoryboard.storyboard */; };
 		0FDE30682002AC4200D4DEFB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE30672002AC4200D4DEFB /* LoginViewController.swift */; };
+		0FE9B3DF2003C351005AB7F9 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FE9B3DE2003C351005AB7F9 /* fontawesome-webfont.ttf */; };
 		3579E74D0AD465DAE096ED59 /* Pods_ChedliWeldi2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C938081B4006F4907E99A8CE /* Pods_ChedliWeldi2.framework */; };
 		5A0023821FB8849000314156 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0023811FB8849000314156 /* AppDelegate.swift */; };
 		5A0023841FB8849000314156 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0023831FB8849000314156 /* ViewController.swift */; };
@@ -111,9 +110,6 @@
 		0F3C010F20015EE8002AE7B3 /* AddJobViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddJobViewController.swift; sourceTree = "<group>"; };
 		0F3C011120015F64002AE7B3 /* MyJobPreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyJobPreferencesViewController.xib; sourceTree = "<group>"; };
 		0F3C01132001767B002AE7B3 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
-		0F3C011920017FEC002AE7B3 /* AnimationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationDelegate.swift; sourceTree = "<group>"; };
-		0F3C011A20017FEC002AE7B3 /* CircularRevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularRevealAnimator.swift; sourceTree = "<group>"; };
-		0F3C011B20017FEC002AE7B3 /* CircularRevealTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularRevealTransitionAnimator.swift; sourceTree = "<group>"; };
 		0F3C012220018056002AE7B3 /* ContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		0F3C0125200180A4002AE7B3 /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		0F3C01272001810E002AE7B3 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +123,7 @@
 		0F67102B200139B20016F173 /* BabySitterPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabySitterPin.swift; sourceTree = "<group>"; };
 		0F67102D200148B50016F173 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		0FAB7A352002E9F600FECD1F /* Example-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Example-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		0FD8E76A2003E27600A385CC /* YalFoldingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YalFoldingViewController.swift; sourceTree = "<group>"; };
 		0FDE305520025B6700D4DEFB /* OneTaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneTaskCell.xib; sourceTree = "<group>"; };
 		0FDE30572002716500D4DEFB /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		0FDE30592002760700D4DEFB /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -134,6 +131,7 @@
 		0FDE305D2002943900D4DEFB /* OngoingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OngoingViewController.swift; sourceTree = "<group>"; };
 		0FDE30652002AC3500D4DEFB /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		0FDE30672002AC4200D4DEFB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0FE9B3DE2003C351005AB7F9 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		5A00237E1FB8849000314156 /* ChedliWeldi2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChedliWeldi2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A0023811FB8849000314156 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A0023831FB8849000314156 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -211,16 +209,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F3C011820017FEC002AE7B3 /* Misc */ = {
-			isa = PBXGroup;
-			children = (
-				0F3C011920017FEC002AE7B3 /* AnimationDelegate.swift */,
-				0F3C011A20017FEC002AE7B3 /* CircularRevealAnimator.swift */,
-				0F3C011B20017FEC002AE7B3 /* CircularRevealTransitionAnimator.swift */,
-			);
-			path = Misc;
-			sourceTree = "<group>";
-		};
 		0F3C012120018056002AE7B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,7 +303,6 @@
 			children = (
 				0F3C0124200180A4002AE7B3 /* Extension */,
 				0F3C012120018056002AE7B3 /* Model */,
-				0F3C011820017FEC002AE7B3 /* Misc */,
 				0FAB7A352002E9F600FECD1F /* Example-Swift-Bridging-Header.h */,
 				0F671029200120C20016F173 /* BabysitterFolding.xib */,
 				0F67101D200107BE0016F173 /* ParentStoryboard.storyboard */,
@@ -334,6 +321,7 @@
 				0FDE305B200279DE00D4DEFB /* TaskTableViewCell.swift */,
 				0FDE30572002716500D4DEFB /* AddTaskViewController.swift */,
 				0FDE305D2002943900D4DEFB /* OngoingViewController.swift */,
+				0FD8E76A2003E27600A385CC /* YalFoldingViewController.swift */,
 			);
 			name = parent;
 			sourceTree = "<group>";
@@ -341,6 +329,7 @@
 		5A0F0D1A2000E80300E76CEF /* common */ = {
 			isa = PBXGroup;
 			children = (
+				0FE9B3DE2003C351005AB7F9 /* fontawesome-webfont.ttf */,
 				0FDE30652002AC3500D4DEFB /* LoginStoryboard.storyboard */,
 				0FDE30672002AC4200D4DEFB /* LoginViewController.swift */,
 			);
@@ -515,6 +504,7 @@
 				5A0023871FB8849000314156 /* Main.storyboard in Resources */,
 				5AA06EC01FF2716600FC2D90 /* customBar.xib in Resources */,
 				0FDE30662002AC3500D4DEFB /* LoginStoryboard.storyboard in Resources */,
+				0FE9B3DF2003C351005AB7F9 /* fontawesome-webfont.ttf in Resources */,
 				5A071ED81FC6162700B9411A /* RequestDialog.xib in Resources */,
 				5AD98F4F1FD77845008F4AA8 /* favoritesDialog.xib in Resources */,
 			);
@@ -642,7 +632,6 @@
 				0FDE305E2002943900D4DEFB /* OngoingViewController.swift in Sources */,
 				5A2335411FBBB55E00EFEC12 /* CreateProfileViewController.swift in Sources */,
 				5A0023971FB8873100314156 /* SignUpTypeViewController.swift in Sources */,
-				0F3C011D20017FEC002AE7B3 /* AnimationDelegate.swift in Sources */,
 				5AEAE11F1FCE1934001CFD55 /* DemoViewController.swift in Sources */,
 				5AD98F481FD73858008F4AA8 /* ProfileViewController.swift in Sources */,
 				0FDE305C200279DE00D4DEFB /* TaskTableViewCell.swift in Sources */,
@@ -662,7 +651,6 @@
 				5ADCAB981FD349A0000062AD /* PhotosViewController.swift in Sources */,
 				5A0023841FB8849000314156 /* ViewController.swift in Sources */,
 				5A06F9121FCE15E40029B99A /* RatingDialogViewController.swift in Sources */,
-				0F3C011E20017FEC002AE7B3 /* CircularRevealAnimator.swift in Sources */,
 				5ADCAB9C1FD35089000062AD /* ExampleCollectionViewCell.swift in Sources */,
 				0FDE30582002716500D4DEFB /* AddTaskViewController.swift in Sources */,
 				5A8060871FF15E6D007D5700 /* InboxViewController.swift in Sources */,
@@ -680,7 +668,7 @@
 				0F67102420010B0A0016F173 /* MapViewController.swift in Sources */,
 				0F3C011020015EE8002AE7B3 /* AddJobViewController.swift in Sources */,
 				5A2335431FBBC15D00EFEC12 /* OffersViewController.swift in Sources */,
-				0F3C011F20017FEC002AE7B3 /* CircularRevealTransitionAnimator.swift in Sources */,
+				0FD8E76B2003E27600A385CC /* YalFoldingViewController.swift in Sources */,
 				5ADCABA61FD36B04000062AD /* maintab.swift in Sources */,
 				0F3C012C2001853C002AE7B3 /* TabsViewController.swift in Sources */,
 				5AD98F511FD778F2008F4AA8 /* FavoritesDialogViewController.swift in Sources */,

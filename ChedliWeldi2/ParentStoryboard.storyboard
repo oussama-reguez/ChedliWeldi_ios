@@ -545,11 +545,10 @@
             </objects>
             <point key="canvasLocation" x="-1095" y="123"/>
         </scene>
-        <!--Babysitters-->
+        <!--Yal Folding View Controller-->
         <scene sceneID="KdH-Ts-sVq">
             <objects>
-                <tabBarController id="YW3-23-EEC" customClass="YALFoldingTabBarController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Babysitters" id="wXK-Rp-Fq4"/>
+                <tabBarController storyboardIdentifier="Home" id="YW3-23-EEC" customClass="YalFoldingViewController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="a0U-cX-ai6" customClass="YALCustomHeightTabBar">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -569,7 +568,7 @@
         <!--Home Menu View Controller-->
         <scene sceneID="OEq-fJ-bVU">
             <objects>
-                <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YEp-S7-guN" customClass="HomeMenuViewController" customModule="ChedliWeldi2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="YEp-S7-guN" customClass="HomeMenuViewController" customModule="ChedliWeldi2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cDh-hu-T56"/>
                         <viewControllerLayoutGuide type="bottom" id="FQ1-Lx-OS9"/>

@@ -26,96 +26,18 @@ class HomeMenuViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch (segue.identifier, segue.destination) {
         case (.some("presentMenu"), let menu as MenuViewController):
-            menu.selectedItem = selectedIndex
+            print("")
+            /*menu.selectedItem = selectedIndex
             menu.delegate = self
             menu.transitioningDelegate = self
-            menu.modalPresentationStyle = .custom
+            menu.modalPresentationStyle = .custom*/
         case (.some("embedNavigator"), let navigator as UINavigationController):
-            self.navigator = navigator
-            self.navigator.delegate = self
+            print("")
+         //   self.navigator = navigator
+         //   self.navigator.delegate = self
         default:
             super.prepare(for: segue, sender: sender)
         }
     }
 }
 
-extension HomeMenuViewController: MenuViewControllerDelegate {
-    
-    func menu(_: MenuViewController, didSelectItemAt index: Int, at point: CGPoint) {
-        contentType = !contentType
-        transitionPoint = point
-        selectedIndex = index
-        switch index {
-        case 0:
-        
-            let content = storyboard!.instantiateViewController(withIdentifier: "Content") as! TabsViewController
-            navigator.setViewControllers([content], animated: true)
-        
-            
-        case 1:
-            let content = storyboard!.instantiateViewController(withIdentifier: "AddJob") as! AddJobViewController
-            navigator.setViewControllers([content], animated: true)
-            
-        case 2:
-            Alamofire.request(AppDelegate.serverUrlTaha+"checkJobs?id="+AppDelegate.userId, method: .get)
-                .responseJSON { response in
-                    
-                    if let json = response.data {
-                        let data = JSON(data: json)
-                        if((data["status"].stringValue).contains("found")){
-                            print(data["status"].stringValue)
-                            self.jobId = data["id"].stringValue
-                            let content = self.storyboard!.instantiateViewController(withIdentifier: "Ongoing") as! OngoingViewController
-                            content.jobId = self.jobId!
-                            self.navigator.setViewControllers([content], animated: true)
-                        }else {
-                            
-                        }
-                        
-                    }
-                            //Add alert no ongoing job
-            }
-
-            
-        default:
-            let content = storyboard!.instantiateViewController(withIdentifier: "Content") as! TabsViewController
-            navigator.setViewControllers([content], animated: true)
-            
-        
-        }
-        
-        
-        DispatchQueue.main.async {
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
-    
-    func menuDidCancel(_: MenuViewController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-}
-
-extension HomeMenuViewController: UINavigationControllerDelegate {
-    
-    func navigationController(_: UINavigationController, animationControllerFor _: UINavigationControllerOperation,
-                              from _: UIViewController, to _: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        if let transitionPoint = transitionPoint {
-            return CircularRevealTransitionAnimator(center: transitionPoint)
-        }
-        return nil
-    }
-}
-
-extension HomeMenuViewController: UIViewControllerTransitioningDelegate {
-    
-    func animationController(forPresented presented: UIViewController, presenting _: UIViewController,
-                             source _: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return menuAnimator
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return MenuTransitionAnimator(mode: .dismissal)
-    }
-}
