@@ -99,6 +99,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
                 "password": self.textField2.text!,
             ]
             print(parameters)
+            
             Alamofire.request(AppDelegate.serverUrlTaha+"login", method: .post, parameters: parameters).responseJSON { response in
                 print(response)
                 switch response.result {
