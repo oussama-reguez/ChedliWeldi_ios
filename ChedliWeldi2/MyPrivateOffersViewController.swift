@@ -1,24 +1,22 @@
 //
-//  OffersViewController.swift
+//  MyOffersViewController.swift
 //  ChedliWeldi2
 //
-//  Created by oussama reguez on 11/15/17.
+//  Created by oussama reguez on 11/21/17.
 //  Copyright © 2017 Esprit. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 import SwiftyJSON
-import Kingfisher
 
-
-class OffersViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource  {
-
-    @IBOutlet weak var table: UITableView!
+class MyOffersViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
     var offers:[JSON]? = nil
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        getOffers()
+        getOffers(id: AppDelegate.userId)
 
         // Do any additional setup after loading the view.
     }
@@ -27,6 +25,9 @@ class OffersViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
+
     
 
     /*
@@ -38,43 +39,34 @@ class OffersViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBOutlet weak var table: UITableView!
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if(offers == nil) {
+       
+        if(offers==nil){
             return 0
         }
+        
         return offers!.count
     }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "prototype1", for: indexPath)
+        
         let offer = offers?[indexPath.row]
         
+     let lbl1:UILabel =   cell.viewWithTag(101) as! (UILabel)
+        let description:UILabel =   cell.viewWithTag(102) as! (UILabel)
         
-        let img:UIImageView=cell.viewWithTag(101) as! (UIImageView)
-     
-        let name:UILabel =   cell.viewWithTag(102) as! (UILabel)
-        //let lastName:UILabel =   cell.viewWithTag(103) as! (UILabel)
-        let description:UILabel =   cell.viewWithTag(104) as! (UILabel)
-       
-        
-        let url = URL(string: "http://localhost:8888/images/" + offer!["photo"].stringValue)
-        img.kf.setImage(with: url)
-           let img2:UIImageView=cell.viewWithTag(105) as! (UIImageView)
-         img2.kf.setImage(with: url)
-        
-       // img.image=#imageLiteral(resourceName: "man")
-        name.text=(offer?["firstName"].stringValue)! + " " + (offer?["lastName"].stringValue)!
-       
+        lbl1.text="Offer " + (offer?["id"].stringValue)!
         description.text=offer?["description"].stringValue
-        
-
         
         /*
          
+         let lbl1:UILabel =   cell.viewWithTag(101) as! (UILabel)
          
          let note:NSManagedObject=notes[indexPath.row]
          let cell = tableView.dequeueReusableCell(withIdentifier: "prototype1", for: indexPath)
@@ -83,20 +75,21 @@ class OffersViewController: UIViewController ,UITableViewDelegate, UITableViewDa
          let img:UIImageView=cell.viewWithTag(103) as! (UIImageView)
          
          */
-     
+        
         
         return cell
         
     }
-    func getOffers()   {
-        Alamofire.request("http://localhost:8888/rest/v1/offers", method: .get)
+    
+    func getOffers(id:String)   {
+        Alamofire.request(AppDelegate.serverUrl+"getPrivateOffers", method: .post , parameters: ["user_id": id ])
             
             .responseJSON { response in
                 print("Response String: \(response.result.value)")
                 
                 if let json = response.data {
                     let data = JSON(data: json)
-                    self.offers = data["offers"].arrayValue
+                    self.offers = data.arrayValue
                     self.table.reloadData()
                     
                     print("")
@@ -106,8 +99,19 @@ class OffersViewController: UIViewController ,UITableViewDelegate, UITableViewDa
                 
         }
         
+    
+        
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let entitiy =  offers?[indexPath.row]
+        let destination = UIStoryboard(name: "Main", bundle: nil) .
+            instantiateViewController(withIdentifier: "Requests") as? RequestsViewController
+        destination?.offerId=entitiy?["id"].stringValue
+        self.navigationController?.pushViewController(destination!, animated: true)
+    }
     
+    
+
 }

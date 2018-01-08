@@ -14,7 +14,29 @@ import PopupDialog
 class RequestsViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
     var requests:[JSON]? = nil
     var offerId:String?="5"
+    var detail:String?=nil
+    var strDate:String?=nil
+    var offer:JSON? = nil
     
+
+   
+    
+    
+    fileprivate let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return formatter
+    }()
+    
+    fileprivate let formatter2: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat =  "h:mm a"
+        return formatter
+    }()
+    
+    @IBOutlet weak var offerDate: UILabel!
+    @IBOutlet weak var offerDetail: UILabel!
+    @IBOutlet weak var nbrRequests: UILabel!
     func showStandardDialog(animated: Bool = true) {
         
         // Prepare the popup
@@ -101,8 +123,29 @@ class RequestsViewController: UIViewController ,UITableViewDelegate, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        offerDetail.text=offer?["description"].stringValue
+        var strStart = offer?["start"].stringValue
+        var strEnd=offer?["end"].stringValue
+        offerId=offer?["id"].stringValue
+       
+        
+        let dateStart=formatter.date(from: strStart!)
+         let dateEnd=formatter.date(from: strEnd!)
+        
+     
+        
+        strStart=formatter2.string(from: dateStart!)
+        strEnd=formatter2.string(from: dateEnd!)
+        
+      formatter2.dateFormat="E"
+        let day=formatter2.string(from: dateStart!)
+        
+        offerDate.text=day+" at "+strStart!+" to " + strEnd!
+        
+    table.reloadData()
         getRequestsByOffer(id: offerId!)
 
+        
         // Do any additional setup after loading the view.
     }
 
@@ -182,10 +225,9 @@ class RequestsViewController: UIViewController ,UITableViewDelegate, UITableView
                 if let json = response.data {
                     let data = JSON(data: json)
                     self.requests = data["requests"].arrayValue
+                    self.nbrRequests.text = String(describing: self.requests?.count)+" request"
                     self.table.reloadData()
-                    
-                    
-                    
+        
                    // self.requestIdFromNotification="1"
                     
                     if(self.requestIdFromNotification != nil)
@@ -211,6 +253,9 @@ class RequestsViewController: UIViewController ,UITableViewDelegate, UITableView
         
         
     }
+    
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.

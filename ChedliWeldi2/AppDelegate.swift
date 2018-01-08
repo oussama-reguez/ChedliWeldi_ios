@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
     static let  serverUrl="http://localhost:8888/rest/v1/"
     static let  connectedUser="5"
     static let serverImage="http://localhost:8888/images/"
-    static let userId="5"
+    static let userId="4"
     
     
 
