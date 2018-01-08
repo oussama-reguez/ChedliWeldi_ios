@@ -25,6 +25,7 @@ class PhotosViewController: UIViewController  ,IndicatorInfoProvider,UICollectio
     
     func getPhotos() -> [INSPhotoViewable]  {
        var photos = [INSPhotoViewable]()
+      
         self.photosString.forEach{ url in
             photos.append( INSPhoto(imageURL: URL(string: url), thumbnailImageURL: URL(string: url)))
             
@@ -101,7 +102,7 @@ class PhotosViewController: UIViewController  ,IndicatorInfoProvider,UICollectio
         let cell = collectionView.cellForItem(at: indexPath) as! ExampleCollectionViewCell
         let currentPhoto = photos[(indexPath as NSIndexPath).row]
         let galleryPreview = INSPhotosViewController(photos: photos, initialPhoto: currentPhoto, referenceView: cell)
-        
+        galleryPreview.overlayView = CustomOverlayView(frame: CGRect.zero)
         
         galleryPreview.referenceViewForPhotoWhenDismissingHandler = { [weak self] photo in
             if let index = self?.photos.index(where: {$0 === photo}) {

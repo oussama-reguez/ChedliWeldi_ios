@@ -16,10 +16,10 @@ import Kingfisher
 class TestingViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource  {
     @IBAction func sendRequestAction(_ sender: Any) {
         let offer=offers?[selectedRow]
-        let idUser = "4"
+        
          let idOffer = offer?["idOffer"].stringValue
     
-        sendRequest(idUser:idUser,idOffer:idOffer! )
+        sendRequest(idUser:AppDelegate.userId,idOffer:idOffer! )
         
         /*
         var duration = 0.0
@@ -42,9 +42,21 @@ class TestingViewController: UIViewController ,UITableViewDelegate, UITableViewD
     
     
     
+    @IBOutlet weak var txtFulName: UILabel!
     @IBOutlet var table: UITableView!
     @IBOutlet var tableView: UITableView!
+    fileprivate let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return formatter
+    }()
     
+    
+    fileprivate let formatter2: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat =  "h:mm a"
+        return formatter
+    }()
     
  
   
@@ -116,7 +128,13 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     
     let img:UIImageView=cell.viewWithTag(101) as! (UIImageView)
     let name:UILabel =   cell.viewWithTag(102) as! (UILabel)
-        //let lastName:UILabel =   cell.viewWithTag(103) as! (UILabel)
+    let from:UILabel =   cell.viewWithTag(107) as! (UILabel)
+    let to:UILabel =   cell.viewWithTag(108) as! (UILabel)
+    let duration:UILabel =   cell.viewWithTag(110) as! (UILabel)
+     let date:UILabel =   cell.viewWithTag(109) as! (UILabel)
+    let nbrRequests:UILabel =   cell.viewWithTag(111) as! (UILabel)
+    
+    let fullName:UILabel =   cell.viewWithTag(106) as! (UILabel)        //let lastName:UILabel =   cell.viewWithTag(103) as! (UILabel)
     let description:UILabel =   cell.viewWithTag(104) as! (UILabel)
     
     //http://localhost:8888/images/man.png
@@ -130,10 +148,33 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     
     // img.image=#imageLiteral(resourceName: "man")
     name.text=(offer?["firstName"].stringValue)! + " " + (offer?["lastName"].stringValue)!
+    fullName.text=(offer?["firstName"].stringValue)! + " " + (offer?["lastName"].stringValue)!
     
     description.text=offer?["description"].stringValue
+    var strStart = offer?["start"].stringValue
+    var strEnd=offer?["end"].stringValue
     
-
+    
+    
+    let dateStart=formatter.date(from: strStart!)
+    let dateEnd=formatter.date(from: strEnd!)
+    
+    
+    
+    strStart=formatter2.string(from: dateStart!)
+    strEnd=formatter2.string(from: dateEnd!)
+    
+    
+    
+    formatter2.dateFormat="E, MMM d, yyyy"
+    date.text=formatter2.string(from: dateStart!)
+    formatter2.dateFormat = "h:mm a"
+    
+    from.text=strStart
+    to.text=strEnd
+    
+    duration.text=dateEnd?.offsetFrom(date: dateStart!)
+    nbrRequests.text=(offer?["requests"].stringValue)!+" people send a request"
     
     
     

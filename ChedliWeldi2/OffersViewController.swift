@@ -57,8 +57,7 @@ class OffersViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         let name:UILabel =   cell.viewWithTag(102) as! (UILabel)
         //let lastName:UILabel =   cell.viewWithTag(103) as! (UILabel)
         let description:UILabel =   cell.viewWithTag(104) as! (UILabel)
-        
-        //http://localhost:8888/images/man.png
+       
         
         let url = URL(string: "http://localhost:8888/images/" + offer!["photo"].stringValue)
         img.kf.setImage(with: url)

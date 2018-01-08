@@ -17,6 +17,8 @@ target ‘ChedliWeldi2’ do
     pod 'TagListView', '~> 1.2.0'
     pod 'FSCalendar'
     pod 'NMessenger'
+    pod 'EasyNotificationBadge'
+    pod 'INSNibLoading'
     pod 'RAMAnimatedTabBarController'
     pod 'YALSideMenu', '~> 2.0'
     pod 'TransitionButton'

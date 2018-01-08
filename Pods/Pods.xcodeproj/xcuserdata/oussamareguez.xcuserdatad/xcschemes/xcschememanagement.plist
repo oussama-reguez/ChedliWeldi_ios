@@ -24,12 +24,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>EasyNotificationBadge.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FSCalendar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>FoldingCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FoldingTabBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>INSNibLoading.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -79,6 +94,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RAMAnimatedTabBarController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SimulatorRemoteNotifications.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -99,6 +119,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TransitionButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UIFloatLabelTextField.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -114,10 +139,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>YALSideMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>13EBD1B054F5F611834B6DCAF0B831CC</key>
+		<key>01A4345EE4E4EB7641C40BC484532319</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0DE025EA6C5C0DAEA4125B34CB811190</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>152B6F694A0ED072267BC9019DFB2E10</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,27 +167,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>161C75B3BE3CB29C95EEB83B4F0B0C34</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>184A1650DC0B648BD756068E60BF2C59</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>355880F2257E3A38864A164DF6480E0F</key>
+		<key>23EEF3C1D5525ED6D9D5A6414DD81BFA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4676EA5E9389AEEE9DBEC9F544AC164E</key>
+		<key>3388FEFF8AFA00D5F8C445DBE2FD55E1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>47802DF441EEFF744ED10FC9C54BCE99</key>
+		<key>34CEACFF9D02E5FFDF8400EFF2A326D1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>36C7E6EF7FD690C2BF7CDA29BAE095ED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4A0D9A7760507CD8527A3B1E20A960D0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -162,17 +207,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>55AA215962670F3924D199E0EBB88A9A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>5AB2AFB1E6DC8D2967EF130A030AD1B8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6D6A05538726A79942E51E0D6636139F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -187,7 +222,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>827334D0AD7F09AF18CBD338F7DB507D</key>
+		<key>79BF5ADB9A8C4E922056EB368E9BD1B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7E02331C227F88079B3794D63773F2E5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>876A456D7926F6B8C6A0D203786B88BE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -197,7 +242,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AC1012C31E95590C528AF538A72D2965</key>
+		<key>AB05A0E4429BD17057843E26D37E115E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -208,6 +253,11 @@
 			<true/>
 		</dict>
 		<key>C5A2DB7A84B7B78E359870D2E1B24AA7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE436A59CF81D0B8D0FBD0526FDDA1C5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -223,6 +273,16 @@
 			<true/>
 		</dict>
 		<key>E0A59FEBE757722BE4BBBFADC6E5DD94</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E6B82E94EE21E7F3931DADCB05BA6AB8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FBDF799FBC0401611199714F1BED0A7B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
