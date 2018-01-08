@@ -23,4 +23,6 @@ target ‘ChedliWeldi2’ do
     pod 'YALSideMenu', '~> 2.0'
     pod 'TransitionButton'
     pod 'FoldingTabBar', '~> 1.1'
+    pod 'Onboard'
+
 end

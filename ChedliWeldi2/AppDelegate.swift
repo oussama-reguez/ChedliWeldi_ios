@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import UserNotifications
 import FoldingTabBar
-
+import Onboard
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate {
 
@@ -28,7 +28,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
         // Override point for customization after application launch.
         registerForRemoteNotification()
         setupYALTabBarController()
+        let firstPage = OnboardingContentViewController(title: "Chedli Weldi !", body: "Your best companion for finding a babysitter nearby easily.", image: nil,buttonText: nil,action: nil)
+        
+        let thirdPage = OnboardingContentViewController(title: "Fast & Easy", body: "With Chedliweldi you can hire a babysitter in less than 5 minutes !", image: nil,buttonText: nil,action: nil)
+        
+        
+        let secondPage = OnboardingContentViewController(title: "Let's go !", body: "", image: UIImage(named: ""), buttonText: "Go!") { () -> Void in
+            // do something here
+            let storyBoard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
+            let secondVC2 = storyBoard.instantiateInitialViewController()
+            self.window?.rootViewController = secondVC2
 
+        }
+        
+        // Image
+        let onboardingVC = OnboardingViewController(backgroundImage: UIImage(named: "loginbg"), contents: [firstPage,thirdPage, secondPage])
+        
+        // Setting the BG color
+        
+        // Setting the rootViewController to your onboardingVC
+        self.window?.rootViewController = onboardingVC
+        
       /*
         let storyBoard = UIStoryboard(name: "testing", bundle: nil)
         
