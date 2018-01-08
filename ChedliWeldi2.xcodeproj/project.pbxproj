@@ -25,7 +25,6 @@
 		0FDE30682002AC4200D4DEFB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE30672002AC4200D4DEFB /* LoginViewController.swift */; };
 		3579E74D0AD465DAE096ED59 /* Pods_ChedliWeldi2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C938081B4006F4907E99A8CE /* Pods_ChedliWeldi2.framework */; };
 		5A0023821FB8849000314156 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0023811FB8849000314156 /* AppDelegate.swift */; };
-		5A0023871FB8849000314156 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0023851FB8849000314156 /* Main.storyboard */; };
 		5A00238A1FB8849000314156 /* ChedliWeldi2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A0023881FB8849000314156 /* ChedliWeldi2.xcdatamodeld */; };
 		5A00238C1FB8849000314156 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A00238B1FB8849000314156 /* Assets.xcassets */; };
 		5A00238F1FB8849000314156 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A00238D1FB8849000314156 /* LaunchScreen.storyboard */; };
@@ -43,7 +42,8 @@
 		5A115C3E20019083006A8F7B /* MyPrivateOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A115C3D20019083006A8F7B /* MyPrivateOffersViewController.swift */; };
 		5A115C402001911C006A8F7B /* PrivateOfferRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A115C3F2001911C006A8F7B /* PrivateOfferRequestViewController.swift */; };
 		5A2335411FBBB55E00EFEC12 /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2335401FBBB55E00EFEC12 /* CreateProfileViewController.swift */; };
-		5A2335431FBBC15D00EFEC12 /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2335421FBBC15D00EFEC12 /* OffersViewController.swift */; };
+		5A2850C620041E1F004C8C53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A2850C520041E1F004C8C53 /* Main.storyboard */; };
+		5A2850CE200424D0004C8C53 /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2850CD200424D0004C8C53 /* RoundImage.swift */; };
 		5A4AC4851FC4A2B800A1B989 /* MyOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4AC4841FC4A2B800A1B989 /* MyOffersViewController.swift */; };
 		5A4E80D62003FA88003EA9C2 /* BabySitterPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F67102B200139B20016F173 /* BabySitterPin.swift */; };
 		5A4E80D72003FABA003EA9C2 /* OngoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE305D2002943900D4DEFB /* OngoingViewController.swift */; };
@@ -53,6 +53,7 @@
 		5A4E80DB2003FFDC003EA9C2 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDE30652002AC3500D4DEFB /* LoginStoryboard.storyboard */; };
 		5A4E80DC20040033003EA9C2 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FE9B3DE2003C351005AB7F9 /* fontawesome-webfont.ttf */; };
 		5A4E80E020040C0F003EA9C2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E80DF20040C0F003EA9C2 /* SignUpViewController.swift */; };
+		5A4E80E220041A59003EA9C2 /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E80E120041A59003EA9C2 /* OffersViewController.swift */; };
 		5A583B381FE06A63002E3372 /* InterfaceBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A583B371FE06A63002E3372 /* InterfaceBuilderViewController.swift */; };
 		5A5939111FC0E71D00FF5DA6 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5939101FC0E71D00FF5DA6 /* UserNotifications.framework */; };
 		5A5939131FC0E71D00FF5DA6 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5939121FC0E71D00FF5DA6 /* UserNotificationsUI.framework */; };
@@ -149,7 +150,6 @@
 		0FE9B3DE2003C351005AB7F9 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		5A00237E1FB8849000314156 /* ChedliWeldi2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChedliWeldi2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A0023811FB8849000314156 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A0023861FB8849000314156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A0023891FB8849000314156 /* ChedliWeldi2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChedliWeldi2.xcdatamodel; sourceTree = "<group>"; };
 		5A00238B1FB8849000314156 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A00238E1FB8849000314156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -168,9 +168,11 @@
 		5A115C3D20019083006A8F7B /* MyPrivateOffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrivateOffersViewController.swift; sourceTree = "<group>"; };
 		5A115C3F2001911C006A8F7B /* PrivateOfferRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateOfferRequestViewController.swift; sourceTree = "<group>"; };
 		5A2335401FBBB55E00EFEC12 /* CreateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
-		5A2335421FBBC15D00EFEC12 /* OffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
+		5A2850C520041E1F004C8C53 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5A2850CD200424D0004C8C53 /* RoundImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
 		5A4AC4841FC4A2B800A1B989 /* MyOffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOffersViewController.swift; sourceTree = "<group>"; };
 		5A4E80DF20040C0F003EA9C2 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5A4E80E120041A59003EA9C2 /* OffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
 		5A583B371FE06A63002E3372 /* InterfaceBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceBuilderViewController.swift; sourceTree = "<group>"; };
 		5A59390A1FC0C44500FF5DA6 /* ChedliWeldi2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChedliWeldi2.entitlements; sourceTree = "<group>"; };
 		5A59390F1FC0E71D00FF5DA6 /* notification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = notification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -279,9 +281,8 @@
 		5A0023801FB8849000314156 /* ChedliWeldi2 */ = {
 			isa = PBXGroup;
 			children = (
+				5A2850CC2004248F004C8C53 /* extension */,
 				5AC2C54E20034BF80008BFB4 /* accout */,
-				5A115C3120015A7C006A8F7B /* DateExtension.swift */,
-				5A0F0D1B2000EDE100E76CEF /* ViewCorner.swift */,
 				5A0F0D1A2000E80300E76CEF /* common */,
 				5A0F0D192000E7F300E76CEF /* parent */,
 				5A8060851FF15945007D5700 /* message */,
@@ -291,10 +292,10 @@
 				5A59390A1FC0C44500FF5DA6 /* ChedliWeldi2.entitlements */,
 				5A0023811FB8849000314156 /* AppDelegate.swift */,
 				5A0F0D182000E7E200E76CEF /* babysitter */,
-				5A0023851FB8849000314156 /* Main.storyboard */,
 				5A0F0D2320010A6A00E76CEF /* CollectionViewController.swift */,
 				5AD98F471FD73858008F4AA8 /* ProfileViewController.swift */,
 				5ADCAB991FD34B98000062AD /* testing.storyboard */,
+				5A2850C520041E1F004C8C53 /* Main.storyboard */,
 				5ADCAB9B1FD35089000062AD /* ExampleCollectionViewCell.swift */,
 				5AD98F4C1FD73B56008F4AA8 /* ReviewsViewControlleBackupr.swift */,
 				5AC2C54C200346870008BFB4 /* RequestDialog.xib */,
@@ -311,9 +312,9 @@
 				5AEAE4401FBB9B48007798EE /* SkyFloatingLabelExtension.swift */,
 				5ADF89BE1FBE480500C2FCD3 /* DemoCell.swift */,
 				5AEAE4421FBBA58C007798EE /* Tex.swift */,
-				5A2335421FBBC15D00EFEC12 /* OffersViewController.swift */,
 				5ADF89901FBE1FF700C2FCD3 /* TableViewCell.swift */,
 				5ADF89921FBE260300C2FCD3 /* TestingViewController.swift */,
+				5A4E80E120041A59003EA9C2 /* OffersViewController.swift */,
 				5A4AC4841FC4A2B800A1B989 /* MyOffersViewController.swift */,
 				5A115C3D20019083006A8F7B /* MyPrivateOffersViewController.swift */,
 				5A115C3920018379006A8F7B /* ScheduledBabysitterOfferViewController.swift */,
@@ -370,6 +371,16 @@
 				0FDE30672002AC4200D4DEFB /* LoginViewController.swift */,
 			);
 			name = common;
+			sourceTree = "<group>";
+		};
+		5A2850CC2004248F004C8C53 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				5A115C3120015A7C006A8F7B /* DateExtension.swift */,
+				5A0F0D1B2000EDE100E76CEF /* ViewCorner.swift */,
+				5A2850CD200424D0004C8C53 /* RoundImage.swift */,
+			);
+			name = extension;
 			sourceTree = "<group>";
 		};
 		5A5939141FC0E71D00FF5DA6 /* notification */ = {
@@ -556,7 +567,7 @@
 				5ADCAB9A1FD34B98000062AD /* testing.storyboard in Resources */,
 				0FDE305620025B6700D4DEFB /* OneTaskCell.xib in Resources */,
 				5ADCABAC1FD36C63000062AD /* YoutubeIconCell.xib in Resources */,
-				5A0023871FB8849000314156 /* Main.storyboard in Resources */,
+				5A2850C620041E1F004C8C53 /* Main.storyboard in Resources */,
 				5AC2C54D200346870008BFB4 /* RequestDialog.xib in Resources */,
 				5A4E80DC20040033003EA9C2 /* fontawesome-webfont.ttf in Resources */,
 				5AA06EC01FF2716600FC2D90 /* customBar.xib in Resources */,
@@ -739,10 +750,11 @@
 				5A0F0D1C2000EDE100E76CEF /* ViewCorner.swift in Sources */,
 				0F67102420010B0A0016F173 /* MapViewController.swift in Sources */,
 				0F3C011020015EE8002AE7B3 /* AddJobViewController.swift in Sources */,
-				5A2335431FBBC15D00EFEC12 /* OffersViewController.swift in Sources */,
 				0FD8E76B2003E27600A385CC /* YalFoldingViewController.swift in Sources */,
 				5ADCABA61FD36B04000062AD /* maintab.swift in Sources */,
+				5A2850CE200424D0004C8C53 /* RoundImage.swift in Sources */,
 				0F3C012C2001853C002AE7B3 /* TabsViewController.swift in Sources */,
+				5A4E80E220041A59003EA9C2 /* OffersViewController.swift in Sources */,
 				5AD98F511FD778F2008F4AA8 /* FavoritesDialogViewController.swift in Sources */,
 				5AD715A62003C6E200D24E61 /* SettingsTableViewController.swift in Sources */,
 				5A8CF66B1FCE3716007B9340 /* ReviewsViewController.swift in Sources */,
@@ -770,14 +782,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5A0023851FB8849000314156 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5A0023861FB8849000314156 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5A00238D1FB8849000314156 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

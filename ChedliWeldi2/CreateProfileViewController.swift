@@ -136,12 +136,7 @@ import SwiftyJSON
         }
     }
     
-    func showOffers(){
-        
-        let vc = UIStoryboard(name: "Main", bundle: nil) .
-            instantiateViewController(withIdentifier: "OffersController") as? OffersViewController
-        self.present(vc!, animated: true, completion: nil)
-    }
+    
 
     /*
     // MARK: - Navigation
