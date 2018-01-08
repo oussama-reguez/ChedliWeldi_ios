@@ -68,6 +68,17 @@ import SwiftyJSON
     
     @IBAction func createClick(_ sender: Any) {
         
+        if(!isValidEmail(testStr: txtEmail.text!)){
+            
+            
+            print("email non valide")
+            
+            return
+        }
+        
+        validateEmailFromDatabase(email: txtEmail.text!)
+        
+        
         /*
         if self.validate() {
             validateEmailFromDatabase(email: txtEmail.text!)
@@ -79,6 +90,7 @@ import SwiftyJSON
             print("not matching ")
             return 
         }
+         
         if(!isValidEmail(testStr: txtEmail.text!)){
             
             

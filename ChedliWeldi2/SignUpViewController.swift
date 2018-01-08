@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 //import EGFormValidator
 
-class ViewController: UIViewController {
+class SignUpViewController: UIViewController {
 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var tt: UIImageView!
@@ -27,15 +27,18 @@ class ViewController: UIViewController {
         
        // getOffers()
        // validateEmailFromDatabase(email: "oussamareguez@gmail.com")
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.parentAction(_:)))
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(self.parentAction(_:)))
         
         
-        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(ViewController.babySitterAction(_:)))
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(self.babySitterAction(_:)))
         
         parentView.addGestureRecognizer(gesture)
         
         babySitterView.addGestureRecognizer(gesture2)
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
    
     

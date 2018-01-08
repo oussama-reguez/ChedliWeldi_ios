@@ -38,6 +38,8 @@ import SwiftyJSON
             
         }
  */
+        
+         register(email: email!,password: password!,phoneNumber: Int(txtPhoneNumber.text!)!,firstName: txtFirstName.text!,lastName: txtLastName.text!,adress: "not yet",birthDate: txtBirthDate.text!,type: type!)
  
     }
     
@@ -99,7 +101,11 @@ import SwiftyJSON
                         return
                     }
                     
-                     self.showOffers()
+                    let vc = UIStoryboard(name: "LoginStoryboard", bundle: nil) .
+                        instantiateViewController(withIdentifier: "login") as? LoginViewController
+
+                    self.navigationController?.pushViewController(vc!, animated: true)
+                    
                     print("success")
                     
                     
