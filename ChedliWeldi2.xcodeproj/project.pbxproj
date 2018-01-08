@@ -43,6 +43,7 @@
 		5A115C402001911C006A8F7B /* PrivateOfferRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A115C3F2001911C006A8F7B /* PrivateOfferRequestViewController.swift */; };
 		5A2335411FBBB55E00EFEC12 /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2335401FBBB55E00EFEC12 /* CreateProfileViewController.swift */; };
 		5A2850C620041E1F004C8C53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A2850C520041E1F004C8C53 /* Main.storyboard */; };
+		5A2850CE200424D0004C8C53 /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2850CD200424D0004C8C53 /* RoundImage.swift */; };
 		5A4AC4851FC4A2B800A1B989 /* MyOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4AC4841FC4A2B800A1B989 /* MyOffersViewController.swift */; };
 		5A4E80D62003FA88003EA9C2 /* BabySitterPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F67102B200139B20016F173 /* BabySitterPin.swift */; };
 		5A4E80D72003FABA003EA9C2 /* OngoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE305D2002943900D4DEFB /* OngoingViewController.swift */; };
@@ -168,6 +169,7 @@
 		5A115C3F2001911C006A8F7B /* PrivateOfferRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateOfferRequestViewController.swift; sourceTree = "<group>"; };
 		5A2335401FBBB55E00EFEC12 /* CreateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
 		5A2850C520041E1F004C8C53 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5A2850CD200424D0004C8C53 /* RoundImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
 		5A4AC4841FC4A2B800A1B989 /* MyOffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOffersViewController.swift; sourceTree = "<group>"; };
 		5A4E80DF20040C0F003EA9C2 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5A4E80E120041A59003EA9C2 /* OffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
@@ -279,9 +281,8 @@
 		5A0023801FB8849000314156 /* ChedliWeldi2 */ = {
 			isa = PBXGroup;
 			children = (
+				5A2850CC2004248F004C8C53 /* extension */,
 				5AC2C54E20034BF80008BFB4 /* accout */,
-				5A115C3120015A7C006A8F7B /* DateExtension.swift */,
-				5A0F0D1B2000EDE100E76CEF /* ViewCorner.swift */,
 				5A0F0D1A2000E80300E76CEF /* common */,
 				5A0F0D192000E7F300E76CEF /* parent */,
 				5A8060851FF15945007D5700 /* message */,
@@ -370,6 +371,16 @@
 				0FDE30672002AC4200D4DEFB /* LoginViewController.swift */,
 			);
 			name = common;
+			sourceTree = "<group>";
+		};
+		5A2850CC2004248F004C8C53 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				5A115C3120015A7C006A8F7B /* DateExtension.swift */,
+				5A0F0D1B2000EDE100E76CEF /* ViewCorner.swift */,
+				5A2850CD200424D0004C8C53 /* RoundImage.swift */,
+			);
+			name = extension;
 			sourceTree = "<group>";
 		};
 		5A5939141FC0E71D00FF5DA6 /* notification */ = {
@@ -739,6 +750,7 @@
 				0F3C011020015EE8002AE7B3 /* AddJobViewController.swift in Sources */,
 				0FD8E76B2003E27600A385CC /* YalFoldingViewController.swift in Sources */,
 				5ADCABA61FD36B04000062AD /* maintab.swift in Sources */,
+				5A2850CE200424D0004C8C53 /* RoundImage.swift in Sources */,
 				0F3C012C2001853C002AE7B3 /* TabsViewController.swift in Sources */,
 				5A4E80E220041A59003EA9C2 /* OffersViewController.swift in Sources */,
 				5AD98F511FD778F2008F4AA8 /* FavoritesDialogViewController.swift in Sources */,

@@ -138,11 +138,17 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     
     let fullName:UILabel =   cell.viewWithTag(106) as! (UILabel)        //let lastName:UILabel =   cell.viewWithTag(103) as! (UILabel)
     let description:UILabel =   cell.viewWithTag(104) as! (UILabel)
+     let creation:UILabel =   cell.viewWithTag(300) as! (UILabel)
+    
+    
     
     //http://localhost:8888/images/man.png
     
     let url = URL(string: AppDelegate.serverImage + offer!["photo"].stringValue)
+    
+   
     img.kf.setImage(with: url)
+    img.makeItRound()
     let img2:UIImageView=cell.viewWithTag(105) as! (UIImageView)
     img2.kf.setImage(with: url)
 
@@ -155,13 +161,14 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     description.text=offer?["description"].stringValue
     var strStart = offer?["start"].stringValue
     var strEnd=offer?["end"].stringValue
+     var strCreation=offer?["createDate"].stringValue
     
     
     
     let dateStart=formatter.date(from: strStart!)
     let dateEnd=formatter.date(from: strEnd!)
-    
-    
+    let dateCreation=formatter.date(from:strCreation!)
+    creation.text=Date().minOffsetFrom(date: dateCreation!)
     
     strStart=formatter2.string(from: dateStart!)
     strEnd=formatter2.string(from: dateEnd!)
@@ -174,6 +181,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     
     from.text=strStart
     to.text=strEnd
+    
     
     duration.text=dateEnd?.offsetFrom(date: dateStart!)
     nbrRequests.text=(offer?["requests"].stringValue)!+" people send a request"
