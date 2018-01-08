@@ -269,8 +269,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
             endingLineNumber = "110"
-            landmarkName = "registerForRemoteNotification()"
-            landmarkType = "7">
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -301,8 +301,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "159"
             endingLineNumber = "159"
-            landmarkName = "userNotificationCenter(_:didReceive:withCompletionHandler:)"
-            landmarkType = "7">
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -317,8 +317,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "161"
             endingLineNumber = "161"
-            landmarkName = "userNotificationCenter(_:didReceive:withCompletionHandler:)"
-            landmarkType = "7">
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1298,7 +1298,7 @@
                   moduleName = "ChedliWeldi2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/oussamareguez/Desktop/Ios%20Projects%20/ChedliWeldi2/ChedliWeldi2/InboxViewController.swift"
-                  timestampString = "537119017.759437"
+                  timestampString = "537133058.848503"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -1313,7 +1313,7 @@
                   moduleName = "ChedliWeldi2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/oussamareguez/Desktop/Ios%20Projects%20/ChedliWeldi2/ChedliWeldi2/InboxViewController.swift"
-                  timestampString = "537119017.761224"
+                  timestampString = "537133058.850348"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
@@ -1328,7 +1328,7 @@
                   moduleName = "ChedliWeldi2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/oussamareguez/Desktop/Ios%20Projects%20/ChedliWeldi2/ChedliWeldi2/InboxViewController.swift"
-                  timestampString = "537119017.762978"
+                  timestampString = "537133058.852109"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -1343,7 +1343,7 @@
                   moduleName = "ChedliWeldi2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/oussamareguez/Desktop/Ios%20Projects%20/ChedliWeldi2/ChedliWeldi2/InboxViewController.swift"
-                  timestampString = "537119017.76473"
+                  timestampString = "537133058.854116"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -1358,7 +1358,7 @@
                   moduleName = "ChedliWeldi2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/oussamareguez/Desktop/Ios%20Projects%20/ChedliWeldi2/ChedliWeldi2/InboxViewController.swift"
-                  timestampString = "537119017.766476"
+                  timestampString = "537133058.855911"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"

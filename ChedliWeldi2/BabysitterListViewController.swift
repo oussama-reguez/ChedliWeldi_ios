@@ -11,6 +11,7 @@ import Alamofire
 import FoldingCell
 import SwiftyJSON
 
+
 class BabysitterListViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     
@@ -23,6 +24,7 @@ class BabysitterListViewController: UIViewController,UITableViewDelegate, UITabl
     var selectedCell:FoldingCell? = nil
     var selectedRow:Int = 0
 
+   
     @IBOutlet weak var table: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()

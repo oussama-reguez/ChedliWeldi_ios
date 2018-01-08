@@ -11,25 +11,18 @@
 		0F3C011220015F64002AE7B3 /* MyJobPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3C011120015F64002AE7B3 /* MyJobPreferencesViewController.xib */; };
 		0F3C01142001767B002AE7B3 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C01132001767B002AE7B3 /* TaskListViewController.swift */; };
 		0F3C012320018056002AE7B3 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C012220018056002AE7B3 /* ContentType.swift */; };
-		0F3C0126200180A4002AE7B3 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C0125200180A4002AE7B3 /* UITableViewCell.swift */; };
-		0F3C01282001810E002AE7B3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C01272001810E002AE7B3 /* MenuViewController.swift */; };
-		0F3C012A20018457002AE7B3 /* HomeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C012920018457002AE7B3 /* HomeMenuViewController.swift */; };
 		0F3C012C2001853C002AE7B3 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C012B2001853C002AE7B3 /* TabsViewController.swift */; };
 		0F67101E200107BE0016F173 /* ParentStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F67101D200107BE0016F173 /* ParentStoryboard.storyboard */; };
 		0F67102220010AE40016F173 /* BabysitterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F67102120010AE40016F173 /* BabysitterListViewController.swift */; };
 		0F67102420010B0A0016F173 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F67102320010B0A0016F173 /* MapViewController.swift */; };
 		0F67102820011FD20016F173 /* BabysitterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F67102720011FD20016F173 /* BabysitterCell.swift */; };
 		0F67102A200120C20016F173 /* BabysitterFolding.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F671029200120C20016F173 /* BabysitterFolding.xib */; };
-		0F67102C200139B20016F173 /* BabySitterPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F67102B200139B20016F173 /* BabySitterPin.swift */; };
 		0FD8E76B2003E27600A385CC /* YalFoldingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8E76A2003E27600A385CC /* YalFoldingViewController.swift */; };
 		0FDE305620025B6700D4DEFB /* OneTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FDE305520025B6700D4DEFB /* OneTaskCell.xib */; };
 		0FDE30582002716500D4DEFB /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE30572002716500D4DEFB /* AddTaskViewController.swift */; };
 		0FDE305A2002760700D4DEFB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE30592002760700D4DEFB /* Task.swift */; };
 		0FDE305C200279DE00D4DEFB /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE305B200279DE00D4DEFB /* TaskTableViewCell.swift */; };
-		0FDE305E2002943900D4DEFB /* OngoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE305D2002943900D4DEFB /* OngoingViewController.swift */; };
-		0FDE30662002AC3500D4DEFB /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDE30652002AC3500D4DEFB /* LoginStoryboard.storyboard */; };
 		0FDE30682002AC4200D4DEFB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE30672002AC4200D4DEFB /* LoginViewController.swift */; };
-		0FE9B3DF2003C351005AB7F9 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FE9B3DE2003C351005AB7F9 /* fontawesome-webfont.ttf */; };
 		3579E74D0AD465DAE096ED59 /* Pods_ChedliWeldi2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C938081B4006F4907E99A8CE /* Pods_ChedliWeldi2.framework */; };
 		5A0023821FB8849000314156 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0023811FB8849000314156 /* AppDelegate.swift */; };
 		5A0023841FB8849000314156 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0023831FB8849000314156 /* ViewController.swift */; };
@@ -53,6 +46,13 @@
 		5A2335411FBBB55E00EFEC12 /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2335401FBBB55E00EFEC12 /* CreateProfileViewController.swift */; };
 		5A2335431FBBC15D00EFEC12 /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2335421FBBC15D00EFEC12 /* OffersViewController.swift */; };
 		5A4AC4851FC4A2B800A1B989 /* MyOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4AC4841FC4A2B800A1B989 /* MyOffersViewController.swift */; };
+		5A4E80D62003FA88003EA9C2 /* BabySitterPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F67102B200139B20016F173 /* BabySitterPin.swift */; };
+		5A4E80D72003FABA003EA9C2 /* OngoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE305D2002943900D4DEFB /* OngoingViewController.swift */; };
+		5A4E80D82003FAD0003EA9C2 /* HomeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C012920018457002AE7B3 /* HomeMenuViewController.swift */; };
+		5A4E80D92003FAD5003EA9C2 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C01272001810E002AE7B3 /* MenuViewController.swift */; };
+		5A4E80DA2003FB10003EA9C2 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C0125200180A4002AE7B3 /* UITableViewCell.swift */; };
+		5A4E80DB2003FFDC003EA9C2 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDE30652002AC3500D4DEFB /* LoginStoryboard.storyboard */; };
+		5A4E80DC20040033003EA9C2 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FE9B3DE2003C351005AB7F9 /* fontawesome-webfont.ttf */; };
 		5A583B381FE06A63002E3372 /* InterfaceBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A583B371FE06A63002E3372 /* InterfaceBuilderViewController.swift */; };
 		5A5939111FC0E71D00FF5DA6 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5939101FC0E71D00FF5DA6 /* UserNotifications.framework */; };
 		5A5939131FC0E71D00FF5DA6 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5939121FC0E71D00FF5DA6 /* UserNotificationsUI.framework */; };
@@ -545,6 +545,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A4E80DB2003FFDC003EA9C2 /* LoginStoryboard.storyboard in Resources */,
 				0F67102A200120C20016F173 /* BabysitterFolding.xib in Resources */,
 				5A00238F1FB8849000314156 /* LaunchScreen.storyboard in Resources */,
 				5A06F9101FCE0D860029B99A /* RatingDialog.xib in Resources */,
@@ -557,6 +558,7 @@
 				5ADCABAC1FD36C63000062AD /* YoutubeIconCell.xib in Resources */,
 				5A0023871FB8849000314156 /* Main.storyboard in Resources */,
 				5AC2C54D200346870008BFB4 /* RequestDialog.xib in Resources */,
+				5A4E80DC20040033003EA9C2 /* fontawesome-webfont.ttf in Resources */,
 				5AA06EC01FF2716600FC2D90 /* customBar.xib in Resources */,
 				5AD98F4F1FD77845008F4AA8 /* favoritesDialog.xib in Resources */,
 			);
@@ -587,6 +589,7 @@
 				"${BUILT_PRODUCTS_DIR}/EasyNotificationBadge/EasyNotificationBadge.framework",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
+				"${BUILT_PRODUCTS_DIR}/FoldingTabBar/FoldingTabBar.framework",
 				"${BUILT_PRODUCTS_DIR}/INSNibLoading/INSNibLoading.framework",
 				"${BUILT_PRODUCTS_DIR}/INSPhotoGallery/INSPhotoGallery.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -614,6 +617,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyNotificationBadge.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingTabBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/INSNibLoading.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/INSPhotoGallery.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -681,8 +685,10 @@
 				5AD98F441FD71497008F4AA8 /* YoutubeExampleViewController.swift in Sources */,
 				5ADCABA81FD36B90000062AD /* ChildExampleViewController.swift in Sources */,
 				5AC2C55620038AAB0008BFB4 /* SkillsViewController.swift in Sources */,
+				5A4E80D82003FAD0003EA9C2 /* HomeMenuViewController.swift in Sources */,
 				5A115C402001911C006A8F7B /* PrivateOfferRequestViewController.swift in Sources */,
 				5ADA4AC31FB8A13D00D4D3F3 /* CreateAccountViewController.swift in Sources */,
+				5A4E80D92003FAD5003EA9C2 /* MenuViewController.swift in Sources */,
 				0F67102820011FD20016F173 /* BabysitterCell.swift in Sources */,
 				5AD98F4D1FD73B56008F4AA8 /* ReviewsViewControlleBackupr.swift in Sources */,
 				5A115C3220015A7C006A8F7B /* DateExtension.swift in Sources */,
@@ -690,6 +696,8 @@
 				5A0023971FB8873100314156 /* SignUpTypeViewController.swift in Sources */,
 				5AEAE11F1FCE1934001CFD55 /* DemoViewController.swift in Sources */,
 				5AD98F481FD73858008F4AA8 /* ProfileViewController.swift in Sources */,
+				5A4E80D62003FA88003EA9C2 /* BabySitterPin.swift in Sources */,
+				5A4E80D72003FABA003EA9C2 /* OngoingViewController.swift in Sources */,
 				0FDE305C200279DE00D4DEFB /* TaskTableViewCell.swift in Sources */,
 				5A4AC4851FC4A2B800A1B989 /* MyOffersViewController.swift in Sources */,
 				0FDE305A2002760700D4DEFB /* Task.swift in Sources */,
@@ -698,6 +706,7 @@
 				0F3C012320018056002AE7B3 /* ContentType.swift in Sources */,
 				0F67102220010AE40016F173 /* BabysitterListViewController.swift in Sources */,
 				5ADF89931FBE260300C2FCD3 /* TestingViewController.swift in Sources */,
+				5A4E80DA2003FB10003EA9C2 /* UITableViewCell.swift in Sources */,
 				5AC2C55020034C850008BFB4 /* EditPhotosViewController.swift in Sources */,
 				5AD98F4B1FD73AFC008F4AA8 /* AboutViewController.swift in Sources */,
 				5A80608B1FF19430007D5700 /* ChatViewController.swift in Sources */,
