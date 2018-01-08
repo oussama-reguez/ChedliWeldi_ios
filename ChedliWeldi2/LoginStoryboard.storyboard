@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17C88" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gp4-gM-vL7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="PJE-Dg-Tgo">
+            <objects>
+                <viewController id="gp4-gM-vL7" customClass="LoginViewController" customModule="ChedliWeldi2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TIG-aC-3Xg"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZoH-se-7kd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="POy-le-C1e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginbg3" translatesAutoresizingMaskIntoConstraints="NO" id="OPY-z7-5tr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIK-Pc-Nim">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.38670940652036223" green="0.34687500698760604" blue="0.56865233179999997" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouU-Xu-LDc" customClass="TransitionButton" customModule="TransitionButton">
+                                <rect key="frame" x="102" y="578" width="171" height="33"/>
+                                <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Login"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="spinnerColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginBtn:" destination="gp4-gM-vL7" eventType="touchUpInside" id="cgQ-Av-tCN"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xE9-W5-Tft" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="24" y="451.5" width="327" height="39.5"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0uM-pE-5Ad" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="24" y="507" width="327" height="39"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ouU-Xu-LDc" firstAttribute="centerX" secondItem="POy-le-C1e" secondAttribute="centerX" id="0O2-Zw-bxL"/>
+                            <constraint firstItem="dIK-Pc-Nim" firstAttribute="centerY" secondItem="POy-le-C1e" secondAttribute="centerY" id="2tE-7w-wDe"/>
+                            <constraint firstItem="OPY-z7-5tr" firstAttribute="centerY" secondItem="POy-le-C1e" secondAttribute="centerY" id="60t-cx-baE"/>
+                            <constraint firstItem="OPY-z7-5tr" firstAttribute="width" secondItem="POy-le-C1e" secondAttribute="width" id="9Mw-4p-KlW"/>
+                            <constraint firstItem="0uM-pE-5Ad" firstAttribute="leading" secondItem="POy-le-C1e" secondAttribute="leadingMargin" constant="8" id="ApE-Cd-Nxj"/>
+                            <constraint firstItem="OPY-z7-5tr" firstAttribute="centerX" secondItem="POy-le-C1e" secondAttribute="centerX" id="IMf-8Y-6do"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xE9-W5-Tft" secondAttribute="trailing" constant="8" id="Kfq-sL-yPh"/>
+                            <constraint firstItem="ouU-Xu-LDc" firstAttribute="leading" secondItem="POy-le-C1e" secondAttribute="leadingMargin" constant="86" id="LRp-5b-Sor"/>
+                            <constraint firstItem="ZoH-se-7kd" firstAttribute="top" secondItem="ouU-Xu-LDc" secondAttribute="bottom" constant="56" id="UPf-5E-5sM"/>
+                            <constraint firstItem="0uM-pE-5Ad" firstAttribute="top" secondItem="xE9-W5-Tft" secondAttribute="bottom" constant="16" id="Yyw-qM-KWL"/>
+                            <constraint firstItem="dIK-Pc-Nim" firstAttribute="width" secondItem="POy-le-C1e" secondAttribute="width" id="bhZ-9t-gXJ"/>
+                            <constraint firstItem="dIK-Pc-Nim" firstAttribute="centerX" secondItem="POy-le-C1e" secondAttribute="centerX" id="cEj-sc-sDO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0uM-pE-5Ad" secondAttribute="trailing" constant="8" id="dbC-Gl-FGP"/>
+                            <constraint firstItem="xE9-W5-Tft" firstAttribute="leading" secondItem="POy-le-C1e" secondAttribute="leadingMargin" constant="8" id="j13-81-XJU"/>
+                            <constraint firstItem="ouU-Xu-LDc" firstAttribute="top" secondItem="0uM-pE-5Ad" secondAttribute="bottom" constant="32" id="lj7-RU-D5t"/>
+                            <constraint firstItem="dIK-Pc-Nim" firstAttribute="height" secondItem="POy-le-C1e" secondAttribute="height" id="prT-yE-iHC"/>
+                            <constraint firstItem="OPY-z7-5tr" firstAttribute="height" secondItem="POy-le-C1e" secondAttribute="height" id="rwu-7P-eFu"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="eKA-Ka-686"/>
+                    <connections>
+                        <outlet property="button" destination="ouU-Xu-LDc" id="urb-Qc-QIT"/>
+                        <outlet property="textField1" destination="xE9-W5-Tft" id="HcT-x7-NeL"/>
+                        <outlet property="textField2" destination="0uM-pE-5Ad" id="BBt-L8-Xws"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n6c-p3-h8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-967.20000000000005" y="-734.48275862068976"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="loginbg3" width="564" height="830"/>
+    </resources>
+</document>

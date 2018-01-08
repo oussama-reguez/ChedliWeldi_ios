@@ -5,7 +5,6 @@
 //  Created by oussama reguez on 11/15/17.
 //  Copyright © 2017 Esprit. All rights reserved.
 //
-
 import UIKit
 import Alamofire
 import SwiftyJSON
@@ -13,32 +12,31 @@ import Kingfisher
 
 
 class OffersViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource  {
-
+    
     @IBOutlet weak var table: UITableView!
     var offers:[JSON]? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         getOffers()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -55,7 +53,7 @@ class OffersViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         
         
         let img:UIImageView=cell.viewWithTag(101) as! (UIImageView)
-     
+        
         let name:UILabel =   cell.viewWithTag(102) as! (UILabel)
         //let lastName:UILabel =   cell.viewWithTag(103) as! (UILabel)
         let description:UILabel =   cell.viewWithTag(104) as! (UILabel)
@@ -63,15 +61,15 @@ class OffersViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         
         let url = URL(string: "http://localhost:8888/images/" + offer!["photo"].stringValue)
         img.kf.setImage(with: url)
-           let img2:UIImageView=cell.viewWithTag(105) as! (UIImageView)
-         img2.kf.setImage(with: url)
+        let img2:UIImageView=cell.viewWithTag(105) as! (UIImageView)
+        img2.kf.setImage(with: url)
         
-       // img.image=#imageLiteral(resourceName: "man")
+        // img.image=#imageLiteral(resourceName: "man")
         name.text=(offer?["firstName"].stringValue)! + " " + (offer?["lastName"].stringValue)!
-       
+        
         description.text=offer?["description"].stringValue
         
-
+        
         
         /*
          
@@ -83,7 +81,7 @@ class OffersViewController: UIViewController ,UITableViewDelegate, UITableViewDa
          let img:UIImageView=cell.viewWithTag(103) as! (UIImageView)
          
          */
-     
+        
         
         return cell
         
