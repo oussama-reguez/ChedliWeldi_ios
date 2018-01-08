@@ -10,8 +10,10 @@ import UIKit
 import MapKit
 import Alamofire
 import SwiftyJSON
+import TransitionButton
 class AddJobViewController: UIViewController {
 
+    @IBOutlet weak var button: TransitionButton!
     @IBOutlet weak var toTime: UILabel!
     @IBOutlet weak var fromTime: UILabel!
     @IBOutlet weak var jobDate: UILabel!
@@ -32,11 +34,21 @@ class AddJobViewController: UIViewController {
     }
     
     @IBAction func btnAddJob(_ sender: Any) {
-        if((bbyId ?? "").isEmpty){
-            AddJob()
-        }else{
-            addJobForBbySitter()
-        }
+        button.startAnimation() // 2: Then start the animation when the user tap the button
+        let qualityOfServiceClass = DispatchQoS.QoSClass.background
+        let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
+        backgroundQueue.async(execute: {
+            
+            if((self.bbyId ?? "").isEmpty){
+                self.AddJob()
+            }else{
+                self.addJobForBbySitter()
+            } // 3: Do your networking task or background work here.
+            
+            
+        })
+
+        
     }
 
     func AddJob(){
@@ -60,17 +72,21 @@ class AddJobViewController: UIViewController {
                 
                 //example if there is an id
                 let userId = response.object(forKey: "id")!
-                self.jobId=userId as! String
-                let vc = UIStoryboard(name: "ParentStoryboard", bundle: nil) .
-                 instantiateViewController(withIdentifier: "TaskListViewController") as? TaskListViewController
-                 
-                 //vc?.image=photo.image
-                 //vc?.fullName=name.text!
-                 
-                 vc?.jobId=self.jobId
-
-                self.present(vc!, animated:true, completion:nil)
-
+                
+                DispatchQueue.main.async(execute: { () -> Void in
+                    // 4: Stop the animation, here you have three options for the `animationStyle` property:
+                    // .expand: useful when the task has been compeletd successfully and you want to expand the button and transit to another view controller in the completion callback
+                    // .shake: when you want to reflect to the user that the task did not complete successfly
+                    // .normal
+                    self.button.stopAnimation(animationStyle: .expand, completion: {
+                        self.jobId=userId as! String
+                        let vc = UIStoryboard(name: "ParentStoryboard", bundle: nil) .
+                            instantiateViewController(withIdentifier: "TaskListViewController") as? TaskListViewController
+                            vc?.jobId=self.jobId
+                            self.present(vc!, animated:true, completion:nil)
+                    })
+                })
+                
             case .failure(let error):
                 print("Request failed with error: \(error)")
                 
@@ -106,7 +122,16 @@ class AddJobViewController: UIViewController {
                 //example if there is an id
                 let userId = response.object(forKey: "id")!
                 self.jobId="\(userId)"
-                self.performSegue(withIdentifier: "seg", sender: self)
+                DispatchQueue.main.async(execute: { () -> Void in
+                    // 4: Stop the animation, here you have three options for the `animationStyle` property:
+                    // .expand: useful when the task has been compeletd successfully and you want to expand the button and transit to another view controller in the completion callback
+                    // .shake: when you want to reflect to the user that the task did not complete successfly
+                    // .normal
+                    self.button.stopAnimation(animationStyle: .expand, completion: {
+                        self.performSegue(withIdentifier: "seg", sender: self)
+                    })
+                })
+
              /*   let vc = UIStoryboard(name: "ParentStoryboard", bundle: nil) .
                     instantiateViewController(withIdentifier: "TaskListManagerNav") as? TaskListViewController
                 

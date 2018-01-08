@@ -17,7 +17,6 @@ class BabysitterCell: FoldingCell {
     @IBOutlet var FullName: UILabel!
     @IBAction func Call(_ sender: UIButton) {
         print("Called")
-        print(sender.tag)
         if let onButtonTapped = self.onButtonTapped {
             onButtonTapped()
         }

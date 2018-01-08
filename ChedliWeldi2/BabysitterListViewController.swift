@@ -50,6 +50,7 @@ class BabysitterListViewController: UIViewController,UITableViewDelegate, UITabl
     */
     func setup() {
         table.register(UINib(nibName: "BabysitterFolding", bundle: nil), forCellReuseIdentifier: "FoldingCell")
+        table.separatorStyle = .none
        // cellHeights = Array(repeating: kCloseCellHeight, count: babysitters!.count)
         table.estimatedRowHeight = kCloseCellHeight
         table.rowHeight = UITableViewAutomaticDimension
@@ -68,10 +69,10 @@ class BabysitterListViewController: UIViewController,UITableViewDelegate, UITabl
         cell.durationsForCollapsedState = durations
         cell.apply((babysitter?["image"].stringValue)!, name: (babysitter?["firstname"].stringValue)!+" "+(babysitter?["lastname"].stringValue)!, descr: (babysitter?["descr"].stringValue)!)
         cell.onButtonTapped={
+            print("going")
             let content = self.storyboard!.instantiateViewController(withIdentifier: "AddJob") as! AddJobViewController
             content.bbyId = babysitter?["id"].stringValue
-            self.navigationController?.setViewControllers([content], animated: true)
-            
+            self.present(content, animated: true, completion: nil)            
         }
         return cell
     }

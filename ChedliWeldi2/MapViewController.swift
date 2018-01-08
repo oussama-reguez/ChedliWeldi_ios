@@ -10,13 +10,14 @@ import UIKit
 import MapKit
 import Alamofire
 import SwiftyJSON
+import FoldingTabBar
 
-class MapViewController: UIViewController , MKMapViewDelegate,CLLocationManagerDelegate{
+class MapViewController: UIViewController , MKMapViewDelegate,CLLocationManagerDelegate,YALTabBarDelegate{
    
     @IBOutlet weak var map: MKMapView!
     var babysitters:[JSON]? = nil
     var locationManager: CLLocationManager!
-    var rad : CLLocationDistance = 5000
+    var rad : CLLocationDistance = 10000
     override func viewDidLoad() {
         super.viewDidLoad()
         map.delegate = self
@@ -108,7 +109,9 @@ class MapViewController: UIViewController , MKMapViewDelegate,CLLocationManagerD
         // You can either return your square here, or ignore the circle check and only return circles.
     }
 
-   
+    func tabBarDidSelectExtraRightItem(_ tabBar: YALFoldingTabBar) {
+        //apply filtres
+    }
 
 }
 

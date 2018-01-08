@@ -126,6 +126,7 @@
 		0F671029200120C20016F173 /* BabysitterFolding.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BabysitterFolding.xib; sourceTree = "<group>"; };
 		0F67102B200139B20016F173 /* BabySitterPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabySitterPin.swift; sourceTree = "<group>"; };
 		0F67102D200148B50016F173 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
+		0FAB7A352002E9F600FECD1F /* Example-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Example-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		0FDE305520025B6700D4DEFB /* OneTaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneTaskCell.xib; sourceTree = "<group>"; };
 		0FDE30572002716500D4DEFB /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		0FDE30592002760700D4DEFB /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -315,6 +316,7 @@
 				0F3C0124200180A4002AE7B3 /* Extension */,
 				0F3C012120018056002AE7B3 /* Model */,
 				0F3C011820017FEC002AE7B3 /* Misc */,
+				0FAB7A352002E9F600FECD1F /* Example-Swift-Bridging-Header.h */,
 				0F671029200120C20016F173 /* BabysitterFolding.xib */,
 				0F67101D200107BE0016F173 /* ParentStoryboard.storyboard */,
 				0F67102120010AE40016F173 /* BabysitterListViewController.swift */,
@@ -542,6 +544,7 @@
 				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
+				"${BUILT_PRODUCTS_DIR}/FoldingTabBar/FoldingTabBar.framework",
 				"${BUILT_PRODUCTS_DIR}/INSPhotoGallery/INSPhotoGallery.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/NMessenger/NMessenger.framework",
@@ -567,6 +570,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingTabBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/INSPhotoGallery.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NMessenger.framework",

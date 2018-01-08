@@ -20,5 +20,6 @@ target ‘ChedliWeldi2’ do
     pod 'RAMAnimatedTabBarController'
     pod 'YALSideMenu', '~> 2.0'
     pod 'TransitionButton'
+    pod 'FoldingTabBar', '~> 1.1'
 
 end

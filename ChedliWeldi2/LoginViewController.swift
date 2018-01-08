@@ -8,7 +8,6 @@
 
 import UIKit
 import TransitionButton
-
 class LoginViewController: UIViewController {
     @IBOutlet weak var button: TransitionButton!
 
@@ -23,7 +22,7 @@ class LoginViewController: UIViewController {
         let qualityOfServiceClass = DispatchQoS.QoSClass.background
         let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
         backgroundQueue.async(execute: {
-            
+           
             sleep(3) // 3: Do your networking task or background work here.
             
             DispatchQueue.main.async(execute: { () -> Void in
@@ -33,7 +32,7 @@ class LoginViewController: UIViewController {
                 // .normal
                 self.button.stopAnimation(animationStyle: .expand, completion: {
                     let storyboard = UIStoryboard(name: "ParentStoryboard", bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier: "Home") as! HomeMenuViewController
+                    let vc = storyboard.instantiateViewController(withIdentifier: "Content")
                     self.present(vc, animated: true, completion: nil)
                 })
             })
