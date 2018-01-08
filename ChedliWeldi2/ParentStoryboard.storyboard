@@ -548,7 +548,7 @@
         <!--Yal Folding View Controller-->
         <scene sceneID="KdH-Ts-sVq">
             <objects>
-                <tabBarController storyboardIdentifier="Home" id="YW3-23-EEC" customClass="YalFoldingViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YW3-23-EEC" customClass="YalFoldingViewController" customModule="ChedliWeldi2" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="a0U-cX-ai6" customClass="YALCustomHeightTabBar">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

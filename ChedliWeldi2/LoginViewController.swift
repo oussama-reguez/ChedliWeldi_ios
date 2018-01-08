@@ -117,9 +117,10 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
                         // .shake: when you want to reflect to the user that the task did not complete successfly
                         // .normal
                         self.button.stopAnimation(animationStyle: .expand, completion: {
-                            let storyboard = UIStoryboard(name: "ParentStoryboard", bundle: nil)
-                            let vc = storyboard.instantiateViewController(withIdentifier: "Home")
-                            self.present(vc, animated: true, completion: nil)
+                            let testController = UIStoryboard(name: "ParentStoryboard", bundle: nil).instantiateViewController(withIdentifier: "Home") as! YALFoldingTabBarController
+                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                            appDelegate.window?.rootViewController = testController
+                            self.present(testController, animated: true, completion: nil)
                         })
                     })
                 case .failure(let error):

@@ -11,13 +11,17 @@ import FoldingTabBar
 
 class YalFoldingViewController: YALFoldingTabBarController ,YALTabBarDelegate{
     var window: UIWindow?
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Here")
+        print(appDelegate.window)
+        print(appDelegate.window?.rootViewController)
         // Do any additional setup after loading the view.
-       
+        setupYALTabBarController()
+
     
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -42,7 +46,7 @@ class YalFoldingViewController: YALFoldingTabBarController ,YALTabBarDelegate{
     */
     
     func setupYALTabBarController() {
-        guard let tabBarController = window?.rootViewController as? YALFoldingTabBarController else {
+        guard let tabBarController = appDelegate.window?.rootViewController as? YalFoldingViewController else {
             print("Else")
             return }
         print("OK")
