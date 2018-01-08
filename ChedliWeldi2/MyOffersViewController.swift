@@ -82,7 +82,7 @@ class MyOffersViewController: UIViewController ,UITableViewDelegate, UITableView
     }
     
     func getOffers(id:String)   {
-        Alamofire.request(AppDelegate.serverUrl+"getUserOffers", method: .post , parameters: ["id_user": id ])
+        Alamofire.request(AppDelegate.serverUrl+"getPrivateOffers", method: .post , parameters: ["user_id": id ])
             
             .responseJSON { response in
                 print("Response String: \(response.result.value)")

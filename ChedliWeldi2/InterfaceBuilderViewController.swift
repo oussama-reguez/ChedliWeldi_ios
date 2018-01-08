@@ -129,7 +129,7 @@ class InterfaceBuilderViewController: UIViewController, FSCalendarDataSource, FS
         
         
         
-        getDates(idUser: "4")
+        getDates(idUser: AppDelegate.userId)
 
 
     }
@@ -177,7 +177,7 @@ class InterfaceBuilderViewController: UIViewController, FSCalendarDataSource, FS
             calendar.setCurrentPage(date, animated: true)
         }
         
-        getOffers(idUser: "4",date: self.formatter.string(from: date))
+        getOffers(idUser: AppDelegate.userId,date: self.formatter.string(from: date))
         
         
     }
@@ -199,6 +199,21 @@ class InterfaceBuilderViewController: UIViewController, FSCalendarDataSource, FS
             }
 
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let offer = offers?[indexPath.row]
+        let destination = UIStoryboard(name: "Main", bundle: nil) .
+            instantiateViewController(withIdentifier: "scheduledBabysitter") as? ScheduledBabysitterOfferViewController
+        
+        
+        destination?.offer=offer
+        
+        self.navigationController?.pushViewController(destination!, animated: true)
+        return
+        
+        
+    }
     
     func getOffers(idUser:String , date:String)
     {

@@ -19,7 +19,23 @@ class RequestsViewController: UIViewController ,UITableViewDelegate, UITableView
     var offer:JSON? = nil
     
 
+    @IBOutlet weak var offerDuration: UILabel!
    
+    
+    func back(sender: UIBarButtonItem) {
+        // Perform your custom actions
+        // ...
+        // Go back to the previous ViewController
+        // _ = navigationController?.popViewController(animated: true)
+        
+        let destination = UIStoryboard(name: "Main", bundle: nil) .
+            instantiateViewController(withIdentifier: "myPrivateOffers") as? MyOfferCollectionViewController
+        
+        let navigationController = self.view.window?.rootViewController as! UINavigationController
+        navigationController.setViewControllers([destination!], animated: true)
+        
+    }
+
     
     
     fileprivate let formatter: DateFormatter = {
@@ -67,8 +83,9 @@ class RequestsViewController: UIViewController ,UITableViewDelegate, UITableView
 
     
     var requestIdFromNotification:String?=nil
-   
-    func displayDialog(request:JSON) {
+    var selecedRequest:JSON?=nil
+    
+    func displayDialog(request:JSON , position:Int) {
         let vc = RequestDialogViewController(nibName: "RequestDialog", bundle: nil)
         vc.request = request
         
@@ -86,21 +103,8 @@ class RequestsViewController: UIViewController ,UITableViewDelegate, UITableView
         
         // Create second button
         let buttonTwo = DefaultButton(title: "Accept", height: 60) {
-            var count = 0
-            self.requests?.forEach{ requeste in
-                if(requeste["id_request"].stringValue == request["id_request"].stringValue){
-                  
-                    self.respondToRequest(idRequest: request["id_request"].stringValue, respond: "accepted", position: count)
-                    
-                    
-                    
-                    return
-                }
-                 count += 1
             
-            
-            }
-            
+              self.respondToRequest(idRequest: request["id_request"].stringValue, respond: "accepted", position: position)
         }
         
         // Add buttons to dialog
@@ -113,16 +117,23 @@ class RequestsViewController: UIViewController ,UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let position = indexPath.row
         
+         let request = requests?[position]
+        selecedRequest=request
         
-         let request = requests?[indexPath.row]
-        displayDialog(request: request!)
+        displayDialog(request: selecedRequest!,position: position)
         
         
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(RequestsViewController.back(sender:)))
+        self.navigationItem.leftBarButtonItem = newBackButton
+        
+        
         offerDetail.text=offer?["description"].stringValue
         var strStart = offer?["start"].stringValue
         var strEnd=offer?["end"].stringValue
@@ -132,17 +143,19 @@ class RequestsViewController: UIViewController ,UITableViewDelegate, UITableView
         let dateStart=formatter.date(from: strStart!)
          let dateEnd=formatter.date(from: strEnd!)
         
-     
+        
         
         strStart=formatter2.string(from: dateStart!)
         strEnd=formatter2.string(from: dateEnd!)
+        
+        
         
       formatter2.dateFormat="E"
         let day=formatter2.string(from: dateStart!)
         
         offerDate.text=day+" at "+strStart!+" to " + strEnd!
         
-    table.reloadData()
+        offerDuration.text=dateEnd?.offsetFrom(date: dateStart!)
         getRequestsByOffer(id: offerId!)
 
         
@@ -232,10 +245,12 @@ class RequestsViewController: UIViewController ,UITableViewDelegate, UITableView
                     
                     if(self.requestIdFromNotification != nil)
                     {
+                        var count:Int=0
                         self.requests?.forEach{ request in
                             if(request["id_request"].stringValue == self.requestIdFromNotification){
-                                self.displayDialog(request: request)
+                                self.displayDialog(request: request,position: count)
                                 self.requestIdFromNotification=nil
+                                count = count + 1
                                 return
                             }
                             

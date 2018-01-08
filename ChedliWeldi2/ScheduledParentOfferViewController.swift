@@ -46,13 +46,13 @@ class ScheduledParentOfferViewController: UIViewController ,UITableViewDelegate,
     
 
     
-
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+              
         offerDescription.text=offer?["description"].stringValue
         var strStart = offer?["start"].stringValue
         var strEnd=offer?["end"].stringValue
@@ -174,6 +174,8 @@ class ScheduledParentOfferViewController: UIViewController ,UITableViewDelegate,
                     let url = URL(string: "http://localhost:8888/images/" + offer["photo"].stringValue)
                     self.imgProfil.kf.setImage(with: url)
                     self.userId=offer["id_user"].stringValue
+                    
+                    self.fullName.text=(offer["firstName"].stringValue) + " " + (offer["lastName"].stringValue)
                     print("")
                     
                 }

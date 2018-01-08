@@ -10,13 +10,13 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class MyOffersViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
+class MyPrivateOffersViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
     var offers:[JSON]? = nil
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getOffers(id: AppDelegate.userId)
+        self.navigationItem.setHidesBackButton(true, animated:true)       
 
         // Do any additional setup after loading the view.
     }
@@ -58,11 +58,15 @@ class MyOffersViewController: UIViewController ,UITableViewDelegate, UITableView
         
         let offer = offers?[indexPath.row]
         
-     let lbl1:UILabel =   cell.viewWithTag(101) as! (UILabel)
+     let lbl1:UILabel =   cell.viewWithTag(103) as! (UILabel)
         let description:UILabel =   cell.viewWithTag(102) as! (UILabel)
-        
-        lbl1.text="Offer " + (offer?["id"].stringValue)!
+         let img:UIImageView=cell.viewWithTag(101) as! (UIImageView)
+       
         description.text=offer?["description"].stringValue
+        
+        let url = URL(string: AppDelegate.serverImage + (offer?["photo"].stringValue)!)
+        img.kf.setImage(with: url)
+        lbl1.text=(offer?["firstName"].stringValue)! + " " + (offer?["lastName"].stringValue)!
         
         /*
          
@@ -88,8 +92,21 @@ class MyOffersViewController: UIViewController ,UITableViewDelegate, UITableView
                 print("Response String: \(response.result.value)")
                 
                 if let json = response.data {
+                    
+                    
+                    
                     let data = JSON(data: json)
-                    self.offers = data.arrayValue
+                    let error = data["error"].boolValue
+                    if(error){
+                        self.offers = nil
+                         self.table.reloadData()
+                        
+                        return
+                    }
+                    
+                    
+                    
+                    self.offers = data["offers"].arrayValue
                     self.table.reloadData()
                     
                     print("")
@@ -107,9 +124,14 @@ class MyOffersViewController: UIViewController ,UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let entitiy =  offers?[indexPath.row]
         let destination = UIStoryboard(name: "Main", bundle: nil) .
-            instantiateViewController(withIdentifier: "Requests") as? RequestsViewController
-        destination?.offerId=entitiy?["id"].stringValue
+            instantiateViewController(withIdentifier: "privateOfferRequest") as? PrivateOfferRequestViewController
+        destination?.offer=entitiy
         self.navigationController?.pushViewController(destination!, animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+         getOffers(id: AppDelegate.userId)
     }
     
     

@@ -12,10 +12,23 @@ import XLPagerTabStrip
 import Alamofire
 import SwiftyJSON
 
-class PhotosViewController: UIViewController  ,IndicatorInfoProvider,UICollectionViewDelegateFlowLayout ,UICollectionViewDataSource {
+class EditPhotosViewController: UIViewController  , UIImagePickerControllerDelegate,IndicatorInfoProvider,UICollectionViewDelegateFlowLayout ,UICollectionViewDataSource,UINavigationControllerDelegate  {
     
+    var imagePicker = UIImagePickerController()
+    var imagePicked = 0
+    
+    
+    @IBAction func onClick(_ sender: UIButton) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.savedPhotosAlbum){
+            imagePicked = (sender as AnyObject).tag
+            present(imagePicker, animated: true)
+        }
+    
+    }
     var idUser:String="4"
      var photosString = [String]()
+    var photosId = [String]()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -35,6 +48,44 @@ class PhotosViewController: UIViewController  ,IndicatorInfoProvider,UICollectio
         
         return photos
     }
+    
+    
+    var image:UIImage? = nil
+    func uploadImage(userId:String){
+        
+        
+        let myUrl = URL(string: AppDelegate.serverUrl+"uploadPhotos");
+        let imageData = UIImageJPEGRepresentation(self.image!, 1)
+        let strBase64 = imageData?.base64EncodedString(options: .lineLength64Characters) ?? ""
+        
+        if(imageData==nil)  { return; }
+        
+        let params : Dictionary = [
+            "image_path" : strBase64,
+            "user_id" : userId
+        ]
+       
+        Alamofire.request(myUrl!, method: .post , parameters: params).validate()
+            .responseData { response in
+                
+                switch response.result {
+                    
+                case .success:
+                    print("Validation Successful")
+                    
+                    // Print out reponse body
+                    let responseString = NSString(data: response.data!, encoding: String.Encoding.utf8.rawValue)
+                    print("**** response data = \(responseString!)")
+                    
+                    self.getPhotos(idUser: AppDelegate.userId)
+                    
+                    
+                    
+                case .failure(let error):
+                    print(error)
+                }
+        }}
+    
     
     
     func initPhotos() -> [INSPhotoViewable]  {
@@ -58,13 +109,16 @@ class PhotosViewController: UIViewController  ,IndicatorInfoProvider,UICollectio
         super.viewDidLoad()
        // photos=initPhotos()
         
+        imagePicker.delegate = self
+        imagePicker.sourceType = .savedPhotosAlbum
+        imagePicker.allowsEditing = false
         collectionView.delegate = self
         collectionView.dataSource = self
         
         
-          let viewController = self.parent as! ProfileTabsViewController
-            idUser = viewController.idUser
-        getPhotos(idUser: idUser)
+        //  let viewController = self.parent as! ProfileTabsViewController
+            //idUser = viewController.idUser
+        getPhotos(idUser: AppDelegate.userId)
 
         
        
@@ -98,20 +152,22 @@ class PhotosViewController: UIViewController  ,IndicatorInfoProvider,UICollectio
         return photos.count
     }
     
+    var galleryPreview:INSPhotosViewController? = nil
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! ExampleCollectionViewCell
         let currentPhoto = photos[(indexPath as NSIndexPath).row]
-        let galleryPreview = INSPhotosViewController(photos: photos, initialPhoto: currentPhoto, referenceView: cell)
-        galleryPreview.overlayView = CustomOverlayView(frame: CGRect.zero)
+        galleryPreview = INSPhotosViewController(photos: photos, initialPhoto: currentPhoto, referenceView: cell)
+        galleryPreview?.overlayView = CustomOverlayView(frame: CGRect.zero)
         
-        galleryPreview.referenceViewForPhotoWhenDismissingHandler = { [weak self] photo in
+        
+        galleryPreview?.referenceViewForPhotoWhenDismissingHandler = { [weak self] photo in
             if let index = self?.photos.index(where: {$0 === photo}) {
                 let indexPath = IndexPath(item: index, section: 0)
                 return collectionView.cellForItem(at: indexPath) as? ExampleCollectionViewCell
             }
             return nil
         }
-        present(galleryPreview, animated: true, completion: nil)
+        present(galleryPreview!, animated: true, completion: nil)
     }
     
     
@@ -138,9 +194,13 @@ class PhotosViewController: UIViewController  ,IndicatorInfoProvider,UICollectio
                     else{
                         
                         let skills = data["photos"].arrayValue
+                        
+                        self.photos=[INSPhotoViewable]()
+                         self.photosString=[String]()
                         skills.forEach{  word in
                             let url = AppDelegate.serverImage+word["photo"].stringValue
                             self.photosString.append(AppDelegate.serverImage+word["photo"].stringValue)
+                            
                             self.photos=self.getPhotos()
                             self.collectionView.reloadData()
                             
@@ -158,6 +218,21 @@ class PhotosViewController: UIViewController  ,IndicatorInfoProvider,UICollectio
         }
         
         
+        
     }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        self.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        
+      uploadImage(userId: AppDelegate.userId)
+        dismiss(animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+        
+    }
+    
 
 }

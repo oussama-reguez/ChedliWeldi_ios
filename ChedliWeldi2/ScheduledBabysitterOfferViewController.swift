@@ -26,7 +26,8 @@ class ScheduledBabysitterOfferViewController: UIViewController ,UITableViewDeleg
     @IBOutlet weak var imgProfil: UIImageView!
     @IBOutlet weak var offerDuration: UILabel!
  
-    
+   
+   
    
     var offer:JSON? = nil
 
@@ -153,7 +154,7 @@ class ScheduledBabysitterOfferViewController: UIViewController ,UITableViewDeleg
     
     
     func getOffer(idUser:String)   {
-        Alamofire.request(AppDelegate.serverUrl+"getOffer", method: .post , parameters: ["id_offer": idUser])
+        Alamofire.request(AppDelegate.serverUrl+"getOffer2", method: .post , parameters: ["id_offer": idUser])
             
             .responseJSON { response in
                 print("Response String: \(response.result.value)")
@@ -174,6 +175,8 @@ class ScheduledBabysitterOfferViewController: UIViewController ,UITableViewDeleg
                     let url = URL(string: "http://localhost:8888/images/" + offer["photo"].stringValue)
                     self.imgProfil.kf.setImage(with: url)
                     self.userId=offer["id_user"].stringValue
+                    
+                      self.fullName.text=(offer["firstName"].stringValue) + " " + (offer["lastName"].stringValue)
                     print("")
                     
                 }

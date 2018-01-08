@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'AC1012C31E95590C528AF538A72D2965'
+               BlueprintIdentifier = '7581EC11EB77B4CC7BE636199C765FED'
                BlueprintName = 'SimulatorRemoteNotifications'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'SimulatorRemoteNotifications.framework'>

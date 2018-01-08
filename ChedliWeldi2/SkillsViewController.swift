@@ -11,20 +11,38 @@ import TagListView
 import XLPagerTabStrip
 import Alamofire
 import SwiftyJSON
-class AboutViewController: UIViewController ,IndicatorInfoProvider{
+
+class SkillsViewController: UIViewController ,IndicatorInfoProvider , TagListViewDelegate{
     var idUser:String="4"
-    var about:String=""
     var skills = [String]()
+    @IBOutlet weak var input: UITextField!
+    @IBAction func onAdd(_ sender: Any) {
+        
+        skills.append(input.text!)
+        tags.addTag(input.text!)
+        
+        
+        
+        
+    }
     @IBOutlet weak var tags: TagListView!
+    @IBAction func apply(_ sender: Any) {
+        
+        skills=[String]()
+        for tag in tags.tagViews {
+            skills.append((tag.titleLabel?.text)!)
+            
+        }
+        
+        updateSkills(idUser: AppDelegate.userId, skills: skills)
+        
+    }
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         
-       
-        let viewController = self.parent as! ProfileTabsViewController
-        idUser = viewController.idUser
-        about=viewController.about
+     
         
 
      
@@ -32,18 +50,28 @@ class AboutViewController: UIViewController ,IndicatorInfoProvider{
        // tags.textFont = UIFont.systemFont(ofSize: 24)
         //tags.alignment = .center // possible values are .Left, .Center, and .Right
         
-       
+         tags.delegate = self
         tags.addTags(["Add", "two", "tags"])
         
-        getSkills(idUser: idUser)
+        getSkills(idUser: AppDelegate.userId)
         // Do any additional setup after loading the view.
     }
 
-    @IBOutlet weak var textAbout: UITextView!
-    override func didReceiveMemoryWarning() {
+      override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        print("Tag pressed: \(title), \(sender)")
+        
+        
+        tags.removeTagView(tagView)
+
+    }
+    
+    func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
+           }
     
 
     /*
@@ -78,7 +106,7 @@ class AboutViewController: UIViewController ,IndicatorInfoProvider{
                     }
                     else{
                         
-                        let skills = data["skills"].arrayValue
+                        var skills = data["skills"].arrayValue
                         skills.forEach{  word in
                         
                             self.skills.append(word["skill"].stringValue)
@@ -87,6 +115,10 @@ class AboutViewController: UIViewController ,IndicatorInfoProvider{
                         }
                        self.tags.removeAllTags()
                         self.tags.addTags(self.skills)
+                        
+                       
+                        self.updateSkills(idUser: AppDelegate.userId, skills: self.skills)
+                        
                         
                     }
                     
@@ -99,6 +131,67 @@ class AboutViewController: UIViewController ,IndicatorInfoProvider{
         
         
     }
+    
+    func convertToDictionary(text: String) -> [String: Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
+    
+    
+    
+    
+    func updateSkills(idUser:String,skills:[String])   {
+        
+    
+        var data: [String: Any] = [
+            "id_user": AppDelegate.userId,
+            
+            "skills": []
+        ]
+        
+       
+        
+
+            // get existing items, or create new array if doesn't exist
+            var existingItems =  [Any]()
+        
+        skills.forEach{  word in
+            
+                     existingItems.append(word)
+
+            
+            
+        }
+        
+        
+        
+        
+            // replace back into `data`
+            data["skills"] = existingItems
+       
+        print(data)
+        Alamofire.request(AppDelegate.serverUrl+"updateSkills", method: .post, parameters: data, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                print(response)
+        }
+        
+        
+                }
+        
+        
+        
+        
+        
+        
+    }
+    
+    
 
 
-}
+

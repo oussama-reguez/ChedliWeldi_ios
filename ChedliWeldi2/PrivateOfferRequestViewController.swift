@@ -12,7 +12,7 @@ import PopupDialog
 
 
 
-class ScheduledParentOfferViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
+class PrivateOfferRequestViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
     var offers:[JSON]? = nil
 
     private let reuseIdentifier = "Cell"
@@ -26,7 +26,15 @@ class ScheduledParentOfferViewController: UIViewController ,UITableViewDelegate,
     @IBOutlet weak var imgProfil: UIImageView!
     @IBOutlet weak var offerDuration: UILabel!
  
+    @IBAction func onRefuse(_ sender: Any) {
+    refuseRequest(idRequest: offerId!)
+        
+    }
     
+    @IBAction func onAccept(_ sender: Any) {
+    acceptRequest(idRequest: offerId!)
+       
+    }
    
     var offer:JSON? = nil
 
@@ -122,10 +130,11 @@ class ScheduledParentOfferViewController: UIViewController ,UITableViewDelegate,
         
         
         let description:UILabel =   cell.viewWithTag(102) as! (UILabel)
-        
+       
       
         description.text=offer?["detail"].stringValue
         
+       
         /*
          
          let lbl1:UILabel =   cell.viewWithTag(101) as! (UILabel)
@@ -137,7 +146,6 @@ class ScheduledParentOfferViewController: UIViewController ,UITableViewDelegate,
          let img:UIImageView=cell.viewWithTag(103) as! (UIImageView)
          
          */
-        
         
         return cell
         
@@ -153,7 +161,7 @@ class ScheduledParentOfferViewController: UIViewController ,UITableViewDelegate,
     
     
     func getOffer(idUser:String)   {
-        Alamofire.request(AppDelegate.serverUrl+"getOffer", method: .post , parameters: ["id_offer": idUser])
+        Alamofire.request(AppDelegate.serverUrl+"getOffer2", method: .post , parameters: ["id_offer": idUser])
             
             .responseJSON { response in
                 print("Response String: \(response.result.value)")
@@ -217,6 +225,60 @@ class ScheduledParentOfferViewController: UIViewController ,UITableViewDelegate,
 
 
 }
+    
+    
+    func acceptRequest(idRequest:String )   {
+        Alamofire.request(AppDelegate.serverUrl+"acceptPrivateOffer", method: .post , parameters: ["offer_id": idRequest  ])
+            
+            .responseJSON { response in
+                print("Response String: \(response.result.value)")
+                
+                if let json = response.data {
+                    let data = JSON(data: json)
+                    
+                    if(data["error"].bool)!{
+                        return
+                    }
+                    
+                    _ = self.navigationController?.popViewController(animated: true)
+                    
+                    //sucesss
+                }
+                
+                
+        }
+        
+        
+    }
+    
+    func refuseRequest(idRequest:String )   {
+        Alamofire.request(AppDelegate.serverUrl+"refusePrivateOffer", method: .post , parameters: ["offer_id": idRequest ])
+            
+            .responseJSON { response in
+                print("Response String: \(response.result.value)")
+                
+                if let json = response.data {
+                    let data = JSON(data: json)
+                    
+                    
+                    
+                    if(data["error"].bool)!{
+                        return
+                    }
+                    
+                    _ = self.navigationController?.popViewController(animated: true)
+                    
+                    
+                    
+                    
+                    //sucesss
+                }
+                
+                
+        }
+        
+        
+    }
     
     
     

@@ -5,35 +5,150 @@
 //  Created by oussama reguez on 1/6/18.
 //  Copyright © 2018 Esprit. All rights reserved.
 //
-
 import UIKit
+import Alamofire
+import SwiftyJSON
+import PopupDialog
+import Cosmos
 
-private let reuseIdentifier = "Cell"
 
-class PrivateOfferViewController: UICollectionViewController {
+
+
+class PrivateOfferViewController: UIViewController{
+    private let reuseIdentifier = "Cell"
+    var offerId:String?="5"
     
-    fileprivate let formatter1: DateFormatter = {
+    @IBAction func btnClick(_ sender: Any) {
+        makeOfferPublic(idRequest: offerId!)
+        
+        
+    }
+    @IBOutlet weak var fullName: UILabel!
+    @IBOutlet weak var rate: CosmosView!
+    @IBOutlet weak var imgProfil: UIImageView!
+    @IBOutlet weak var offerDuration: UILabel!
+    @IBOutlet weak var offerDate: UILabel!
+    @IBOutlet weak var offerDescription: UILabel!
+    var offer:JSON? = nil
+
+    fileprivate let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return formatter
     }()
     
+    
     fileprivate let formatter2: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.dateFormat =  "h:mm a"
         return formatter
     }()
 
+    
 
+    
+    func makeOfferPublic(idRequest:String)   {
+        Alamofire.request(AppDelegate.serverUrl+"makeOfferPublic", method: .post , parameters: ["offer_id": idRequest ])
+            
+            .responseJSON { response in
+                print("Response String: \(response.result.value)")
+                
+                if let json = response.data {
+                    let data = JSON(data: json)
+                    
+                    if(data["error"].bool)!{
+                       
+                    
+                    return
+                    }
+                    
+                    //pending
+                    let destination = UIStoryboard(name: "Main", bundle: nil) .
+                        instantiateViewController(withIdentifier: "Requests") as? RequestsViewController
+                    
+                    
+                    destination?.offer=self.offer
+                    
+                    self.navigationController?.pushViewController(destination!, animated: true)
+                    
+                    
+                    
+                    //sucesss
+                }
+                
+                
+        }
+ }
+    
+    
+    
+    func getOffer(idUser:String)   {
+        Alamofire.request(AppDelegate.serverUrl+"getOffer3", method: .post , parameters: ["id_offer": idUser])
+            
+            .responseJSON { response in
+                print("Response String: \(response.result.value)")
+                
+                if let json = response.data {
+                    
+                    
+                    
+                    let data = JSON(data: json)
+                    let error = data["error"].boolValue
+                    if(error){
+                        
+                        return
+                    }
+                    
+                    let offer = data["offer"]
+                    
+                    let url = URL(string: "http://localhost:8888/images/" + offer["photo"].stringValue)
+                    self.imgProfil.kf.setImage(with: url)
+                    self.userId=offer["id_user"].stringValue
+                    
+                    self.fullName.text=(offer["firstName"].stringValue) + " " + (offer["lastName"].stringValue)
+                  
+                    self.rate.rating=offer["rate"].doubleValue
+                    
+                    print("")
+                    
+                }
+                
+                
+        }
+        
+        
+    }
+    
+    var userId:String? = nil    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        offerDescription.text=offer?["description"].stringValue
+        var strStart = offer?["start"].stringValue
+        var strEnd=offer?["end"].stringValue
+          offerId=offer?["id"].stringValue
+        
+        
+        let dateStart=formatter.date(from: strStart!)
+        let dateEnd=formatter.date(from: strEnd!)
+        
+        
+        
+        strStart=formatter2.string(from: dateStart!)
+        strEnd=formatter2.string(from: dateEnd!)
+        
+        
+        
+        formatter2.dateFormat="E"
+        let day=formatter2.string(from: dateStart!)
+        
+        offerDate.text=day+" at "+strStart!+" to " + strEnd!
+        
+        offerDuration.text=dateEnd?.offsetFrom(date: dateStart!)
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+          getOffer(idUser: offerId!)
+      
 
         // Do any additional setup after loading the view.
     }
@@ -42,67 +157,9 @@ class PrivateOfferViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
-        // Configure the cell
     
-        return cell
-    }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
-    }
-    */
+
 
 }

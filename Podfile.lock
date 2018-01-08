@@ -9,8 +9,10 @@ PODS:
     - PINRemoteImage/PINCache
   - Cosmos (8.0.2)
   - DatePickerDialog (2.0)
+  - EasyNotificationBadge (1.0.3)
   - FoldingCell (2.1.3)
   - FSCalendar (2.7.9)
+  - INSNibLoading (1.0.2)
   - INSPhotoGallery (1.2.3)
   - Kingfisher (3.13.1)
   - NMessenger (1.0.80):
@@ -41,8 +43,10 @@ DEPENDENCIES:
   - Alamofire (~> 4.0)
   - Cosmos (from `https://github.com/marketplacer/Cosmos.git`, tag `8.0.2`)
   - DatePickerDialog
+  - EasyNotificationBadge
   - FoldingCell
   - FSCalendar
+  - INSNibLoading
   - INSPhotoGallery
   - Kingfisher (~> 3.13.1)
   - NMessenger
@@ -75,8 +79,10 @@ SPEC CHECKSUMS:
   AsyncDisplayKit: 1585f6cd0531ae9b30476f5912f577b73ebcb0e4
   Cosmos: 83d7e1c5289839a954dfa45376a11e9a9cef0a13
   DatePickerDialog: 5e1c24d9fe6506cd45dbc573eed7b0a251b1c09d
+  EasyNotificationBadge: 7da13ae3e2f139ee458461983d960a45f231f94c
   FoldingCell: f3073f8b24cf20866a35198f31e3b67aea64e96e
   FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
+  INSNibLoading: 0244d5b9c30d4642c77b31469cbfd905e8b1efb3
   INSPhotoGallery: 2c07e4a5b5be1b4fd49c0c1f16eed28c6fe8a15d
   Kingfisher: ed9707a409cc47fddafbcd12a43a9757e3600af5
   NMessenger: ca6a89073ca40d3868cf45505f6f8318853afd40
@@ -91,6 +97,6 @@ SPEC CHECKSUMS:
   UIFloatLabelTextField: c1df7d4e688a1bd52738513f961df16f94914367
   XLPagerTabStrip: 87b8b705f9a7178e76a063ffaa2d70045944a965
 
-PODFILE CHECKSUM: bfa5b82712bcace07e71097e59e7a34b83600da4
+PODFILE CHECKSUM: 82605976d226b958d26d523bd36abece29f678c3
 
 COCOAPODS: 1.3.1

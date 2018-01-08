@@ -8,10 +8,13 @@
 
 import UIKit
 import INSNibLoading
-import INSPhotoGalleryFramework
+import INSPhotoGallery
+// galleryPreview.overlayView = CustomOverlayView(frame: CGRect.zero)
+
 
 class CustomOverlayView: INSNibLoadedView {
     weak var photosViewController: INSPhotosViewController?
+    
     
     // Pass the touches down to other views
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
@@ -22,6 +25,23 @@ class CustomOverlayView: INSNibLoadedView {
     }
     
     @IBAction func closeButtonTapped(_ sender: AnyObject) {
+     
+        
+        let k =  photosViewController as? EditPhotosViewController
+
+        
+        let d = k?.galleryPreview?.currentPhoto
+        
+        
+    
+        
+        /*
+        var dataInPhone = [NSManagedObject]()    // Here is data to update
+        ...
+        if let index = dataInPhone.indexOf({$0.objectID == anObject.objectID}) {
+            dataInPhone[index] = anObject as! NSManagedObject
+        }
+ */
         photosViewController?.dismiss(animated: true, completion: nil)
     }
 }
