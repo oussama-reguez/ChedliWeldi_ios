@@ -23,7 +23,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("")
         
        // let textFieldframe1 = CGRect(origin: CGPoint(x: 10,y :40), size: CGSize(width: 200, height: 45))
         //let textField1 = SkyFloatingLabelTextFieldWithIcon(frame: textFieldframe1)
