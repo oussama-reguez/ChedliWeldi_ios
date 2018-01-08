@@ -103,6 +103,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
             Alamofire.request(AppDelegate.serverUrlTaha+"login", method: .post, parameters: parameters).responseJSON { response in
                 print(response)
                 
+                
                 switch response.result {
                 case .success(let JSON):
                     print(JSON)
