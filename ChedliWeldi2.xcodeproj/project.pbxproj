@@ -25,7 +25,6 @@
 		0FDE30682002AC4200D4DEFB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE30672002AC4200D4DEFB /* LoginViewController.swift */; };
 		3579E74D0AD465DAE096ED59 /* Pods_ChedliWeldi2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C938081B4006F4907E99A8CE /* Pods_ChedliWeldi2.framework */; };
 		5A0023821FB8849000314156 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0023811FB8849000314156 /* AppDelegate.swift */; };
-		5A0023841FB8849000314156 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0023831FB8849000314156 /* ViewController.swift */; };
 		5A0023871FB8849000314156 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0023851FB8849000314156 /* Main.storyboard */; };
 		5A00238A1FB8849000314156 /* ChedliWeldi2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A0023881FB8849000314156 /* ChedliWeldi2.xcdatamodeld */; };
 		5A00238C1FB8849000314156 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A00238B1FB8849000314156 /* Assets.xcassets */; };
@@ -53,6 +52,7 @@
 		5A4E80DA2003FB10003EA9C2 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C0125200180A4002AE7B3 /* UITableViewCell.swift */; };
 		5A4E80DB2003FFDC003EA9C2 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDE30652002AC3500D4DEFB /* LoginStoryboard.storyboard */; };
 		5A4E80DC20040033003EA9C2 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FE9B3DE2003C351005AB7F9 /* fontawesome-webfont.ttf */; };
+		5A4E80E020040C0F003EA9C2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E80DF20040C0F003EA9C2 /* SignUpViewController.swift */; };
 		5A583B381FE06A63002E3372 /* InterfaceBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A583B371FE06A63002E3372 /* InterfaceBuilderViewController.swift */; };
 		5A5939111FC0E71D00FF5DA6 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5939101FC0E71D00FF5DA6 /* UserNotifications.framework */; };
 		5A5939131FC0E71D00FF5DA6 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5939121FC0E71D00FF5DA6 /* UserNotificationsUI.framework */; };
@@ -149,7 +149,6 @@
 		0FE9B3DE2003C351005AB7F9 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		5A00237E1FB8849000314156 /* ChedliWeldi2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChedliWeldi2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A0023811FB8849000314156 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A0023831FB8849000314156 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5A0023861FB8849000314156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A0023891FB8849000314156 /* ChedliWeldi2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChedliWeldi2.xcdatamodel; sourceTree = "<group>"; };
 		5A00238B1FB8849000314156 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,6 +170,7 @@
 		5A2335401FBBB55E00EFEC12 /* CreateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
 		5A2335421FBBC15D00EFEC12 /* OffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
 		5A4AC4841FC4A2B800A1B989 /* MyOffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOffersViewController.swift; sourceTree = "<group>"; };
+		5A4E80DF20040C0F003EA9C2 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5A583B371FE06A63002E3372 /* InterfaceBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceBuilderViewController.swift; sourceTree = "<group>"; };
 		5A59390A1FC0C44500FF5DA6 /* ChedliWeldi2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChedliWeldi2.entitlements; sourceTree = "<group>"; };
 		5A59390F1FC0E71D00FF5DA6 /* notification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = notification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,7 +291,6 @@
 				5A59390A1FC0C44500FF5DA6 /* ChedliWeldi2.entitlements */,
 				5A0023811FB8849000314156 /* AppDelegate.swift */,
 				5A0F0D182000E7E200E76CEF /* babysitter */,
-				5A0023831FB8849000314156 /* ViewController.swift */,
 				5A0023851FB8849000314156 /* Main.storyboard */,
 				5A0F0D2320010A6A00E76CEF /* CollectionViewController.swift */,
 				5AD98F471FD73858008F4AA8 /* ProfileViewController.swift */,
@@ -302,7 +301,6 @@
 				5A071ED31FC5ED9D00B9411A /* RequestDialogViewController.swift */,
 				5AD98F501FD778F2008F4AA8 /* FavoritesDialogViewController.swift */,
 				5A06F9111FCE15E40029B99A /* RatingDialogViewController.swift */,
-				5ADA4AC21FB8A13D00D4D3F3 /* CreateAccountViewController.swift */,
 				5A0023961FB8873100314156 /* SignUpTypeViewController.swift */,
 				5AD98F4E1FD77845008F4AA8 /* favoritesDialog.xib */,
 				5A06F90F1FCE0D860029B99A /* RatingDialog.xib */,
@@ -313,7 +311,6 @@
 				5AEAE4401FBB9B48007798EE /* SkyFloatingLabelExtension.swift */,
 				5ADF89BE1FBE480500C2FCD3 /* DemoCell.swift */,
 				5AEAE4421FBBA58C007798EE /* Tex.swift */,
-				5A2335401FBBB55E00EFEC12 /* CreateProfileViewController.swift */,
 				5A2335421FBBC15D00EFEC12 /* OffersViewController.swift */,
 				5ADF89901FBE1FF700C2FCD3 /* TableViewCell.swift */,
 				5ADF89921FBE260300C2FCD3 /* TestingViewController.swift */,
@@ -399,6 +396,9 @@
 		5AC2C54E20034BF80008BFB4 /* accout */ = {
 			isa = PBXGroup;
 			children = (
+				5A4E80DF20040C0F003EA9C2 /* SignUpViewController.swift */,
+				5A2335401FBBB55E00EFEC12 /* CreateProfileViewController.swift */,
+				5ADA4AC21FB8A13D00D4D3F3 /* CreateAccountViewController.swift */,
 				5AD715A52003C6E200D24E61 /* SettingsTableViewController.swift */,
 				5AC2C54F20034C850008BFB4 /* EditPhotosViewController.swift */,
 				5AC2C553200384B90008BFB4 /* ChangePasswordViewController.swift */,
@@ -681,6 +681,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A4E80E020040C0F003EA9C2 /* SignUpViewController.swift in Sources */,
 				5A0F0D2420010A6A00E76CEF /* CollectionViewController.swift in Sources */,
 				5AD98F441FD71497008F4AA8 /* YoutubeExampleViewController.swift in Sources */,
 				5ADCABA81FD36B90000062AD /* ChildExampleViewController.swift in Sources */,
@@ -717,7 +718,6 @@
 				0FDE30682002AC4200D4DEFB /* LoginViewController.swift in Sources */,
 				5ADCAB981FD349A0000062AD /* PhotosViewController.swift in Sources */,
 				5A0F0D2620012F6A00E76CEF /* PrivateOfferViewController.swift in Sources */,
-				5A0023841FB8849000314156 /* ViewController.swift in Sources */,
 				5A06F9121FCE15E40029B99A /* RatingDialogViewController.swift in Sources */,
 				5A115C3B20018379006A8F7B /* ScheduledBabysitterOfferViewController.swift in Sources */,
 				5ADCAB9C1FD35089000062AD /* ExampleCollectionViewCell.swift in Sources */,
