@@ -16,11 +16,11 @@ import PopupDialog
 class MapViewController: UIViewController , MKMapViewDelegate,CLLocationManagerDelegate,YALTabBarDelegate{
     var userLocation:CLLocation!
     @IBOutlet weak var map: MKMapView!
-    var babysitters:[JSON]? = nil
+    var babysitters:[JSON]!
     var circle:MKCircle? = nil
     var locationManager: CLLocationManager!
     var annotations : [MKAnnotation] = []
-    var rad : CLLocationDistance = 10000
+    var rad : CLLocationDistance = 100000
     override func viewDidLoad() {
         super.viewDidLoad()
         map.delegate = self
@@ -96,7 +96,7 @@ class MapViewController: UIViewController , MKMapViewDelegate,CLLocationManagerD
             
             let marker = BabySitterPin(title: babysitter["firstname"].stringValue + " " + babysitter["lastname"].stringValue,
                                   locationName: babysitter["descr"].stringValue,
-                                  discipline: "Babysitter",
+                                  discipline: babysitter["id"].stringValue,
                                   coordinate: CLLocationCoordinate2D(latitude: Double((babysitter["altitude"].stringValue))!, longitude: Double((babysitter["longitude"].stringValue))!))
             let bbcoordinate = CLLocation(latitude: Double((babysitter["altitude"].stringValue))!, longitude: Double((babysitter["longitude"].stringValue))!)
 
@@ -168,7 +168,7 @@ class MapViewController: UIViewController , MKMapViewDelegate,CLLocationManagerD
 
     }
     func displayDialog() {
-        let vc = FiltreViewController(nibName: "RequestDialog", bundle: nil)
+        let vc = FiltreViewController(nibName: "FiltreDialog", bundle: nil)
         
         
         // vc.photo.kf.setImage(with: url)        // Present dialog
@@ -184,6 +184,14 @@ class MapViewController: UIViewController , MKMapViewDelegate,CLLocationManagerD
         
         // Create second button
         let buttonTwo = DefaultButton(title: "Accept", height: 60) {
+            print(vc.getVal())
+            self.rad = CLLocationDistance(vc.getVal())
+            //apply filtres
+            self.map.remove(self.circle!)
+            self.map.removeAnnotations(self.annotations)
+            self.circle = MKCircle(center: (self.userLocation.coordinate), radius: self.rad)
+            self.map.add(self.circle!)
+            self.populateMap()
             
         }
         
@@ -195,6 +203,46 @@ class MapViewController: UIViewController , MKMapViewDelegate,CLLocationManagerD
         
         
     }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        // do something
+        let marker = view.annotation as! BabySitterPin
+        print("Taped \(marker.discipline)")
+        displayDialog(request: babysitters[0])
+    }
+    
+    func displayDialog(request:JSON) {
+        let vc = RequestDialogViewController(nibName: "RequestDialog", bundle: nil)
+        vc.request = request
+        
+        
+        // vc.photo.kf.setImage(with: url)        // Present dialog
+        
+        
+        // Create the dialog
+        let popup = PopupDialog(viewController: vc, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true)
+        
+        // Create first button
+        let buttonOne = CancelButton(title: "CANCEL", height: 60) {
+            
+        }
+        
+        // Create second button
+        let buttonTwo = DefaultButton(title: "Hire", height: 60) {
+            let content = self.storyboard!.instantiateViewController(withIdentifier: "AddJob") as! AddJobViewController
+            content.bbyId = request["id"].stringValue
+            self.present(content, animated: true, completion: nil)
+        }
+        
+        // Add buttons to dialog
+        popup.addButtons([buttonOne, buttonTwo])
+        
+        // Present dialog
+        self.present(popup, animated: true, completion: nil)
+        
+        
+    }
+
 
 }
 

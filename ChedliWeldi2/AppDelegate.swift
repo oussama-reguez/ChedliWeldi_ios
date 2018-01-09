@@ -11,6 +11,7 @@ import CoreData
 import UserNotifications
 import FoldingTabBar
 import Onboard
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate {
 
@@ -28,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
         // Override point for customization after application launch.
         registerForRemoteNotification()
         setupYALTabBarController()
+        
         let firstPage = OnboardingContentViewController(title: "Chedli Weldi !", body: "Your best companion for finding a babysitter nearby easily.", image: nil,buttonText: nil,action: nil)
         
         let thirdPage = OnboardingContentViewController(title: "Fast & Easy", body: "With Chedliweldi you can hire a babysitter in less than 5 minutes !", image: nil,buttonText: nil,action: nil)
