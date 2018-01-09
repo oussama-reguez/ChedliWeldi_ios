@@ -163,40 +163,37 @@ class MapViewController: UIViewController , MKMapViewDelegate,CLLocationManagerD
         self.present(popup, animated: true, completion: nil)
         
         */
-        
-        
-        // Create our custom view controller programatically
-        let vc = FiltreViewController(nibName: nil, bundle: nil)
-        
-        // Create the PopupDialog with a completion handler,
-        // called whenever the dialog is dismissed
-        let popup = PopupDialog(viewController: vc, gestureDismissal: false) {
-            print("User selected city: ")
-        }
-        
-        // Create a cancel button for the dialog,
-        // including a button action
-        let cancel = CancelButton(title: "Cancel") {
-            print("User did not select a city")
-        }
-        let ok = DefaultButton(title: "Ok") {
-            print("Ok"")
-        }
-        
-        
-        // Add the cancel button we just created to the dialog
-        popup.addButton(cancel)
-        
-        // Moreover, we set a list of cities on our custom view controller
-        
-        // We also pass a reference to our PopupDialog to our custom view controller
-        // This way, we can dismiss and manipulate it from there
-        vc.popup = popup
-        
-        // Last but not least: present the PopupDialog
-        present(popup, animated: true, completion: nil)
+        displayDialog()
         
 
+    }
+    func displayDialog() {
+        let vc = FiltreViewController(nibName: "RequestDialog", bundle: nil)
+        
+        
+        // vc.photo.kf.setImage(with: url)        // Present dialog
+        
+        
+        // Create the dialog
+        let popup = PopupDialog(viewController: vc, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true)
+        
+        // Create first button
+        let buttonOne = CancelButton(title: "CANCEL", height: 60) {
+            
+        }
+        
+        // Create second button
+        let buttonTwo = DefaultButton(title: "Accept", height: 60) {
+            
+        }
+        
+        // Add buttons to dialog
+        popup.addButtons([buttonOne, buttonTwo])
+        
+        // Present dialog
+        self.present(popup, animated: true, completion: nil)
+        
+        
     }
 
 }
