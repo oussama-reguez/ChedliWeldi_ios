@@ -21,14 +21,28 @@ class ProfileViewController: UIViewController {
      var image:UIImage?=nil
     
 
+    func messageAction(_ sender:UITapGestureRecognizer){
+        
+        let destination = UIStoryboard(name: "Main", bundle: nil) .
+            instantiateViewController(withIdentifier: "chat") as? ChatViewController
+        destination?.idSender=idUser
+        self.navigationController?.pushViewController(destination!, animated: true)
+        
+    }
+    
     override func viewDidLoad() {
         btnRate.layer.borderWidth = 2
         btnRate.layer.borderColor = UIColor.white.cgColor
         profilImage.image=image
+        profilImage.makeItRound()
         profilName.text=fullName
         btnChat.layer.borderWidth = 2
         btnChat.layer.borderColor = UIColor.white.cgColor
         
+        
+        let gestureMessage = UITapGestureRecognizer(target: self, action: #selector(self.messageAction(_:)))
+        
+        btnChat.addGestureRecognizer(gestureMessage)
         btnFavorite.layer.borderWidth = 2
         btnFavorite.layer.borderColor = UIColor.white.cgColor
         

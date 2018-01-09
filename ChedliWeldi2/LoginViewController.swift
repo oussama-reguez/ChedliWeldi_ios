@@ -120,10 +120,19 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
                         // .shake: when you want to reflect to the user that the task did not complete successfly
                         // .normal
                         self.button.stopAnimation(animationStyle: .expand, completion: {
-                            let testController = UIStoryboard(name: "ParentStoryboard", bundle: nil).instantiateViewController(withIdentifier: "Home") as! YALFoldingTabBarController
-                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                            appDelegate.window?.rootViewController = testController
-                            self.present(testController, animated: true, completion: nil)
+                            let userType = response["type"]!
+                            if("\(userType)" == "Parent"){
+                                
+                                let testController = UIStoryboard(name: "ParentStoryboard", bundle: nil).instantiateViewController(withIdentifier: "Home") as! YALFoldingTabBarController
+                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                appDelegate.window?.rootViewController = testController
+                                self.present(testController, animated: true, completion: nil)                            }
+                            else {
+                                let testController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BBHome") as! YALFoldingTabBarController
+                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                appDelegate.window?.rootViewController = testController
+                                self.present(testController, animated: true, completion: nil)                            }
+                            
                         })
                     })
                 case .failure(let error):

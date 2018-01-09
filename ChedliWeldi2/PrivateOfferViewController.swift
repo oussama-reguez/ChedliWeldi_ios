@@ -18,6 +18,7 @@ class PrivateOfferViewController: UIViewController{
     private let reuseIdentifier = "Cell"
     var offerId:String?="5"
     
+    @IBOutlet weak var imgMessage: UIImageView!
     @IBAction func btnClick(_ sender: Any) {
         makeOfferPublic(idRequest: offerId!)
         
@@ -103,6 +104,7 @@ class PrivateOfferViewController: UIViewController{
                     
                     let url = URL(string: "http://localhost:8888/images/" + offer["photo"].stringValue)
                     self.imgProfil.kf.setImage(with: url)
+                    self.imgProfil.makeItRound()
                     self.userId=offer["id_user"].stringValue
                     
                     self.fullName.text=(offer["firstName"].stringValue) + " " + (offer["lastName"].stringValue)
@@ -119,10 +121,43 @@ class PrivateOfferViewController: UIViewController{
         
     }
     
+    func tapAction(_ sender:UITapGestureRecognizer){
+        let vc = UIStoryboard(name: "Main", bundle: nil) .
+            instantiateViewController(withIdentifier: "Profile") as? ProfileViewController
+        
+        //vc?.image=photo.image
+        //vc?.fullName=name.text!
+        
+        let id = offer?["id_user"].stringValue
+        vc?.idUser=id!
+        vc?.image=imgProfil.image
+        
+        
+        self.present(vc!, animated:true, completion:nil)
+    }
+    
+    
+    func messageAction(_ sender:UITapGestureRecognizer){
+         let id = offer?["id_user"].stringValue
+        
+        let destination = UIStoryboard(name: "Main", bundle: nil) .
+            instantiateViewController(withIdentifier: "chat") as? ChatViewController
+        destination?.idSender=id!
+        self.navigationController?.pushViewController(destination!, animated: true)
+        
+    }
+    
+    
     var userId:String? = nil    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(self.tapAction(_:)))
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(self.messageAction(_:)))
+        
+        imgProfil.addGestureRecognizer(gesture)
+        imgMessage.addGestureRecognizer(gesture2)
         
         offerDescription.text=offer?["description"].stringValue
         var strStart = offer?["start"].stringValue

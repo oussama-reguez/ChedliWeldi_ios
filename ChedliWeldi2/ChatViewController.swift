@@ -158,7 +158,7 @@ class ChatViewController: NMessengerViewController {
         //END BOOTSTRAPPING OF MESSAGES
         var timer = Timer.scheduledTimer(timeInterval: 5, target: self,selector: "execute", userInfo: nil, repeats: true)
         
-        getConversation(idSender: "5", idReceiver: "19")
+        getConversation(idSender: idSender, idReceiver: AppDelegate.userId)
         
     }
 

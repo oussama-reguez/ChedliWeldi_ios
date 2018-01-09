@@ -9,10 +9,12 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import PopupDialog
+import MapKit
 
 
 
 class PrivateOfferRequestViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var mapView: MKMapView!
     var offers:[JSON]? = nil
 
     private let reuseIdentifier = "Cell"
@@ -57,9 +59,14 @@ class PrivateOfferRequestViewController: UIViewController ,UITableViewDelegate, 
 
     
     
-
+        
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
         
         offerDescription.text=offer?["description"].stringValue
         var strStart = offer?["start"].stringValue
@@ -181,7 +188,21 @@ class PrivateOfferRequestViewController: UIViewController ,UITableViewDelegate, 
                     
                     let url = URL(string: "http://localhost:8888/images/" + offer["photo"].stringValue)
                     self.imgProfil.kf.setImage(with: url)
+                    self.imgProfil.makeItRound()
                     self.userId=offer["id_user"].stringValue
+                    
+                    self.fullName.text=(offer["firstName"].stringValue) + " " + (offer["lastName"].stringValue)
+                    
+                    let longitude=offer["longitude"].doubleValue
+                    let altitude=offer["altitude"].doubleValue
+                    let initialLocation = CLLocation(latitude: altitude, longitude: longitude)
+                    
+                    let place = Place(title: "Sitting location",
+                                      coordinate: CLLocationCoordinate2D(latitude: altitude, longitude: longitude),info: "info")
+                    self.mapView.addAnnotation(place)
+                    
+                    self.centerMapOnLocation(location: initialLocation)
+                    
                     print("")
                     
                 }
@@ -226,6 +247,13 @@ class PrivateOfferRequestViewController: UIViewController ,UITableViewDelegate, 
 
 }
     
+    
+    let regionRadius: CLLocationDistance = 1000
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+                                                                  regionRadius, regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
     
     func acceptRequest(idRequest:String )   {
         Alamofire.request(AppDelegate.serverUrl+"acceptPrivateOffer", method: .post , parameters: ["offer_id": idRequest  ])

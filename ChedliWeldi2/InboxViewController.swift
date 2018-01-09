@@ -44,7 +44,7 @@ class InboxViewController: UIViewController ,UITableViewDelegate, UITableViewDat
   
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        table.tableFooterView = UIView() 
         getInbox(id: "5")
        
         // Do any additional setup after loading the view.

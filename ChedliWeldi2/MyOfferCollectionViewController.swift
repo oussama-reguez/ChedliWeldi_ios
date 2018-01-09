@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import EasyNotificationBadge
 
-class MyOfferCollectionViewController: UIViewController,UICollectionViewDelegate ,UICollectionViewDataSource {
+class MyOfferCollectionViewController: UIViewController,UICollectionViewDelegate ,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
 
     
     @IBOutlet weak var table: UICollectionView!
@@ -24,6 +24,8 @@ class MyOfferCollectionViewController: UIViewController,UICollectionViewDelegate
     @IBOutlet weak var test: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title="My offers"
         
               formatter = DateFormatter()
         formatter2 = DateFormatter()
@@ -77,6 +79,7 @@ class MyOfferCollectionViewController: UIViewController,UICollectionViewDelegate
         
         
         let state:UILabel =   cell.viewWithTag(102) as! (UILabel)
+         let lblPrivate:UIImageView =   cell.viewWithTag(400) as! (UIImageView)
         
         let date :UILabel =   cell.viewWithTag(101) as! (UILabel)
         
@@ -121,7 +124,10 @@ class MyOfferCollectionViewController: UIViewController,UICollectionViewDelegate
         
         let k = offer?["requested_babysitter"].stringValue
         if( k?.isEmpty == false ){
-             state.text="PRIVATE"
+            
+             isEnable=false
+            lblPrivate.isHidden=false
+             
         }
         
         
@@ -163,6 +169,11 @@ class MyOfferCollectionViewController: UIViewController,UICollectionViewDelegate
         
         
         return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+return CGSize(width: CGFloat(100), height: CGFloat(125))
     }
     
     

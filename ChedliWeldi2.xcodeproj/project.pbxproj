@@ -34,6 +34,7 @@
 		5A06F9101FCE0D860029B99A /* RatingDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A06F90F1FCE0D860029B99A /* RatingDialog.xib */; };
 		5A06F9121FCE15E40029B99A /* RatingDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A06F9111FCE15E40029B99A /* RatingDialogViewController.swift */; };
 		5A071ED41FC5ED9D00B9411A /* RequestDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A071ED31FC5ED9D00B9411A /* RequestDialogViewController.swift */; };
+		5A0D78722004864600B78337 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D78712004864600B78337 /* Place.swift */; };
 		5A0F0D1C2000EDE100E76CEF /* ViewCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F0D1B2000EDE100E76CEF /* ViewCorner.swift */; };
 		5A0F0D222000FF2900E76CEF /* MyOfferCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F0D212000FF2900E76CEF /* MyOfferCollectionViewController.swift */; };
 		5A0F0D2420010A6A00E76CEF /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F0D2320010A6A00E76CEF /* CollectionViewController.swift */; };
@@ -162,6 +163,7 @@
 		5A06F90F1FCE0D860029B99A /* RatingDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingDialog.xib; sourceTree = "<group>"; };
 		5A06F9111FCE15E40029B99A /* RatingDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingDialogViewController.swift; sourceTree = "<group>"; };
 		5A071ED31FC5ED9D00B9411A /* RequestDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestDialogViewController.swift; sourceTree = "<group>"; };
+		5A0D78712004864600B78337 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		5A0F0D1B2000EDE100E76CEF /* ViewCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCorner.swift; sourceTree = "<group>"; };
 		5A0F0D212000FF2900E76CEF /* MyOfferCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOfferCollectionViewController.swift; sourceTree = "<group>"; };
 		5A0F0D2320010A6A00E76CEF /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				5AEAE11E1FCE1934001CFD55 /* DemoViewController.swift */,
 				5A0F0D212000FF2900E76CEF /* MyOfferCollectionViewController.swift */,
 				5A0F0D2520012F6900E76CEF /* PrivateOfferViewController.swift */,
+				5A0D78712004864600B78337 /* Place.swift */,
 			);
 			path = ChedliWeldi2;
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 				5ADCAB9C1FD35089000062AD /* ExampleCollectionViewCell.swift in Sources */,
 				0FDE30582002716500D4DEFB /* AddTaskViewController.swift in Sources */,
 				5A8060871FF15E6D007D5700 /* InboxViewController.swift in Sources */,
+				5A0D78722004864600B78337 /* Place.swift in Sources */,
 				5ADCABAB1FD36C63000062AD /* YoutubeIconCell.swift in Sources */,
 				5A115C3E20019083006A8F7B /* MyPrivateOffersViewController.swift in Sources */,
 				5ADF89911FBE1FF700C2FCD3 /* TableViewCell.swift in Sources */,

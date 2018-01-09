@@ -16,7 +16,10 @@ class MyPrivateOffersViewController: UIViewController ,UITableViewDelegate, UITa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated:true)       
+       title="private requests"
+        
+        self.navigationItem.setHidesBackButton(true, animated:true)
+        table.tableFooterView = UIView()
 
         // Do any additional setup after loading the view.
     }
@@ -59,13 +62,19 @@ class MyPrivateOffersViewController: UIViewController ,UITableViewDelegate, UITa
         let offer = offers?[indexPath.row]
         
      let lbl1:UILabel =   cell.viewWithTag(103) as! (UILabel)
+         let creation:UILabel =   cell.viewWithTag(400) as! (UILabel)
         let description:UILabel =   cell.viewWithTag(102) as! (UILabel)
          let img:UIImageView=cell.viewWithTag(101) as! (UIImageView)
        
         description.text=offer?["description"].stringValue
+        description.sizeToFit()
+        let strCreate=offer?["createDate"].stringValue
+        let dateCreation=formatter.date(from:strCreate!)
+        creation.text=Date().minOffsetFrom(date: dateCreation!)
         
         let url = URL(string: AppDelegate.serverImage + (offer?["photo"].stringValue)!)
         img.kf.setImage(with: url)
+        img.makeItRound()
         lbl1.text=(offer?["firstName"].stringValue)! + " " + (offer?["lastName"].stringValue)!
         
         /*
@@ -84,6 +93,12 @@ class MyPrivateOffersViewController: UIViewController ,UITableViewDelegate, UITa
         return cell
         
     }
+    
+    fileprivate let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return formatter
+    }()
     
     func getOffers(id:String)   {
         Alamofire.request(AppDelegate.serverUrl+"getPrivateOffers", method: .post , parameters: ["user_id": id ])

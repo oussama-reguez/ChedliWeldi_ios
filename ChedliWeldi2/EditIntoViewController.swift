@@ -146,6 +146,7 @@ class EditIntoViewController: UIViewController ,  UIImagePickerControllerDelegat
                     
                     let url = URL(string: AppDelegate.serverImage + user["photo"].stringValue)
                     self.photo.kf.setImage(with: url)
+                    self.photo.makeItRound()
                     //self.userId=offer["id_user"].stringValue
                     
                     self.firstName.text=user["firstName"].stringValue

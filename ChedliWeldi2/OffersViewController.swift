@@ -11,6 +11,7 @@ import FoldingCell
 import Alamofire
 import SwiftyJSON
 import Kingfisher
+import MapKit
 
 
 class OffersViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource  {
@@ -133,6 +134,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     let from:UILabel =   cell.viewWithTag(107) as! (UILabel)
     let to:UILabel =   cell.viewWithTag(108) as! (UILabel)
     let duration:UILabel =   cell.viewWithTag(110) as! (UILabel)
+     let mapView:MKMapView =   cell.viewWithTag(802) as! (MKMapView)
      let date:UILabel =   cell.viewWithTag(109) as! (UILabel)
     let nbrRequests:UILabel =   cell.viewWithTag(111) as! (UILabel)
     
@@ -189,8 +191,15 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     
     
     
+    let longitude=offer?["longitude"].doubleValue
+    let altitude=offer?["altitude"].doubleValue
+    let initialLocation = CLLocation(latitude: altitude!, longitude: longitude!)
     
+    let place = Place(title: "Sitting location",
+                      coordinate: CLLocationCoordinate2D(latitude: altitude!, longitude: longitude!),info: "info")
+    mapView.addAnnotation(place)
     
+    self.centerMapOnLocation(location: initialLocation, map: mapView)
     
     
         return cell
@@ -203,6 +212,14 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     var selectedRow:Int = 0
     var selectedOffer:JSON? = nil
     
+    
+    
+    let regionRadius: CLLocationDistance = 1000
+    func centerMapOnLocation(location: CLLocation,map:MKMapView) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+                                                                  regionRadius, regionRadius)
+        map.setRegion(coordinateRegion, animated: true)
+    }
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         

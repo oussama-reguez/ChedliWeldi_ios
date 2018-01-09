@@ -347,6 +347,7 @@ class InterfaceBuilderViewController: UIViewController, FSCalendarDataSource, FS
         
         let url = URL(string: AppDelegate.serverImage + offer!["photo"].stringValue)
          img.kf.setImage(with: url)
+        img.makeItRound()
         // img.image=#imageLiteral(resourceName: "man")
         
         

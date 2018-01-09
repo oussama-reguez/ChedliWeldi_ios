@@ -209,6 +209,7 @@ class RequestsViewController: UIViewController ,UITableViewDelegate, UITableView
         
         let image = URL(string: AppDelegate.serverImage + request!["photo"].stringValue)
         img.kf.setImage(with: image)
+        img.makeItRound()
 
        
         

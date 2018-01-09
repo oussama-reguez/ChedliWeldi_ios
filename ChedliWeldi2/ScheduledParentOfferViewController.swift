@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import PopupDialog
+import MapKit
 
 
 
@@ -44,7 +45,20 @@ class ScheduledParentOfferViewController: UIViewController ,UITableViewDelegate,
     }()
 
     
-
+    func tapAction(_ sender:UITapGestureRecognizer){
+        let vc = UIStoryboard(name: "Main", bundle: nil) .
+            instantiateViewController(withIdentifier: "Profile") as? ProfileViewController
+        
+        //vc?.image=photo.image
+        //vc?.fullName=name.text!
+        
+        let id = offer?["id_user"].stringValue
+        vc?.idUser=id!
+        vc?.image=imgProfil.image
+        
+        
+        self.present(vc!, animated:true, completion:nil)
+    }
     
     
     
@@ -52,7 +66,9 @@ class ScheduledParentOfferViewController: UIViewController ,UITableViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-              
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(self.tapAction(_:)))
+        
+        offerUser.addGestureRecognizer(gesture)
         offerDescription.text=offer?["description"].stringValue
         var strStart = offer?["start"].stringValue
         var strEnd=offer?["end"].stringValue
@@ -151,6 +167,14 @@ class ScheduledParentOfferViewController: UIViewController ,UITableViewDelegate,
     
     
     
+    let regionRadius: CLLocationDistance = 1000
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+                                                                  regionRadius, regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    @IBOutlet weak var mapView: MKMapView!
     
     func getOffer(idUser:String)   {
         Alamofire.request(AppDelegate.serverUrl+"getOffer", method: .post , parameters: ["id_offer": idUser])
@@ -173,9 +197,21 @@ class ScheduledParentOfferViewController: UIViewController ,UITableViewDelegate,
                     
                     let url = URL(string: "http://localhost:8888/images/" + offer["photo"].stringValue)
                     self.imgProfil.kf.setImage(with: url)
+                    self.imgProfil.makeItRound()
                     self.userId=offer["id_user"].stringValue
                     
                     self.fullName.text=(offer["firstName"].stringValue) + " " + (offer["lastName"].stringValue)
+                   
+                    let longitude=offer["longitude"].doubleValue
+                     let altitude=offer["altitude"].doubleValue
+                    let initialLocation = CLLocation(latitude: altitude, longitude: longitude)
+                    
+                    let place = Place(title: "Sitting location",
+                                          coordinate: CLLocationCoordinate2D(latitude: altitude, longitude: longitude),info: "info")
+                    self.mapView.addAnnotation(place)
+                    
+                    self.centerMapOnLocation(location: initialLocation)
+                    
                     print("")
                     
                 }

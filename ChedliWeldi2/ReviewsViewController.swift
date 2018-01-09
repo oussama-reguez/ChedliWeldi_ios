@@ -77,6 +77,7 @@ class ReviewsViewController: UIViewController , UITableViewDelegate, UITableView
         
         let url = URL(string: AppDelegate.serverImage + review["photo"].stringValue)
         img.kf.setImage(with: url)
+        img.makeItRound()
         lbl1.text=review["firstName"].stringValue + " " + review["lastName"].stringValue
         let stringDate=review["date"].stringValue
        
