@@ -159,6 +159,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     fullName.text=(offer?["firstName"].stringValue)! + " " + (offer?["lastName"].stringValue)!
     
     description.text=offer?["description"].stringValue
+    description.sizeToFit()
     var strStart = offer?["start"].stringValue
     var strEnd=offer?["end"].stringValue
      var strCreation=offer?["createDate"].stringValue

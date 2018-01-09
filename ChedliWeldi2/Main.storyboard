@@ -52,44 +52,52 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ysh-jH-Mns" userLabel="Foreground" customClass="RotatedView" customModule="FoldingCell">
-                                            <rect key="frame" x="20" y="7" width="280" height="165"/>
+                                            <rect key="frame" x="20" y="7" width="280" height="144"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="time_purple" translatesAutoresizingMaskIntoConstraints="NO" id="MIf-Nn-oDM">
-                                                    <rect key="frame" x="195" y="10" width="16" height="16"/>
+                                                    <rect key="frame" x="197" y="7" width="16" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ine-mk-SmE">
-                                                    <rect key="frame" x="80" y="47" width="129" height="45"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" i need a babysitter as soon as possible come one i really need it" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ine-mk-SmE">
+                                                    <rect key="frame" x="64" y="31" width="206" height="70"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.65533788069999999" green="0.65533788069999999" blue="0.65533788069999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5it-zo-45i">
-                                                    <rect key="frame" x="78" y="18" width="149" height="21"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="location-pin_purple" translatesAutoresizingMaskIntoConstraints="NO" id="kkg-OD-IQ1">
+                                                    <rect key="frame" x="224" y="116" width="16" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taha Douri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5it-zo-45i">
+                                                    <rect key="frame" x="64" y="10" width="133" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="133" id="SuC-KC-hTL"/>
+                                                        <constraint firstAttribute="height" constant="21" id="ojf-Aq-3ao"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rr3-Sr-eyl">
-                                                    <rect key="frame" x="219" y="8" width="53" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="St4-dc-LDe">
+                                                    <rect key="frame" x="246" y="115" width="53" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.65533788069999999" green="0.65533788069999999" blue="0.65533788069999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LcM-DG-6xG">
-                                                    <rect key="frame" x="8" y="8" width="64" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man" translatesAutoresizingMaskIntoConstraints="NO" id="LcM-DG-6xG">
+                                                    <rect key="frame" x="8" y="8" width="48" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="48" id="8wb-XV-bxl"/>
+                                                        <constraint firstAttribute="height" constant="48" id="YI5-e7-lrR"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="location-pin_purple" translatesAutoresizingMaskIntoConstraints="NO" id="kkg-OD-IQ1">
-                                                    <rect key="frame" x="195" y="137" width="16" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="St4-dc-LDe">
-                                                    <rect key="frame" x="217" y="136" width="53" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rr3-Sr-eyl">
+                                                    <rect key="frame" x="233" y="5" width="39" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="39" id="P0f-sD-aUU"/>
+                                                        <constraint firstAttribute="height" constant="21" id="Tpi-uR-QyQ"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.65533788069999999" green="0.65533788069999999" blue="0.65533788069999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -97,7 +105,15 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="165" id="5lE-Me-zpO"/>
+                                                <constraint firstAttribute="trailing" secondItem="Rr3-Sr-eyl" secondAttribute="trailing" constant="8" id="3Xh-ei-INN"/>
+                                                <constraint firstAttribute="height" constant="144" id="5lE-Me-zpO"/>
+                                                <constraint firstItem="LcM-DG-6xG" firstAttribute="top" secondItem="ysh-jH-Mns" secondAttribute="top" constant="8" id="DZq-Hj-TUc"/>
+                                                <constraint firstItem="5it-zo-45i" firstAttribute="leading" secondItem="LcM-DG-6xG" secondAttribute="trailing" constant="8" id="Rca-h7-ZUA"/>
+                                                <constraint firstItem="Ine-mk-SmE" firstAttribute="top" secondItem="5it-zo-45i" secondAttribute="bottom" id="SoK-g0-ANu"/>
+                                                <constraint firstItem="5it-zo-45i" firstAttribute="top" secondItem="ysh-jH-Mns" secondAttribute="top" constant="10" id="ews-nf-i9V"/>
+                                                <constraint firstItem="Ine-mk-SmE" firstAttribute="leading" secondItem="LcM-DG-6xG" secondAttribute="trailing" constant="8" id="iiW-iK-rcB"/>
+                                                <constraint firstItem="LcM-DG-6xG" firstAttribute="leading" secondItem="ysh-jH-Mns" secondAttribute="leading" constant="8" id="leM-cM-Hyf"/>
+                                                <constraint firstItem="Rr3-Sr-eyl" firstAttribute="top" secondItem="ysh-jH-Mns" secondAttribute="top" constant="5" id="pdE-jD-UgJ"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mnm-1V-oT1" userLabel="Container">
