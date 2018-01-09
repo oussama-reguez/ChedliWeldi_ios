@@ -47,7 +47,7 @@ class YalFoldingViewController: YALFoldingTabBarController ,YALTabBarDelegate{
         print("OK")
 
         let item1 = YALTabBarItem(itemImage: UIImage(named: "nearby_icon"), leftItemImage: nil,rightItemImage: UIImage(named: "edit_icon"))
-        let item2 = YALTabBarItem(itemImage: UIImage(named: "profile_icon"), leftItemImage: UIImage(named: "plus_icon"), rightItemImage: nil)
+        let item2 = YALTabBarItem(itemImage: UIImage(named: "profile_icon"), leftItemImage: UIImage(named: "plus_icon"), rightItemImage: UIImage(named: "search_icon"))
         tabBarController.leftBarItems = [item1, item2]
         
         

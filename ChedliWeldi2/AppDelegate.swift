@@ -11,6 +11,7 @@ import CoreData
 import UserNotifications
 import FoldingTabBar
 import Onboard
+import MapKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate {
@@ -22,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
     static var  connectedUser="5"
     static let serverImage="http://localhost:8888/images/"
     static var userId="30"
-    
+    static var userLocation : CLLocation!
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

@@ -61,7 +61,6 @@ class OngoingViewController: UIViewController,MKMapViewDelegate,UITableViewDeleg
                     for task in data.array! {
                         let t = Task(name: task["task"].stringValue,desc: task["details"].stringValue, from: task["time"].stringValue, to: "")
                         self.tasks.append(t)
-                        print("\(self.tasks.count)")
                         
                     }
                     self.tab.reloadData()

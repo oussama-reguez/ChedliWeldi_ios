@@ -11,20 +11,23 @@ import MapKit
 import Alamofire
 import SwiftyJSON
 import TransitionButton
-class AddJobViewController: UIViewController {
+import DateTimePicker
+class AddJobViewController: UIViewController ,UITextFieldDelegate{
 
     @IBOutlet weak var button: TransitionButton!
-    @IBOutlet weak var toTime: UILabel!
-    @IBOutlet weak var fromTime: UILabel!
-    @IBOutlet weak var jobDate: UILabel!
+    @IBOutlet weak var txtTo: UITextField!
+    @IBOutlet weak var txtFrom: UITextField!
     @IBOutlet weak var jobDescription: UITextView!
     @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var txtDate: UITextField!
     
     var jobId : String = "0"
     var bbyId : String? = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        txtTo.delegate = self
+        txtFrom.delegate = self
+        txtDate.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -53,15 +56,15 @@ class AddJobViewController: UIViewController {
 
     func AddJob(){
         let parameters: Parameters = [
-            "id": "30",
-            "desc": "qrestdyfughj",
-            "date":"2017-07-07",
-            "from":"08:00",
-            "to":"18:00",
-            "longi":"6.00",
-            "alt":"6.00"
+            "id": AppDelegate.userId,
+            "desc": jobDescription.text!,
+            "date": txtDate.text!,
+            "from": txtFrom.text!,
+            "to": txtTo.text!,
+            "longi":String(AppDelegate.userLocation.coordinate.longitude),
+            "alt":String(AppDelegate.userLocation.coordinate.latitude)
         ]
-        
+        print(parameters)
         // All three of these calls are equivalent
         Alamofire.request(AppDelegate.serverUrlTaha+"AddJob", method: .post, parameters: parameters).responseJSON { response in
             switch response.result {
@@ -101,16 +104,16 @@ class AddJobViewController: UIViewController {
     func addJobForBbySitter(){
 
         let parameters: Parameters = [
-            "id": "30",
-            "desc": "qrestdyfughj",
-            "date":"2017-07-07",
-            "from":"08:00",
-            "to":"18:00",
-            "longi":"6.00",
-            "alt":"6.00",
+            "id": AppDelegate.userId,
+            "desc": jobDescription.text!,
+            "date": txtDate.text!,
+            "from": txtFrom.text!,
+            "to": txtTo.text!,
+            "longi":String(AppDelegate.userLocation.coordinate.longitude),
+            "alt":String(AppDelegate.userLocation.coordinate.latitude),
             "bbId":bbyId!
         ]
-        
+        print(parameters)
         // All three of these calls are equivalent
         Alamofire.request(AppDelegate.serverUrlTaha+"AddJobId", method: .post, parameters: parameters).responseJSON { response in
             switch response.result {
@@ -165,6 +168,45 @@ class AddJobViewController: UIViewController {
         
         tableVC.jobId = self.jobId
     }
-
-
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print(textField)
+        if(textField.isEqual(txtDate)){
+            let min = Date().addingTimeInterval(-60 * 60 * 24 * 4)
+            let max = Date().addingTimeInterval(60 * 60 * 24 * 4)
+            let picker = DateTimePicker.show(selected: Date(), minimumDate: min, maximumDate: max)
+            picker.highlightColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 138.0/255.0, alpha: 1)
+            picker.isDatePickerOnly = true // to hide time and show only date picker
+            picker.completionHandler = { date in
+                let formatter = DateFormatter()
+                formatter.dateFormat = "YYYY-MM-dd"
+                self.txtDate.text = formatter.string(from: date)
+            }
+        }
+        if(textField.isEqual(txtFrom)){
+            let min = Date().addingTimeInterval(-60 * 60 * 24 * 4)
+            let max = Date().addingTimeInterval(60 * 60 * 24 * 4)
+            let picker = DateTimePicker.show(selected: Date(), minimumDate: min, maximumDate: max)
+            picker.highlightColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 138.0/255.0, alpha: 1)
+            picker.isTimePickerOnly = true // to hide time and show only date picker
+            picker.completionHandler = { date in
+                let formatter = DateFormatter()
+                formatter.dateFormat = "hh:mm"
+                self.txtFrom.text = formatter.string(from: date)
+            }
+        }
+        if(textField.isEqual(txtTo)){
+            let min = Date().addingTimeInterval(-60 * 60 * 24 * 4)
+            let max = Date().addingTimeInterval(60 * 60 * 24 * 4)
+            let picker = DateTimePicker.show(selected: Date(), minimumDate: min, maximumDate: max)
+            picker.highlightColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 138.0/255.0, alpha: 1)
+            picker.isTimePickerOnly = true // to hide time and show only date picker
+            picker.completionHandler = { date in
+                let formatter = DateFormatter()
+                formatter.dateFormat = "hh:mm"
+                self.txtTo.text = formatter.string(from: date)
+            }
+        }
+    }
+    
 }

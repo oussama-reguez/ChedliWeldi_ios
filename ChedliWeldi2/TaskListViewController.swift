@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
-
+import FoldingTabBar
 class TaskListViewController: UIViewController,UITableViewDelegate, UITableViewDataSource  {
     var jobId : String = "0"
     var tasks = [Task]()
@@ -50,9 +50,10 @@ class TaskListViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     
     @IBAction func btnSaveTaskList(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "ParentStoryboard", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "Home")
-        self.present(vc, animated: true, completion: nil)
+        let testController = UIStoryboard(name: "ParentStoryboard", bundle: nil).instantiateViewController(withIdentifier: "Home") as! YALFoldingTabBarController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = testController
+        self.present(testController, animated: true, completion: nil)
     }
     
     // MARK: - Navigation

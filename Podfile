@@ -25,4 +25,7 @@ target ‘ChedliWeldi2’ do
     pod 'FoldingTabBar', '~> 1.1'
     pod 'Onboard'
     pod 'PopupDialog', '~> 0.5.4'
+    pod 'DateTimePicker', '~> 1.1.4'
+    pod 'NVActivityIndicatorView', '~> 3.6.0'
+
 end
