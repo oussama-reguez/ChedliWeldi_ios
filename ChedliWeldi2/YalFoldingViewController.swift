@@ -17,17 +17,12 @@ class YalFoldingViewController: YALFoldingTabBarController ,YALTabBarDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Here")
-        print(appDelegate.window)
-        print(appDelegate.window?.rootViewController)
         // Do any additional setup after loading the view.
         setupYALTabBarController()
 
     
     }
-    override func viewWillAppear(_ animated: Bool) {
-        setupYALTabBarController()
 
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -73,6 +68,6 @@ class YalFoldingViewController: YALFoldingTabBarController ,YALTabBarDelegate{
         tabBarController.tabBarView.tabBarViewEdgeInsets = YALTabBarViewHDefaultEdgeInsets;
         tabBarController.tabBarView.tabBarItemsEdgeInsets = YALTabBarViewItemsDefaultEdgeInsets;
     }
-
+    
     
 }

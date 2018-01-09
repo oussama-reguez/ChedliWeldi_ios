@@ -7,12 +7,22 @@
 //
 
 import UIKit
-
+import PopupDialog
 class FiltreViewController: UIViewController {
-
+    public weak var popup: PopupDialog?
+    
+    public fileprivate(set) var selectedCity: String?
+    
+    // MARK: Private
+    // We will use this instead to reference our
+    // controllers view instead of `view`
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // Set the dialog (custom) title
+        let txt = UITextView()
+        txt.text="hello"
+        self.view.addSubview(txt)
         // Do any additional setup after loading the view.
     }
 

@@ -24,5 +24,5 @@ target ‘ChedliWeldi2’ do
     pod 'TransitionButton'
     pod 'FoldingTabBar', '~> 1.1'
     pod 'Onboard'
-
+    pod 'PopupDialog', '~> 0.5.4'
 end

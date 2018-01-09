@@ -12,6 +12,7 @@
 		0F3C01142001767B002AE7B3 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C01132001767B002AE7B3 /* TaskListViewController.swift */; };
 		0F3C012320018056002AE7B3 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C012220018056002AE7B3 /* ContentType.swift */; };
 		0F3C012C2001853C002AE7B3 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C012B2001853C002AE7B3 /* TabsViewController.swift */; };
+		0F642DD520043C0C0053D88F /* FiltreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F642DD420043C0C0053D88F /* FiltreViewController.swift */; };
 		0F67101E200107BE0016F173 /* ParentStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F67101D200107BE0016F173 /* ParentStoryboard.storyboard */; };
 		0F67102220010AE40016F173 /* BabysitterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F67102120010AE40016F173 /* BabysitterListViewController.swift */; };
 		0F67102420010B0A0016F173 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F67102320010B0A0016F173 /* MapViewController.swift */; };
@@ -131,6 +132,7 @@
 		0F3C01272001810E002AE7B3 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0F3C012920018457002AE7B3 /* HomeMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuViewController.swift; sourceTree = "<group>"; };
 		0F3C012B2001853C002AE7B3 /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
+		0F642DD420043C0C0053D88F /* FiltreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltreViewController.swift; sourceTree = "<group>"; };
 		0F67101D200107BE0016F173 /* ParentStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ParentStoryboard.storyboard; sourceTree = "<group>"; };
 		0F67102120010AE40016F173 /* BabysitterListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabysitterListViewController.swift; sourceTree = "<group>"; };
 		0F67102320010B0A0016F173 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				0FDE30572002716500D4DEFB /* AddTaskViewController.swift */,
 				0FDE305D2002943900D4DEFB /* OngoingViewController.swift */,
 				0FD8E76A2003E27600A385CC /* YalFoldingViewController.swift */,
+				0F642DD420043C0C0053D88F /* FiltreViewController.swift */,
 			);
 			name = parent;
 			sourceTree = "<group>";
@@ -729,6 +732,7 @@
 				5AD98F461FD734AA008F4AA8 /* ProfileTabsViewController.swift in Sources */,
 				5A00238A1FB8849000314156 /* ChedliWeldi2.xcdatamodeld in Sources */,
 				0FDE30682002AC4200D4DEFB /* LoginViewController.swift in Sources */,
+				0F642DD520043C0C0053D88F /* FiltreViewController.swift in Sources */,
 				5ADCAB981FD349A0000062AD /* PhotosViewController.swift in Sources */,
 				5A0F0D2620012F6A00E76CEF /* PrivateOfferViewController.swift in Sources */,
 				5A06F9121FCE15E40029B99A /* RatingDialogViewController.swift in Sources */,
