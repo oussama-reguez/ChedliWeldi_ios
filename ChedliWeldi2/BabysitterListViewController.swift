@@ -10,9 +10,9 @@ import UIKit
 import Alamofire
 import FoldingCell
 import SwiftyJSON
-
-
-class BabysitterListViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+import FoldingTabBar
+import PopupDialog
+class BabysitterListViewController: UIViewController,UITableViewDelegate, UITableViewDataSource,YALTabBarDelegate {
     
     
     var cellHeights = (0..<10).map { _ in C.CellHeight.close}
@@ -134,6 +134,62 @@ class BabysitterListViewController: UIViewController,UITableViewDelegate, UITabl
                 }
         }
     }
+    func tabBarDidSelectExtraRightItem(_ tabBar: YALFoldingTabBar) {
+        checkOnGoing()
+        //let content = self.storyboard!.instantiateViewController(withIdentifier: "Ongoin") as! OngoingViewController
+        //self.present(content, animated: true, completion: nil)
+
+    }
+    
+    func tabBarDidSelectExtraLeftItem(_ tabBar: YALFoldingTabBar) {
+        let content = self.storyboard!.instantiateViewController(withIdentifier: "AddJob") as! AddJobViewController
+        self.present(content, animated: true, completion: nil)
+
+    }
+    
+    func checkOnGoing() -> Bool {
+        var res : Bool! = false
+        Alamofire.request(AppDelegate.serverUrlTaha+"checkJobs?id="+AppDelegate.userId, method: .get)
+            
+            .responseJSON { response in
+                print(response)
+                if let json = response.data {
+                    let data = JSON(data: json)
+                    if(data["status"].stringValue == "not found"){
+                        // Prepare the popup assets
+                        let title = "Ongoing Job"
+                        let message = "You don't have an ongoing job currently"
+                        
+                        // Create the dialog
+                        let popup = PopupDialog(title: title, message: message)
+                        
+                        // Create buttons
+                        let buttonOne = CancelButton(title: "Ok") {
+                        }
+                        
+                        
+                        // Add buttons to dialog
+                        // Alternatively, you can use popup.addButton(buttonOne)
+                        // to add a single button
+                        popup.addButtons([buttonOne])
+                        
+                        // Present dialog
+                        self.present(popup, animated: true, completion: nil)
+                    }else {
+                        let content = self.storyboard!.instantiateViewController(withIdentifier: "Ongoin") as! OngoingViewController
+                        content.jobId = data["id"].stringValue
+                        self.present(content, animated: true, completion: nil)
+                    }
+                    
+                    
+                }
+        }
+        
+        return res
+    }
+    
+    
+    
     
     fileprivate struct C {
         struct CellHeight {

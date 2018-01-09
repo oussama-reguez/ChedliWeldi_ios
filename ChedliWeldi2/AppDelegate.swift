@@ -11,6 +11,8 @@ import CoreData
 import UserNotifications
 import FoldingTabBar
 import Onboard
+import MapKit
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate {
 
@@ -20,14 +22,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
     static let  serverUrlTahaImage="http://localhost:8888/images/"
     static var  connectedUser="4"
     static let serverImage="http://localhost:8888/images/"
+<<<<<<< HEAD
     static var userId="4"
     
+=======
+    static var userId="30"
+    static var userLocation : CLLocation!
+>>>>>>> 2e2b93370273652c927ada1ce74b8710a64c91b0
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         registerForRemoteNotification()
         setupYALTabBarController()
+        
         let firstPage = OnboardingContentViewController(title: "Chedli Weldi !", body: "Your best companion for finding a babysitter nearby easily.", image: nil,buttonText: nil,action: nil)
         
         let thirdPage = OnboardingContentViewController(title: "Fast & Easy", body: "With Chedliweldi you can hire a babysitter in less than 5 minutes !", image: nil,buttonText: nil,action: nil)

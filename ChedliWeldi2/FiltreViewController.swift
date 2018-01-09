@@ -9,28 +9,32 @@
 import UIKit
 import PopupDialog
 class FiltreViewController: UIViewController {
-    public weak var popup: PopupDialog?
     
-    public fileprivate(set) var selectedCity: String?
     
     // MARK: Private
     // We will use this instead to reference our
     // controllers view instead of `view`
-    
+    @IBOutlet weak var range: UISlider!
+    @IBOutlet weak var vale: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Set the dialog (custom) title
-        let txt = UITextView()
-        txt.text="hello"
-        self.view.addSubview(txt)
-        // Do any additional setup after loading the view.
+                // Do any additional setup after loading the view.
+        vale.text = "\(Int(range.value)) Km"
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func sliderValueChanged(sender: UISlider) {
+        var currentValue = Int(sender.value)
+        vale.text = "\(currentValue) Km"
+    }
     
+    public func getVal() -> Int{
+        return Int(range.value)
+    }
 
     /*
     // MARK: - Navigation

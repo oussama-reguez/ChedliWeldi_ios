@@ -8,7 +8,7 @@
 
 import UIKit
 import os.log
-
+import DateTimePicker
 
 class AddTaskViewController: UIViewController,UITextFieldDelegate{
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -65,6 +65,30 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate{
         if(textField == txtTaskName){
             navigationItem.title = textField.text
         }
+        if(textField.isEqual(txtFrom)){
+            let min = Date().addingTimeInterval(-60 * 60 * 24 * 4)
+            let max = Date().addingTimeInterval(60 * 60 * 24 * 4)
+            let picker = DateTimePicker.show(selected: Date(), minimumDate: min, maximumDate: max)
+            picker.highlightColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 138.0/255.0, alpha: 1)
+            picker.isTimePickerOnly = true // to hide time and show only date picker
+            picker.completionHandler = { date in
+                let formatter = DateFormatter()
+                formatter.dateFormat = "hh:mm"
+                self.txtFrom.text = formatter.string(from: date)
+            }
+        }
+        if(textField.isEqual(txtTo)){
+            let min = Date().addingTimeInterval(-60 * 60 * 24 * 4)
+            let max = Date().addingTimeInterval(60 * 60 * 24 * 4)
+            let picker = DateTimePicker.show(selected: Date(), minimumDate: min, maximumDate: max)
+            picker.highlightColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 138.0/255.0, alpha: 1)
+            picker.isTimePickerOnly = true // to hide time and show only date picker
+            picker.completionHandler = { date in
+                let formatter = DateFormatter()
+                formatter.dateFormat = "hh:mm"
+                self.txtTo.text = formatter.string(from: date)
+            }
+        }
     }
     private func updateSaveButtonState() {
         // Disable the Save button if the text field is empty.
@@ -78,6 +102,7 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate{
         else {
             saveButton.isEnabled = true
         }
+
     }
 
 }
