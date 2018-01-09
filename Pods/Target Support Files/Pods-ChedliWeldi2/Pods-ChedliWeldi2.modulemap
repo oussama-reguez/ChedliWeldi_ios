@@ -1,6 +1,0 @@
-framework module Pods_ChedliWeldi2 {
-  umbrella header "Pods-ChedliWeldi2-umbrella.h"
-
-  export *
-  module * { export * }
-}

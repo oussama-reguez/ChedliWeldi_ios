@@ -23,7 +23,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("")
         
        // let textFieldframe1 = CGRect(origin: CGPoint(x: 10,y :40), size: CGSize(width: 200, height: 45))
         //let textField1 = SkyFloatingLabelTextFieldWithIcon(frame: textFieldframe1)
@@ -99,8 +99,11 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
                 "password": self.textField2.text!,
             ]
             print(parameters)
+            
             Alamofire.request(AppDelegate.serverUrlTaha+"login", method: .post, parameters: parameters).responseJSON { response in
                 print(response)
+                
+                
                 switch response.result {
                 case .success(let JSON):
                     print(JSON)

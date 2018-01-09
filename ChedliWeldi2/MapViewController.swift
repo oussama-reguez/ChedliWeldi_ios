@@ -11,18 +11,20 @@ import MapKit
 import Alamofire
 import SwiftyJSON
 import FoldingTabBar
+import PopupDialog
 
 class MapViewController: UIViewController , MKMapViewDelegate,CLLocationManagerDelegate,YALTabBarDelegate{
-   
+    var userLocation:CLLocation!
     @IBOutlet weak var map: MKMapView!
     var babysitters:[JSON]? = nil
+    var circle:MKCircle? = nil
     var locationManager: CLLocationManager!
+    var annotations : [MKAnnotation] = []
     var rad : CLLocationDistance = 10000
     override func viewDidLoad() {
         super.viewDidLoad()
         map.delegate = self
         currentLocationButtonAction()
-        getBabysitters()
 
     
     }
@@ -38,18 +40,20 @@ class MapViewController: UIViewController , MKMapViewDelegate,CLLocationManagerD
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
         }
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation:CLLocation = locations[0] as CLLocation
-        
+        userLocation = locations[0] as CLLocation
+        //Zoom to user location
+        let viewRegion = MKCoordinateRegionMakeWithDistance((userLocation?.coordinate)!, 50, 50)
+        map.setRegion(viewRegion, animated: false)
         // Call stopUpdatingLocation() to stop listening for location updates,
         // other wise this function will be called every time when user location changes.
         
         // manager.stopUpdatingLocation()
-        let circle = MKCircle(center: userLocation.coordinate, radius: rad)
-        map.add(circle)
         
+        getBabysitters()
         //UpdateBabyistters
         
     }
@@ -94,9 +98,21 @@ class MapViewController: UIViewController , MKMapViewDelegate,CLLocationManagerD
                                   locationName: babysitter["descr"].stringValue,
                                   discipline: "Babysitter",
                                   coordinate: CLLocationCoordinate2D(latitude: Double((babysitter["altitude"].stringValue))!, longitude: Double((babysitter["longitude"].stringValue))!))
-            map.addAnnotation(marker)
+            let bbcoordinate = CLLocation(latitude: Double((babysitter["altitude"].stringValue))!, longitude: Double((babysitter["longitude"].stringValue))!)
+
+            let distanceInMeters = userLocation?.distance(from: bbcoordinate) // result is in meters
+            if(distanceInMeters!<=rad){
+                print("in range")
+                annotations.append(marker)
+            }
+            else{
+                print("not in range")
+            }
             
         }
+        map.addAnnotations(annotations)
+        circle = MKCircle(center: (userLocation.coordinate), radius: rad)
+        map.add(circle!)
     }
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             if let circle = overlay as? MKCircle {
@@ -110,7 +126,74 @@ class MapViewController: UIViewController , MKMapViewDelegate,CLLocationManagerD
     }
 
     func tabBarDidSelectExtraRightItem(_ tabBar: YALFoldingTabBar) {
-        //apply filtres
+       /*
+        let title = "THIS IS THE DIALOG TITLE"
+        let message = "This is the message section of the popup dialog default view"
+        let image = UIImage(named: "pexels-photo-103290")
+        
+        // Create the dialog
+        let popup = PopupDialog(title: title, message: message, image: image)
+        
+        // Create buttons
+        let buttonOne = CancelButton(title: "CANCEL") {
+            print("You canceled the car dialog.")
+            //apply filtres
+            self.map.remove(self.circle!)
+            self.map.removeAnnotations(self.annotations)
+            self.circle = MKCircle(center: (self.userLocation.coordinate), radius: self.rad)
+            self.map.add(self.circle!)
+            self.populateMap()
+        }
+        
+        // This button will not the dismiss the dialog
+        let buttonTwo = DefaultButton(title: "ADMIRE CAR", dismissOnTap: false) {
+            print("What a beauty!")
+        }
+        
+        let buttonThree = DefaultButton(title: "BUY CAR", height: 60) {
+            print("Ah, maybe next time :)")
+        }
+        
+        // Add buttons to dialog
+        // Alternatively, you can use popup.addButton(buttonOne)
+        // to add a single button
+        popup.addButtons([buttonOne, buttonTwo, buttonThree])
+        
+        // Present dialog
+        self.present(popup, animated: true, completion: nil)
+        
+        */
+        displayDialog()
+        
+
+    }
+    func displayDialog() {
+        let vc = FiltreViewController(nibName: "RequestDialog", bundle: nil)
+        
+        
+        // vc.photo.kf.setImage(with: url)        // Present dialog
+        
+        
+        // Create the dialog
+        let popup = PopupDialog(viewController: vc, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true)
+        
+        // Create first button
+        let buttonOne = CancelButton(title: "CANCEL", height: 60) {
+            
+        }
+        
+        // Create second button
+        let buttonTwo = DefaultButton(title: "Accept", height: 60) {
+            
+        }
+        
+        // Add buttons to dialog
+        popup.addButtons([buttonOne, buttonTwo])
+        
+        // Present dialog
+        self.present(popup, animated: true, completion: nil)
+        
+        
     }
 
 }
