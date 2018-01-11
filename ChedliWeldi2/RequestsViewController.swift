@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import PopupDialog
+import FoldingTabBar
 
 class RequestsViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
     var requests:[JSON]? = nil
@@ -28,11 +29,20 @@ class RequestsViewController: UIViewController ,UITableViewDelegate, UITableView
         // Go back to the previous ViewController
         // _ = navigationController?.popViewController(animated: true)
         
-        let destination = UIStoryboard(name: "Main", bundle: nil) .
-            instantiateViewController(withIdentifier: "myPrivateOffers") as? MyOfferCollectionViewController
-        
-        let navigationController = self.view.window?.rootViewController as! UINavigationController
-        navigationController.setViewControllers([destination!], animated: true)
+        if(AppDelegate.userType == "Parent"){
+            
+            let testController = UIStoryboard(name: "ParentStoryboard", bundle: nil).instantiateViewController(withIdentifier: "Home") as! YALFoldingTabBarController
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController = testController
+            self.present(testController, animated: true, completion: nil)                            }
+        else if (AppDelegate.userType == "Babysitter"){
+            AppDelegate.userType="Babysitter"
+            
+            let testController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BBHome") as! YALFoldingTabBarController
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController = testController
+            self.present(testController, animated: true, completion: nil)
+        }
         
     }
 
@@ -138,6 +148,7 @@ class RequestsViewController: UIViewController ,UITableViewDelegate, UITableView
         var strStart = offer?["start"].stringValue
         var strEnd=offer?["end"].stringValue
         offerId=offer?["id"].stringValue
+        nbrRequests.text=(offer?["requests"].stringValue)!+" requests"
        
         
         let dateStart=formatter.date(from: strStart!)
@@ -239,7 +250,7 @@ class RequestsViewController: UIViewController ,UITableViewDelegate, UITableView
                 if let json = response.data {
                     let data = JSON(data: json)
                     self.requests = data["requests"].arrayValue
-                    self.nbrRequests.text = String(describing: self.requests?.count)+" request"
+                   // self.nbrRequests.text = String(describing: self.requests?.count)+" request"
                     self.table.reloadData()
         
                    // self.requestIdFromNotification="1"

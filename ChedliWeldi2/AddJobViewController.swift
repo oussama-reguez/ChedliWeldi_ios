@@ -75,18 +75,14 @@ class AddJobViewController: UIViewController ,UITextFieldDelegate{
                 
                 //example if there is an id
                 let userId = response.object(forKey: "id")!
-                
+                self.jobId="\(userId)"
                 DispatchQueue.main.async(execute: { () -> Void in
                     // 4: Stop the animation, here you have three options for the `animationStyle` property:
                     // .expand: useful when the task has been compeletd successfully and you want to expand the button and transit to another view controller in the completion callback
                     // .shake: when you want to reflect to the user that the task did not complete successfly
                     // .normal
                     self.button.stopAnimation(animationStyle: .expand, completion: {
-                        self.jobId=userId as! String
-                        let vc = UIStoryboard(name: "ParentStoryboard", bundle: nil) .
-                            instantiateViewController(withIdentifier: "TaskListViewController") as? TaskListViewController
-                            vc?.jobId=self.jobId
-                            self.present(vc!, animated:true, completion:nil)
+                        self.performSegue(withIdentifier: "seg", sender: self)
                     })
                 })
                 

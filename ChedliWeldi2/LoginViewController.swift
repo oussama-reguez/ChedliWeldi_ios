@@ -15,6 +15,15 @@ import FoldingTabBar
 
 class LoginViewController: UIViewController , UITextFieldDelegate{
     @IBOutlet weak var button: TransitionButton!
+    
+    
+    
+    
+    
+    
+    @IBOutlet weak var lblSignUp: UILabel!
+    
+    
 
     @IBOutlet weak var textField1: SkyFloatingLabelTextFieldWithIcon!
     
@@ -40,7 +49,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
         textField1.lineHeight = 1.0 // bottom line height in points
         textField1.lineColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         textField1.selectedLineHeight = 2.0
-        textField1.selectedLineColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        textField1.selectedLineColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         textField1.tintColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         textField1.selectedTitleColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
 
@@ -53,7 +62,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
         textField2.iconText = "\u{f023}" // plane icon as per https://fortawesome.github.io/Font-Awesome/cheatsheet/
         textField2.lineHeight = 1.0 // bottom line height in points
         textField2.lineColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        textField2.selectedLineColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        textField2.selectedLineColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         textField2.selectedLineHeight = 2.0
         textField2.tintColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         textField2.selectedTitleColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
@@ -125,13 +134,20 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
                                 
                                 let testController = UIStoryboard(name: "ParentStoryboard", bundle: nil).instantiateViewController(withIdentifier: "Home") as! YALFoldingTabBarController
                                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                AppDelegate.userType="Parent"
                                 appDelegate.window?.rootViewController = testController
                                 self.present(testController, animated: true, completion: nil)                            }
-                            else {
+                            else if ("\(userType)" == "Babysitter"){
+                                AppDelegate.userType="Babysitter"
+
                                 let testController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BBHome") as! YALFoldingTabBarController
                                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                                 appDelegate.window?.rootViewController = testController
-                                self.present(testController, animated: true, completion: nil)                            }
+                                self.present(testController, animated: true, completion: nil)
+                            }
+                            else {
+                                self.button.stopAnimation(animationStyle: .shake, completion: nil)
+                            }
                             
                         })
                     })

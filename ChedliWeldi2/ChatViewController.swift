@@ -237,8 +237,7 @@ class ChatViewController: NMessengerViewController {
                     
                     let info = data["data"]
                     
-                   
-                    
+                    print("Response String: \(response.result.value)")                    
                         self.setupMessageNode(meta: info)
                        
                         

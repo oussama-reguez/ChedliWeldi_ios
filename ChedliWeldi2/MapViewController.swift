@@ -131,6 +131,11 @@ class MapViewController: UIViewController , MKMapViewDelegate,CLLocationManagerD
         
 
     }
+    func tabBarDidSelectExtraLeftItem(_ tabBar: YALFoldingTabBar) {
+        let content = self.storyboard!.instantiateViewController(withIdentifier: "myPrivateOffers") as! MyOfferCollectionViewController
+        self.navigationController?.pushViewController(content, animated: true)
+
+    }
     func displayDialog() {
         let vc = FiltreViewController(nibName: "FiltreDialog", bundle: nil)
         

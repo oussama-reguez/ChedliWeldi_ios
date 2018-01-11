@@ -10,7 +10,8 @@ import UIKit
 import FSCalendar
 import Alamofire
 import SwiftyJSON
-class InterfaceBuilderViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate ,UITableViewDelegate, UITableViewDataSource  {
+import FoldingTabBar
+class InterfaceBuilderViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate ,UITableViewDelegate, UITableViewDataSource,YALTabBarDelegate  {
     
     @IBOutlet
     weak var calendar: FSCalendar!
@@ -36,7 +37,16 @@ class InterfaceBuilderViewController: UIViewController, FSCalendarDataSource, FS
     
     }
 
+    func tabBarDidSelectExtraRightItem(_ tabBar: YALFoldingTabBar) {
+        let content = self.storyboard!.instantiateViewController(withIdentifier: "settings") as! SettingsTableViewController
+        self.navigationController?.pushViewController(content, animated: true)
+    }
     
+    func tabBarDidSelectExtraLeftItem(_ tabBar: YALFoldingTabBar) {
+        let content = self.storyboard!.instantiateViewController(withIdentifier: "AddJob") as! AddJobViewController
+        self.present(content, animated: true, completion: nil)
+        
+    }
     
     
     @IBOutlet weak var table: UITableView!

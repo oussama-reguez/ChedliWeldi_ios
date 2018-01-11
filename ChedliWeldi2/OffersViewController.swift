@@ -42,6 +42,17 @@ class OffersViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     
     
     
+    @IBAction func onClick(_ sender: Any) {
+        //scheduled
+        let destination = UIStoryboard(name: "Main", bundle: nil) .
+            instantiateViewController(withIdentifier: "settings") as? SettingsTableViewController
+        
+        
+        
+      
+        
+        self.navigationController?.pushViewController(destination!, animated: true)
+    }
     
     @IBOutlet weak var txtFulName: UILabel!
     @IBOutlet var table: UITableView!

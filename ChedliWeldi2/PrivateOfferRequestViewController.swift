@@ -28,16 +28,15 @@ class PrivateOfferRequestViewController: UIViewController ,UITableViewDelegate, 
     @IBOutlet weak var imgProfil: UIImageView!
     @IBOutlet weak var offerDuration: UILabel!
  
-    @IBAction func onRefuse(_ sender: Any) {
-    refuseRequest(idRequest: offerId!)
-        
-    }
-    
-    @IBAction func onAccept(_ sender: Any) {
-    acceptRequest(idRequest: offerId!)
-       
+   
+    @IBAction func refuse(_ sender: UIButton) {
+        refuseRequest(idRequest: offerId!)
     }
    
+    @IBAction func accept(_ sender: UIButton) {
+        acceptRequest(idRequest: offerId!)
+
+    }
     var offer:JSON? = nil
 
     fileprivate let formatter: DateFormatter = {

@@ -22,13 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
     static let  serverUrlTahaImage="http://localhost:8888/images/"
     static var  connectedUser="4"
     static let serverImage="http://localhost:8888/images/"
-<<<<<<< HEAD
     static var userId="4"
-    
-=======
-    static var userId="30"
+    static var userType="Parent"
+  
     static var userLocation : CLLocation!
->>>>>>> 2e2b93370273652c927ada1ce74b8710a64c91b0
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -55,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
         // Setting the BG color
         
         // Setting the rootViewController to your onboardingVC
-      //  self.window?.rootViewController = onboardingVC
+       self.window?.rootViewController = onboardingVC
         
       /*
         let storyBoard = UIStoryboard(name: "testing", bundle: nil)

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AB05A0E4429BD17057843E26D37E115E"
+               BlueprintIdentifier = "3C37BA14F709AFC29473FF944959B8F2"
                BuildableName = "Pods_ChedliWeldi2.framework"
                BlueprintName = "Pods-ChedliWeldi2"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AB05A0E4429BD17057843E26D37E115E"
+            BlueprintIdentifier = "3C37BA14F709AFC29473FF944959B8F2"
             BuildableName = "Pods_ChedliWeldi2.framework"
             BlueprintName = "Pods-ChedliWeldi2"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -45,7 +45,7 @@ class InboxViewController: UIViewController ,UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         table.tableFooterView = UIView() 
-        getInbox(id: "5")
+        getInbox(id: "\(AppDelegate.userId)")
        
         // Do any additional setup after loading the view.
     }
@@ -117,7 +117,19 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     var selectedRow:Int = 0
     var selectedOffer:JSON? = nil
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         let request = users?[indexPath.row]
+        let id = request?["id_sender"].stringValue
+        let destination = UIStoryboard(name: "Main", bundle: nil) .
+            instantiateViewController(withIdentifier: "chat") as? ChatViewController
+        
+        
+        
+        destination?.idSender=id!
+        
+        self.navigationController?.pushViewController(destination!, animated: true)
+        
+    }
     
     func getInbox(id:String)   {
         Alamofire.request(AppDelegate.serverUrl+"getInbox", method: .post,parameters: ["id_user": id ])
